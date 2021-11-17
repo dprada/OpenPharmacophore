@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>openpharmacophore.databases.zinc &mdash; OpenPharmacophore 0+untagged.143.gbfcf4bd documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> OpenPharmacophore
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation and Quick Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html">Pharmacohophores with OpenPharmacophore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Creating-a-pharmacophore-model-manually">Creating a pharmacophore model manually</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Pharmacophoric-Points">Pharmacophoric Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Create-the-Pharmacophore">Create the Pharmacophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Importing-Pharmacophores-from-other-software">Importing Pharmacophores from other software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Exporting-Pharmacophores">Exporting Pharmacophores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Ligand-Based.html">Ligand-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Ligand-Based.html#Pharmacophore-for-Non-Peptide-Angiotensin-II-Receptor-antagonists">Pharmacophore for Non-Peptide Angiotensin II Receptor antagonists</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html">Structured-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Rhinovirus-coat-protein">Pharmacophore of Rhinovirus coat protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-ferrous-Synechocystis-hemoglobin">Pharmacophore of ferrous Synechocystis hemoglobin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Abl-kinase-domain">Pharmacophore of Abl kinase domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Estrogen-Nuclear-Receptor">Pharmacophore of Estrogen Nuclear Receptor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html">Dynamic Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-a-molecular-dynamics-trajectory">Pharmacophores from a molecular dynamics trajectory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-the-first-and-last-frame-only">Pharmacophores from the first and last frame only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophore-Analysis">Pharmacophore Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Get-Pharmacophores-for-each-frame-of-the-trajectory">Get Pharmacophores for each frame of the trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Get-all-unique-pharmacophoric-points">Get all unique pharmacophoric points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Derive-a-pharmacophore-model-from-the-most-frequent-points">Derive a pharmacophore model from the most frequent points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Analyze-frequency-of-all-unique-points">Analyze frequency of all unique points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#2D-Representation-of-the-Dynamic-Pharmacophore">2D Representation of the Dynamic Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Representative-Pharmacophore-Models">Representative Pharmacophore Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Common-Hits-Approach">Common Hits Approach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Zinc.html">Virtual Screening of ZINC Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Zinc.html#Pharmacophore-model-for-Plasmodium-Falciparum-Triosephosphate-isomerase">Pharmacophore model for Plasmodium Falciparum Triosephosphate isomerase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Zinc.html#Screen-ZINC-with-the-pharmacophore-model">Screen ZINC with the pharmacophore model</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#pharmacophoric-point">Pharmacophoric Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.PharmacophoricPoint.html">openpharmacophore.PharmacophoricPoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#features-colorpalettes">Features colorpalettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.color_palettes.get_color_from_palette_for_feature.html">openpharmacophore.color_palettes.get_color_from_palette_for_feature</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#pharmacophores">Pharmacophores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.Pharmacophore.html">openpharmacophore.Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.LigandBasedPharmacophore.html">openpharmacophore.LigandBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.StructuredBasedPharmacophore.html">openpharmacophore.StructuredBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.Dynophore.html">openpharmacophore.Dynophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#virtual-screening">Virtual Screening</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.VirtualScreening.html">openpharmacophore.VirtualScreening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html">openpharmacophore.RetrospectiveScreening</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#io">IO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.from_ligandscout.html">openpharmacophore.io.from_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_ligandscout.html">openpharmacophore.io.to_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.from_pharmer.html">openpharmacophore.io.from_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_pharmer.html">openpharmacophore.io.to_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.from_moe.html">openpharmacophore.io.from_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_moe.html">openpharmacophore.io.to_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.read_pharmagist.html">openpharmacophore.io.read_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_pharmagist.html">openpharmacophore.io.to_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.load_mol2_file.html">openpharmacophore.io.load_mol2_file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#databases">Databases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#zinc">Zinc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.zinc.download_zinc_subset.html">openpharmacophore.databases.zinc.download_zinc_subset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pubchem">PubChem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.pubchem.get_assay_bioactivity_data.html">openpharmacophore.databases.pubchem.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.pubchem.get_compound_assay_summary.html">openpharmacophore.databases.pubchem.get_compound_assay_summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#chembl">ChemBl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.chembl.get_assay_bioactivity_data.html">openpharmacophore.databases.chembl.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.chembl.get_bioactivity_dataframe.html">openpharmacophore.databases.chembl.get_bioactivity_dataframe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.chembl.get_ro5_dataset.html">openpharmacophore.databases.chembl.get_ro5_dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">OpenPharmacophore</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>openpharmacophore.databases.zinc</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <h1>Source code for openpharmacophore.databases.zinc</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">openpharmacophore._private_tools.exceptions</span> <span class="kn">import</span> <span class="n">MissingParameters</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pkg_resources</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">string</span>
+
+<span class="k">def</span> <span class="nf">get_zinc_urls</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">&quot;Lead-Like&quot;</span><span class="p">,</span> 
+                  <span class="n">mw_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logp_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                  <span class="n">file_format</span><span class="o">=</span><span class="s2">&quot;smi&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Get a list of urls for a set of molecules of the ZINC database. </span>
+<span class="sd">    </span>
+<span class="sd">        If file_format is smi, the 2D set of ZINC will be used. If it is sdf </span>
+<span class="sd">        the 3D set will be used.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        subset : str</span>
+<span class="sd">            Name of the ZINC subset to be downloaded. Available subsets are &quot;Drug-Like&quot;,</span>
+<span class="sd">            &quot;Lead-Like&quot;, &quot;Lugs&quot;, &quot;Goldilocks&quot;, &quot;Fragments&quot;, &quot;Flagments&quot;, &quot;Big-n-Greasy&quot;</span>
+<span class="sd">            and &quot;Shards&quot;.</span>
+<span class="sd">        </span>
+<span class="sd">        mw_range : 2-tuple of float</span>
+<span class="sd">            Range of molecular weight for the downloaded molecules.</span>
+<span class="sd">        </span>
+<span class="sd">        logp_range : 2-tuple of float</span>
+<span class="sd">            Range of logP for the downloaded molecules.</span>
+<span class="sd">        </span>
+<span class="sd">        file_format : str</span>
+<span class="sd">            Format of the files that will be downloaded. Can be .smi or .sdf.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        url_list : list of str</span>
+<span class="sd">            A list with the urls</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">mw_range</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">logp_range</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">subset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">MissingParameters</span><span class="p">(</span><span class="s2">&quot;Must pass a molecular weight range and a logP range if no subset is selected&quot;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">file_format</span> <span class="o">!=</span> <span class="s2">&quot;smi&quot;</span> <span class="ow">and</span> <span class="n">file_format</span> <span class="o">!=</span> <span class="s2">&quot;sdf&quot;</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_format</span><span class="si">}</span><span class="s2"> is not a valid file format&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Subsets defined by ZINC</span>
+    <span class="n">subsets</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1"># First tuple is start and end columns, second tuple is start and end rows</span>
+        <span class="s2">&quot;Drug-Like&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)],</span>
+        <span class="s2">&quot;Lead-Like&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)],</span>
+        <span class="s2">&quot;Lugs&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)],</span>
+        <span class="s2">&quot;Goldilocks&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span>
+        <span class="s2">&quot;Fragments&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)],</span>
+        <span class="s2">&quot;Flagments&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)],</span>
+        <span class="s2">&quot;Big-n-Greasy&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">)],</span>
+        <span class="s2">&quot;Shards&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">subset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">subset</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">subsets</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">subset</span><span class="si">}</span><span class="s2"> is not a valid subset. Valid subsets are: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">subsets</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># This are the values that ZINC accepts</span>
+    <span class="n">mw_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">325</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">375</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">425</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">550</span><span class="p">]</span>
+    <span class="n">logp_values</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+    <span class="c1"># ZINC molecular weight is categorized in columns from A to K</span>
+    <span class="n">mw_cols</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span><span class="p">[:</span><span class="mi">11</span><span class="p">])</span>
+    <span class="c1"># LogP is categorized in rows from A to K</span>
+    <span class="n">logp_rows</span> <span class="o">=</span> <span class="n">mw_cols</span>
+    
+    <span class="n">molecular_weight</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">mw_values</span><span class="p">,</span> <span class="n">mw_cols</span><span class="p">))</span>
+    <span class="n">logp</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">logp_values</span><span class="p">,</span> <span class="n">logp_rows</span><span class="p">))</span>
+    
+    <span class="k">if</span> <span class="n">subset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="n">mw_lower_bound</span><span class="p">,</span> <span class="n">mw_upper_bound</span> <span class="o">=</span> <span class="n">mw_range</span>
+        <span class="n">logp_lower_bound</span><span class="p">,</span> <span class="n">logp_upper_bound</span> <span class="o">=</span> <span class="n">logp_range</span>
+        
+        <span class="c1"># Discretize mol weight and logp values:</span>
+        <span class="n">mw_lower_bound</span> <span class="o">=</span> <span class="n">discretize_values</span><span class="p">(</span><span class="n">mw_lower_bound</span><span class="p">,</span> <span class="n">mw_values</span><span class="p">,</span> <span class="s2">&quot;Molecular weight&quot;</span><span class="p">)</span>
+        <span class="n">mw_upper_bound</span> <span class="o">=</span> <span class="n">discretize_values</span><span class="p">(</span><span class="n">mw_upper_bound</span><span class="p">,</span> <span class="n">mw_values</span><span class="p">,</span> <span class="s2">&quot;Molecular weight&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">logp_lower_bound</span> <span class="o">=</span> <span class="n">discretize_values</span><span class="p">(</span><span class="n">logp_lower_bound</span><span class="p">,</span> <span class="n">logp_values</span><span class="p">,</span> <span class="s2">&quot;LogP&quot;</span><span class="p">)</span>
+        <span class="n">logp_upper_bound</span> <span class="o">=</span> <span class="n">discretize_values</span><span class="p">(</span><span class="n">logp_upper_bound</span><span class="p">,</span> <span class="n">logp_values</span><span class="p">,</span> <span class="s2">&quot;LogP&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">start_col</span> <span class="o">=</span> <span class="n">mw_cols</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">molecular_weight</span><span class="p">[</span><span class="n">mw_lower_bound</span><span class="p">])</span>
+        <span class="n">end_col</span> <span class="o">=</span> <span class="n">mw_cols</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">molecular_weight</span><span class="p">[</span><span class="n">mw_upper_bound</span><span class="p">])</span> 
+    
+        <span class="n">start_row</span> <span class="o">=</span> <span class="n">logp_rows</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">logp</span><span class="p">[</span><span class="n">logp_lower_bound</span><span class="p">])</span>
+        <span class="n">end_row</span> <span class="o">=</span> <span class="n">logp_rows</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">logp</span><span class="p">[</span><span class="n">logp_upper_bound</span><span class="p">])</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">start_col</span><span class="p">,</span> <span class="n">end_col</span> <span class="o">=</span> <span class="n">subsets</span><span class="p">[</span><span class="n">subset</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">start_row</span><span class="p">,</span> <span class="n">end_row</span> <span class="o">=</span> <span class="n">subsets</span><span class="p">[</span><span class="n">subset</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">col_list</span> <span class="o">=</span> <span class="n">mw_cols</span><span class="p">[</span><span class="n">start_col</span><span class="p">:</span><span class="n">end_col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">row_list</span> <span class="o">=</span> <span class="n">logp_rows</span><span class="p">[</span><span class="n">start_row</span><span class="p">:</span><span class="n">end_row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">url_list</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">if</span> <span class="n">file_format</span> <span class="o">==</span> <span class="s2">&quot;smi&quot;</span><span class="p">:</span>
+        <span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;http://files.docking.org/2D/&quot;</span>
+        <span class="c1"># Get urls for smi files</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">col_list</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">row_list</span><span class="p">:</span>
+                <span class="n">tranch</span> <span class="o">=</span> <span class="n">col</span> <span class="o">+</span> <span class="n">row</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">tranch</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">tranch</span>
+                <span class="c1"># Each tranch is divided into various files from A to E</span>
+                <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">]:</span>
+                    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">]:</span>
+                        <span class="n">url_download</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="n">f</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="s2">&quot;.smi&quot;</span>
+                        <span class="n">url_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url_download</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Get tranches for sdf files</span>
+        <span class="n">tranches</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">row_list</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">col_list</span><span class="p">:</span>
+                <span class="n">tranch</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="n">col</span>
+                <span class="n">tranches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tranch</span><span class="p">)</span>
+        <span class="n">url_list</span> <span class="o">=</span> <span class="n">get_ZINC3D_url_list</span><span class="p">(</span><span class="n">tranches</span><span class="p">)</span>    
+
+
+    <span class="k">return</span> <span class="n">url_list</span>
+
+    
+
+<span class="k">def</span> <span class="nf">discretize_values</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Discretize a value</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    value : int</span>
+<span class="sd">        Value that will be disctretized.</span>
+
+<span class="sd">    bins : list of int</span>
+<span class="sd">        List containing the bins to discretize the value</span>
+<span class="sd">    </span>
+<span class="sd">    name : str</span>
+<span class="sd">        Name of the variable that will be discretized</span>
+<span class="sd">    </span>
+<span class="sd">    lower : bool</span>
+<span class="sd">        If True the lower bound will be assigned to value.</span>
+<span class="sd">        Else the upper bound will be assigned.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    value : double</span>
+<span class="sd">        The discretized value</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> must be at least </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="k">elif</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">and</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="n">bins</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">lower</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">bins</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">value</span>
+
+<span class="k">def</span> <span class="nf">get_ZINC3D_url_list</span><span class="p">(</span><span class="n">tranches</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Retrieves urls that matches the desired tranches given by</span>
+<span class="sd">        molecular weight and logp range for ZINC 3D. URLS are read </span>
+<span class="sd">        from a file. </span>
+
+<span class="sd">        tranches : list of str</span>
+<span class="sd">            List with the values of each tranch.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">zinc_urls_file</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s1">&#39;openpharmacophore&#39;</span><span class="p">,</span>
+                    <span class="s2">&quot;./data/zinc3d.uri&quot;</span><span class="p">)</span>
+
+    <span class="n">url_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">zinc_urls_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+            <span class="c1"># Extract the column-row from the url</span>
+            <span class="n">tranch</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">tranch</span> <span class="ow">in</span> <span class="n">tranches</span><span class="p">:</span>
+                <span class="n">url_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">url_list</span>
+
+
+<div class="viewcode-block" id="download_zinc_subset"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.databases.zinc.download_zinc_subset.html#openpharmacophore.databases.zinc.download_zinc_subset">[docs]</a><span class="k">def</span> <span class="nf">download_zinc_subset</span><span class="p">(</span><span class="n">download_path</span><span class="p">,</span> <span class="n">subset</span><span class="p">,</span> <span class="n">mw_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logp_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">file_format</span><span class="o">=</span><span class="s2">&quot;smi&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Download a subset from ZINC database.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ---------</span>
+<span class="sd">        subset : str </span>
+<span class="sd">            Name of the ZINC subset to be downloaded. Available subsets are &quot;Drug-Like&quot;,</span>
+<span class="sd">            &quot;Lead-Like&quot;, &quot;Lugs&quot;, &quot;Goldilocks&quot;, &quot;Fragments&quot;, &quot;Flagments&quot;, &quot;Big-n-Greasy&quot;</span>
+<span class="sd">            and &quot;Shards&quot;.</span>
+<span class="sd">        </span>
+<span class="sd">        mw_range : 2-tuple of float</span>
+<span class="sd">            Range of molecular weight for the downloaded molecules.</span>
+<span class="sd">        </span>
+<span class="sd">        logp_range : 2-tuple of float</span>
+<span class="sd">            Range of logP for the downloaded molecules.</span>
+
+<span class="sd">        download_path : str</span>
+<span class="sd">            Name of the path where the files will be downloaded.</span>
+<span class="sd">        </span>
+<span class="sd">        file_format : str</span>
+<span class="sd">                Format of the files that will be downloaded. Can be .smi or .sdf.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Nothing is returned. Files are downloaded.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">url_list</span> <span class="o">=</span> <span class="n">get_zinc_urls</span><span class="p">(</span><span class="n">subset</span><span class="p">,</span> <span class="n">mw_range</span><span class="o">=</span><span class="n">mw_range</span><span class="p">,</span> <span class="n">logp_range</span><span class="o">=</span><span class="n">logp_range</span><span class="p">,</span> <span class="n">file_format</span><span class="o">=</span><span class="n">file_format</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloading from ZINC...&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">url_list</span><span class="p">):</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="n">requests</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not fetch file from </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+            <span class="k">continue</span> 
+
+        <span class="k">if</span> <span class="n">file_format</span><span class="o">==</span> <span class="s2">&quot;smi&quot;</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span>  <span class="n">url</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">:]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">url</span><span class="p">[</span><span class="o">-</span><span class="mi">17</span><span class="p">:]</span>
+        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">download_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span></div>
+
+<span class="k">def</span> <span class="nf">download_zinc</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Download a zinc file and return a list of rdkit molecules</span>
+
+<span class="sd">       Parameters</span>
+<span class="sd">       ----------</span>
+<span class="sd">       url : str</span>
+<span class="sd">         The url of the file.</span>
+<span class="sd">    </span>
+<span class="sd">       Returns</span>
+<span class="sd">       -------</span>
+<span class="sd">       list of rdkit.Chem.Mol</span>
+<span class="sd">         List of molecules.</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="n">requests</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Failed to download from ZINC&quot;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">file_path</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">()</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+            <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+            <span class="n">fp</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">molecules</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SmilesMolSupplier</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">titleLine</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+            <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+            <span class="n">molecules</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SmilesMolSupplier</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">titleLine</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="nb">len</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/openpharmacophore">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and authors. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

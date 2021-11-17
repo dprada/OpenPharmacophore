@@ -1,0 +1,6 @@
+﻿openpharmacophore.color\_palettes.get\_color\_from\_palette\_for\_feature
+=========================================================================
+
+.. currentmodule:: openpharmacophore.color_palettes
+
+.. autofunction:: get_color_from_palette_for_feature

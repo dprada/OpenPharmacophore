@@ -1,0 +1,6 @@
+﻿openpharmacophore.databases.zinc.download\_zinc\_subset
+=======================================================
+
+.. currentmodule:: openpharmacophore.databases.zinc
+
+.. autofunction:: download_zinc_subset

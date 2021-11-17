@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>openpharmacophore.Dynophore &mdash; OpenPharmacophore 0+untagged.143.gbfcf4bd documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="openpharmacophore.VirtualScreening" href="openpharmacophore.VirtualScreening.html" />
+    <link rel="prev" title="openpharmacophore.StructuredBasedPharmacophore" href="openpharmacophore.StructuredBasedPharmacophore.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> OpenPharmacophore
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation and Quick Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contents/Installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contents/Pharmacophore/Pharmacophore.html">Pharmacohophores with OpenPharmacophore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Pharmacophore.html#Creating-a-pharmacophore-model-manually">Creating a pharmacophore model manually</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/Pharmacophore.html#Pharmacophoric-Points">Pharmacophoric Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/Pharmacophore.html#Create-the-Pharmacophore">Create the Pharmacophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Pharmacophore.html#Importing-Pharmacophores-from-other-software">Importing Pharmacophores from other software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Pharmacophore.html#Exporting-Pharmacophores">Exporting Pharmacophores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contents/Pharmacophore/Ligand-Based.html">Ligand-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Ligand-Based.html#Pharmacophore-for-Non-Peptide-Angiotensin-II-Receptor-antagonists">Pharmacophore for Non-Peptide Angiotensin II Receptor antagonists</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contents/Pharmacophore/Structure-Based.html">Structured-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Rhinovirus-coat-protein">Pharmacophore of Rhinovirus coat protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-ferrous-Synechocystis-hemoglobin">Pharmacophore of ferrous Synechocystis hemoglobin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Abl-kinase-domain">Pharmacophore of Abl kinase domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Estrogen-Nuclear-Receptor">Pharmacophore of Estrogen Nuclear Receptor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html">Dynamic Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-a-molecular-dynamics-trajectory">Pharmacophores from a molecular dynamics trajectory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-the-first-and-last-frame-only">Pharmacophores from the first and last frame only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophore-Analysis">Pharmacophore Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Get-Pharmacophores-for-each-frame-of-the-trajectory">Get Pharmacophores for each frame of the trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Get-all-unique-pharmacophoric-points">Get all unique pharmacophoric points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Derive-a-pharmacophore-model-from-the-most-frequent-points">Derive a pharmacophore model from the most frequent points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Analyze-frequency-of-all-unique-points">Analyze frequency of all unique points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#2D-Representation-of-the-Dynamic-Pharmacophore">2D Representation of the Dynamic Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Representative-Pharmacophore-Models">Representative Pharmacophore Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Common-Hits-Approach">Common Hits Approach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contents/Pharmacophore/Zinc.html">Virtual Screening of ZINC Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Zinc.html#Pharmacophore-model-for-Plasmodium-Falciparum-Triosephosphate-isomerase">Pharmacophore model for Plasmodium Falciparum Triosephosphate isomerase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Zinc.html#Screen-ZINC-with-the-pharmacophore-model">Screen ZINC with the pharmacophore model</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../api.html#pharmacophoric-point">Pharmacophoric Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.PharmacophoricPoint.html">openpharmacophore.PharmacophoricPoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#features-colorpalettes">Features colorpalettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.color_palettes.get_color_from_palette_for_feature.html">openpharmacophore.color_palettes.get_color_from_palette_for_feature</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#pharmacophores">Pharmacophores</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.Pharmacophore.html">openpharmacophore.Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.LigandBasedPharmacophore.html">openpharmacophore.LigandBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.StructuredBasedPharmacophore.html">openpharmacophore.StructuredBasedPharmacophore</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">openpharmacophore.Dynophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#virtual-screening">Virtual Screening</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.VirtualScreening.html">openpharmacophore.VirtualScreening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.RetrospectiveScreening.html">openpharmacophore.RetrospectiveScreening</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#io">IO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.from_ligandscout.html">openpharmacophore.io.from_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.to_ligandscout.html">openpharmacophore.io.to_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.from_pharmer.html">openpharmacophore.io.from_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.to_pharmer.html">openpharmacophore.io.to_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.from_moe.html">openpharmacophore.io.from_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.to_moe.html">openpharmacophore.io.to_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.read_pharmagist.html">openpharmacophore.io.read_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.to_pharmagist.html">openpharmacophore.io.to_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.load_mol2_file.html">openpharmacophore.io.load_mol2_file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#databases">Databases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#zinc">Zinc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.databases.zinc.download_zinc_subset.html">openpharmacophore.databases.zinc.download_zinc_subset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#pubchem">PubChem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.databases.pubchem.get_assay_bioactivity_data.html">openpharmacophore.databases.pubchem.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.databases.pubchem.get_compound_assay_summary.html">openpharmacophore.databases.pubchem.get_compound_assay_summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#chembl">ChemBl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.databases.chembl.get_assay_bioactivity_data.html">openpharmacophore.databases.chembl.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.databases.chembl.get_bioactivity_dataframe.html">openpharmacophore.databases.chembl.get_bioactivity_dataframe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.databases.chembl.get_ro5_dataset.html">openpharmacophore.databases.chembl.get_ro5_dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenPharmacophore</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API Documentation</a> &raquo;</li>
+      <li>openpharmacophore.Dynophore</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="openpharmacophore-dynophore">
+<h1>openpharmacophore.Dynophore<a class="headerlink" href="#openpharmacophore-dynophore" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="openpharmacophore.Dynophore">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpharmacophore.</span></span><span class="sig-name descname"><span class="pre">Dynophore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trajectory</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/dynophore.html#Dynophore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.Dynophore" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to store and compute dynamic pharmacophores</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>trajectory</strong> (<em>str</em><em> or </em><em>mdtraj.trajectory</em><em> or </em><em>MDAnalysis.universe</em>) – A str with the file path containing the trajectory, an mdtraj trajectory object,
+or an MDAnalysis universe.</p>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>pharmacophores</strong> (<em>list of openpharmacophore.StructuredBasedPharmacophore</em>) – List with pharmacophores for each relevant frame in the trajectory.</p></li>
+<li><p><strong>pharmacophore_indices</strong> (<em>list of int</em>) – Indices of the frame of the trajectory from which the pharmacophores were extracted.
+The index of each element of the list corresponds to the one in pharmacophores list.</p></li>
+<li><p><strong>n_pharmacophores</strong> (<em>int</em>) – Number of different pharmacophores in the trajectory.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#openpharmacophore.Dynophore.common_hits_approach" title="openpharmacophore.Dynophore.common_hits_approach"><code class="xref py py-obj docutils literal notranslate"><span class="pre">common_hits_approach</span></code></a></p></td>
+<td><p>Get a list of pharmacophore models from a trajectory using the common hits approach method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#openpharmacophore.Dynophore.draw" title="openpharmacophore.Dynophore.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a></p></td>
+<td><p>Draw a 2d representation of the dynamic pharmacophore.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#openpharmacophore.Dynophore.first_and_last_pharmacophore" title="openpharmacophore.Dynophore.first_and_last_pharmacophore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">first_and_last_pharmacophore</span></code></a></p></td>
+<td><p>Derive a pharmacophore model for the first and last frames of a trajectory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#openpharmacophore.Dynophore.pharmacophore_by_frequency" title="openpharmacophore.Dynophore.pharmacophore_by_frequency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pharmacophore_by_frequency</span></code></a></p></td>
+<td><p>Derive a unique pharmacophore model with the pharmacophoric points that have a frequency &gt;= to threshold.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#openpharmacophore.Dynophore.pharmacophore_from_unique_points" title="openpharmacophore.Dynophore.pharmacophore_from_unique_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pharmacophore_from_unique_points</span></code></a></p></td>
+<td><p>Get a pharmacophore which consists of the passed unique pharmacophoric points.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#openpharmacophore.Dynophore.pharmacophores_from_frames" title="openpharmacophore.Dynophore.pharmacophores_from_frames"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pharmacophores_from_frames</span></code></a></p></td>
+<td><p>Get pharmacophores for the specified frames in a trajectory</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#openpharmacophore.Dynophore.pharmacophoric_point_frequency" title="openpharmacophore.Dynophore.pharmacophoric_point_frequency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pharmacophoric_point_frequency</span></code></a></p></td>
+<td><p>Get a dataframe with all unique pharmacophoric points and its frequency.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#openpharmacophore.Dynophore.point_frequency_plot" title="openpharmacophore.Dynophore.point_frequency_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">point_frequency_plot</span></code></a></p></td>
+<td><p>Plot of pharmacophoric points frequency vs time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#openpharmacophore.Dynophore.representative_pharmacophore_models" title="openpharmacophore.Dynophore.representative_pharmacophore_models"><code class="xref py py-obj docutils literal notranslate"><span class="pre">representative_pharmacophore_models</span></code></a></p></td>
+<td><p>Get all representative pharmacophore models in a trajectory.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.Dynophore.common_hits_approach">
+<span class="sig-name descname"><span class="pre">common_hits_approach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/dynophore.html#Dynophore.common_hits_approach"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.Dynophore.common_hits_approach" title="Permalink to this definition"></a></dt>
+<dd><p>Get a list of pharmacophore models from a trajectory using the common hits approach
+method.</p>
+<p class="rubric">Notes</p>
+<p>This method is based on obtaining a list of representative pharmacophore models from a
+trajectory and then validate and score them using virtual screening. The best performant
+pharmacophore models are then returned.</p>
+<p class="rubric">References</p>
+<p>[1] Wieder, Marcus, Arthur Garon, Ugo Perricone, Stefan Boresch, Thomas Seidel, Anna Maria Almerico,
+and Thierry Langer. “Common hits approach: combining pharmacophore modeling and molecular dynamics
+simulations.” Journal of chemical information and modeling 57, no. 2 (2017): 365-385</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.Dynophore.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(500,</span> <span class="pre">500)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/dynophore.html#Dynophore.draw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.Dynophore.draw" title="Permalink to this definition"></a></dt>
+<dd><p>Draw a 2d representation of the dynamic pharmacophore. This is a drawing of the
+ligand with the pharmacophoric features highlighted and the frequency if each
+one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – Name or path og the file where the drawing will be saved. Must be a png file.</p></li>
+<li><p><strong>img_size</strong> (<em>2-tuple of int</em><em>, </em><em>optional</em>) – The size of the image (default=(500,500))</p></li>
+<li><p><strong>legend</strong> (<em>str</em><em>, </em><em>optional</em>) – Image legend.</p></li>
+<li><p><strong>freq_threshold</strong> (<em>double</em><em> , </em><em>optional</em>) – The minimun frequency of a pharmacophoric point to be drawn. Number
+between 0.0 and 1.0 (default=0.2).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.Dynophore.first_and_last_pharmacophore">
+<span class="sig-name descname"><span class="pre">first_and_last_pharmacophore</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/dynophore.html#Dynophore.first_and_last_pharmacophore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.Dynophore.first_and_last_pharmacophore" title="Permalink to this definition"></a></dt>
+<dd><p>Derive a pharmacophore model for the first and last frames of a trajectory.</p>
+<p class="rubric">References</p>
+<p>[1] Wieder, Marcus, Ugo Perricone, Thomas Seidel, Stefan Boresch, and Thierry Langer.
+“Comparing pharmacophore models derived from crystal structures and from molecular
+dynamics simulations.” Monatshefte für Chemie-Chemical Monthly 147, no. 3 (2016):
+553-563.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.Dynophore.pharmacophore_by_frequency">
+<span class="sig-name descname"><span class="pre">pharmacophore_by_frequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/dynophore.html#Dynophore.pharmacophore_by_frequency"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.Dynophore.pharmacophore_by_frequency" title="Permalink to this definition"></a></dt>
+<dd><p>Derive a unique pharmacophore model with the pharmacophoric points
+that have a frequency &gt;= to threshold.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>threshold</strong> (<em>double</em>) – The value of frequency from which points are considered part of
+the pharmacophore model.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pharmacophore model with the unique pharmacophoric points.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>openpharmcophore.Pharmacophore</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>[1] Wieder, Marcus, Ugo Perricone, Thomas Seidel, and Thierry Langer. “Pharmacophore models
+derived from molecular dynamics simulations of protein-ligand complexes: A case study.”
+Natural product communications 11, no. 10 (2016): 1934578X1601101019.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.Dynophore.pharmacophore_from_unique_points">
+<span class="sig-name descname"><span class="pre">pharmacophore_from_unique_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique_points</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/dynophore.html#Dynophore.pharmacophore_from_unique_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.Dynophore.pharmacophore_from_unique_points" title="Permalink to this definition"></a></dt>
+<dd><p>Get a pharmacophore which consists of the passed unique pharmacophoric
+points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>unique_points</strong> (<em>list of str</em>) – List with the name if the unique pharmacophoric points.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pharmacophore model with the specified points.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>openpharmcophore.Pharmacophore</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.Dynophore.pharmacophores_from_frames">
+<span class="sig-name descname"><span class="pre">pharmacophores_from_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_ligand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/dynophore.html#Dynophore.pharmacophores_from_frames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.Dynophore.pharmacophores_from_frames" title="Permalink to this definition"></a></dt>
+<dd><p>Get pharmacophores for the specified frames in a trajectory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frames</strong> (<em>list of int</em>) – Indices of the frames for which pharmacophores will be derived.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.Dynophore.pharmacophoric_point_frequency">
+<span class="sig-name descname"><span class="pre">pharmacophoric_point_frequency</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/dynophore.html#Dynophore.pharmacophoric_point_frequency"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.Dynophore.pharmacophoric_point_frequency" title="Permalink to this definition"></a></dt>
+<dd><p>Get a dataframe with all unique pharmacophoric points and its frequency.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dataframe with the following columns: feature name, frequency and atom
+indices.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.Dynophore.point_frequency_plot">
+<span class="sig-name descname"><span class="pre">point_frequency_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/dynophore.html#Dynophore.point_frequency_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.Dynophore.point_frequency_plot" title="Permalink to this definition"></a></dt>
+<dd><p>Plot of pharmacophoric points frequency vs time.</p>
+<p>Each pharmacophoric point will appear as a different line in the plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>threshold</strong> (<em>double</em><em>, </em><em>default=0.0</em>) – The value of overall frequency from which points will form part of the
+plot. If there are a lot of points with really low frequency, setting
+the threshold value can help with visualization.</p></li>
+<li><p><strong>n_bins</strong> (<em>int</em><em>, </em><em>default=10</em>) – Number of bins to discretize the timesteps.</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib.axes._subplots.AxesSubplot</em><em>, </em><em>optional.</em>) – An axes object where the plot will be drawn.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.Dynophore.representative_pharmacophore_models">
+<span class="sig-name descname"><span class="pre">representative_pharmacophore_models</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/dynophore.html#Dynophore.representative_pharmacophore_models"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.Dynophore.representative_pharmacophore_models" title="Permalink to this definition"></a></dt>
+<dd><p>Get all representative pharmacophore models in a trajectory.</p>
+<p>Get pharmacophore models that have the same pharmacophoric points,</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>rpms</strong> – The representative pharmacophore models</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list of openpharmacophore.StructuredBasedPharmacophore</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Pharmacophoric points are considered equal based only  on feature type and the atoms to
+which this points belong to. Coordinates are not taken into account.</p>
+<p>The coordinates of the pharmacophoric points are those that belong to the median energy of
+the ligand.</p>
+<p class="rubric">References</p>
+<p>[1] Wieder, Marcus, Arthur Garon, Ugo Perricone, Stefan Boresch, Thomas Seidel, Anna Maria Almerico,
+and Thierry Langer. “Common hits approach: combining pharmacophore modeling and molecular dynamics
+simulations.” Journal of chemical information and modeling 57, no. 2 (2017): 365-385</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/openpharmacophore">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="openpharmacophore.StructuredBasedPharmacophore.html" class="btn btn-neutral float-left" title="openpharmacophore.StructuredBasedPharmacophore" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="openpharmacophore.VirtualScreening.html" class="btn btn-neutral float-right" title="openpharmacophore.VirtualScreening" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and authors. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

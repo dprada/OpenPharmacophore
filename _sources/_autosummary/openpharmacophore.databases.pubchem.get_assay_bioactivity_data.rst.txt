@@ -1,0 +1,6 @@
+﻿openpharmacophore.databases.pubchem.get\_assay\_bioactivity\_data
+=================================================================
+
+.. currentmodule:: openpharmacophore.databases.pubchem
+
+.. autofunction:: get_assay_bioactivity_data

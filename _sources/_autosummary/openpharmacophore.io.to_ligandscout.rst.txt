@@ -1,0 +1,6 @@
+﻿openpharmacophore.io.to\_ligandscout
+====================================
+
+.. currentmodule:: openpharmacophore.io
+
+.. autofunction:: to_ligandscout

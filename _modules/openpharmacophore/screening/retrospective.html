@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>openpharmacophore.screening.retrospective &mdash; OpenPharmacophore 0+untagged.143.gbfcf4bd documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> OpenPharmacophore
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation and Quick Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html">Pharmacohophores with OpenPharmacophore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Creating-a-pharmacophore-model-manually">Creating a pharmacophore model manually</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Pharmacophoric-Points">Pharmacophoric Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Create-the-Pharmacophore">Create the Pharmacophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Importing-Pharmacophores-from-other-software">Importing Pharmacophores from other software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Exporting-Pharmacophores">Exporting Pharmacophores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Ligand-Based.html">Ligand-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Ligand-Based.html#Pharmacophore-for-Non-Peptide-Angiotensin-II-Receptor-antagonists">Pharmacophore for Non-Peptide Angiotensin II Receptor antagonists</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html">Structured-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Rhinovirus-coat-protein">Pharmacophore of Rhinovirus coat protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-ferrous-Synechocystis-hemoglobin">Pharmacophore of ferrous Synechocystis hemoglobin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Abl-kinase-domain">Pharmacophore of Abl kinase domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Estrogen-Nuclear-Receptor">Pharmacophore of Estrogen Nuclear Receptor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html">Dynamic Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-a-molecular-dynamics-trajectory">Pharmacophores from a molecular dynamics trajectory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-the-first-and-last-frame-only">Pharmacophores from the first and last frame only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophore-Analysis">Pharmacophore Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Get-Pharmacophores-for-each-frame-of-the-trajectory">Get Pharmacophores for each frame of the trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Get-all-unique-pharmacophoric-points">Get all unique pharmacophoric points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Derive-a-pharmacophore-model-from-the-most-frequent-points">Derive a pharmacophore model from the most frequent points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Analyze-frequency-of-all-unique-points">Analyze frequency of all unique points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#2D-Representation-of-the-Dynamic-Pharmacophore">2D Representation of the Dynamic Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Representative-Pharmacophore-Models">Representative Pharmacophore Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Common-Hits-Approach">Common Hits Approach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Zinc.html">Virtual Screening of ZINC Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Zinc.html#Pharmacophore-model-for-Plasmodium-Falciparum-Triosephosphate-isomerase">Pharmacophore model for Plasmodium Falciparum Triosephosphate isomerase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Zinc.html#Screen-ZINC-with-the-pharmacophore-model">Screen ZINC with the pharmacophore model</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#pharmacophoric-point">Pharmacophoric Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.PharmacophoricPoint.html">openpharmacophore.PharmacophoricPoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#features-colorpalettes">Features colorpalettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.color_palettes.get_color_from_palette_for_feature.html">openpharmacophore.color_palettes.get_color_from_palette_for_feature</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#pharmacophores">Pharmacophores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.Pharmacophore.html">openpharmacophore.Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.LigandBasedPharmacophore.html">openpharmacophore.LigandBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.StructuredBasedPharmacophore.html">openpharmacophore.StructuredBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.Dynophore.html">openpharmacophore.Dynophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#virtual-screening">Virtual Screening</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.VirtualScreening.html">openpharmacophore.VirtualScreening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html">openpharmacophore.RetrospectiveScreening</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#io">IO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.from_ligandscout.html">openpharmacophore.io.from_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_ligandscout.html">openpharmacophore.io.to_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.from_pharmer.html">openpharmacophore.io.from_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_pharmer.html">openpharmacophore.io.to_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.from_moe.html">openpharmacophore.io.from_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_moe.html">openpharmacophore.io.to_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.read_pharmagist.html">openpharmacophore.io.read_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_pharmagist.html">openpharmacophore.io.to_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.load_mol2_file.html">openpharmacophore.io.load_mol2_file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#databases">Databases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#zinc">Zinc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.zinc.download_zinc_subset.html">openpharmacophore.databases.zinc.download_zinc_subset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pubchem">PubChem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.pubchem.get_assay_bioactivity_data.html">openpharmacophore.databases.pubchem.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.pubchem.get_compound_assay_summary.html">openpharmacophore.databases.pubchem.get_compound_assay_summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#chembl">ChemBl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.chembl.get_assay_bioactivity_data.html">openpharmacophore.databases.chembl.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.chembl.get_bioactivity_dataframe.html">openpharmacophore.databases.chembl.get_bioactivity_dataframe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.chembl.get_ro5_dataset.html">openpharmacophore.databases.chembl.get_ro5_dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">OpenPharmacophore</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>openpharmacophore.screening.retrospective</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <h1>Source code for openpharmacophore.screening.retrospective</h1><div class="highlight"><pre>
+<span></span><span class="c1"># OpenPharmacophore</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.databases</span> <span class="kn">import</span> <span class="n">chembl</span><span class="p">,</span> <span class="n">pubchem</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.screening.alignment</span> <span class="kn">import</span> <span class="n">apply_radii_to_bounds</span><span class="p">,</span> <span class="n">transform_embeddings</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore._private_tools.exceptions</span> <span class="kn">import</span> <span class="n">BadShapeError</span><span class="p">,</span> <span class="n">MissingParameters</span><span class="p">,</span> <span class="n">OpenPharmacophoreValueError</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore._private_tools.screening_arguments</span> <span class="kn">import</span> <span class="n">check_virtual_screening_kwargs</span><span class="p">,</span> <span class="n">is_3d_pharmacophore</span>
+<span class="c1"># Third Party</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span><span class="p">,</span> <span class="n">RDConfig</span><span class="p">,</span> <span class="n">DataStructs</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">ChemicalFeatures</span><span class="p">,</span> <span class="n">rdDistGeom</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem.Pharm2D</span> <span class="kn">import</span> <span class="n">Gobbi_Pharm2D</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem.Pharm2D.Generate</span> <span class="kn">import</span> <span class="n">Gen2DFingerprint</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem.Pharm3D</span> <span class="kn">import</span> <span class="n">EmbedLib</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="c1"># Standard library</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<div class="viewcode-block" id="RetrospectiveScreening"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html#openpharmacophore.RetrospectiveScreening">[docs]</a><span class="k">class</span> <span class="nc">RetrospectiveScreening</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Class for performing retrospective virtual screening. </span>
+<span class="sd">    </span>
+<span class="sd">        This class expects molecules classified as actives and inactives. </span>
+<span class="sd">        With this class pharmacophore models can be validated.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pharmacophore</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        
+        <span class="k">if</span> <span class="n">is_3d_pharmacophore</span><span class="p">(</span><span class="n">pharmacophore</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span> <span class="o">=</span> <span class="s2">&quot;SSD&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_screen_fn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_molecules</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pharmacophore</span><span class="p">,</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">SparseBitVect</span><span class="p">):</span> <span class="c1"># For pharmacophore fingerprints</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span> <span class="o">=</span> <span class="s2">&quot;Similarity&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">similarity_fn</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">check_virtual_screening_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">similarity_cutoff</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_factory</span> <span class="o">=</span> <span class="n">Gobbi_Pharm2D</span><span class="o">.</span><span class="n">factory</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_screen_fn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fingerprint_similarity</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;pharmacophore must be of type Pharmacophore, StructuredBasedPharmacophore, &quot;</span>
+                <span class="s2">&quot;LigandBasedPharmacophore, or rdkit.DataStructs.SparseBitVect&quot;</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_actives</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_inactives</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bioactivities</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_molecules</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophore</span> <span class="o">=</span> <span class="n">pharmacophore</span>
+             
+<div class="viewcode-block" id="RetrospectiveScreening.from_chembl_target_id"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html#openpharmacophore.RetrospectiveScreening.from_chembl_target_id">[docs]</a>    <span class="k">def</span> <span class="nf">from_chembl_target_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_id</span><span class="p">,</span> <span class="n">pIC50_threshold</span><span class="o">=</span><span class="mf">6.3</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Retrospective screening from bioactivity data fetched from chembl.</span>
+<span class="sd">           </span>
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           target_id : str</span>
+<span class="sd">                ChemBl target id.</span>
+<span class="sd">           </span>
+<span class="sd">           pIC50_threshold : float, default=6.3</span>
+<span class="sd">                The cuttoff value from which a molecule is considered active.</span>
+<span class="sd">           </span>
+<span class="sd">           &quot;&quot;&quot;</span>
+        <span class="n">smiles</span><span class="p">,</span> <span class="n">activity</span> <span class="o">=</span> <span class="n">chembl</span><span class="o">.</span><span class="n">get_training_data</span><span class="p">(</span><span class="n">target_id</span><span class="p">,</span> <span class="n">pIC50_threshold</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;PubChem&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">from_bioactivity_data</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span> <span class="n">activity</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RetrospectiveScreening.from_bioactivity_data"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html#openpharmacophore.RetrospectiveScreening.from_bioactivity_data">[docs]</a>    <span class="k">def</span> <span class="nf">from_bioactivity_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">smiles</span><span class="p">,</span> <span class="n">activity</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Retrospective screening from a set of molecules classified as active or inactive.</span>
+<span class="sd">        </span>
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            smiles : List of 2-tuples</span>
+<span class="sd">                A list with the molecules for screening. Each element of the list is </span>
+<span class="sd">                a tuple, where the first elements is the compound id and the second </span>
+<span class="sd">                the smiles of the molecule.</span>
+
+<span class="sd">            activity : numpy.ndarray </span>
+<span class="sd">                Array with the labels of each molecule; 1 corresponds to an active molecule</span>
+<span class="sd">                and 0 to an inactive one. An array of rank 1 where the first dimension is </span>
+<span class="sd">                equal to the length of the smiles list is expected. </span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">activity</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">BadShapeError</span><span class="p">(</span><span class="s2">&quot;activity must be an array of rank 1&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span> <span class="o">!=</span> <span class="n">activity</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">OpenPharmacophoreValueError</span><span class="p">(</span><span class="s2">&quot;smiles and activity must contain the same number of entries&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_actives</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">activity</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_inactives</span> <span class="o">=</span> <span class="n">activity</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_actives</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bioactivities</span> <span class="o">=</span> <span class="n">activity</span>
+
+        <span class="n">molecules</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">smi</span> <span class="ow">in</span> <span class="n">smiles</span><span class="p">:</span>
+            <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi</span><span class="p">)</span>
+            <span class="n">mol</span><span class="o">.</span><span class="n">SetProp</span><span class="p">(</span><span class="s2">&quot;_Name&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+            <span class="n">molecules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span> <span class="o">==</span> <span class="s2">&quot;Similarity&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fingerprint_similarity</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span> <span class="o">==</span> <span class="s2">&quot;SSD&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_align_molecules</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="RetrospectiveScreening.from_pubchem_bioassay_id"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html#openpharmacophore.RetrospectiveScreening.from_pubchem_bioassay_id">[docs]</a>    <span class="k">def</span> <span class="nf">from_pubchem_bioassay_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bioassay_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Retrospective screening from a pubchem bioassay.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            bioassay_id : int</span>
+<span class="sd">                PubChem bioassay id. </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pubchem_client</span> <span class="o">=</span> <span class="n">pubchem</span><span class="o">.</span><span class="n">PubChem</span><span class="p">()</span>
+        <span class="n">smiles</span><span class="p">,</span> <span class="n">activity</span> <span class="o">=</span> <span class="n">pubchem_client</span><span class="o">.</span><span class="n">get_assay_training_data</span><span class="p">(</span><span class="n">bioassay_id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;Pubchem&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">from_bioactivity_data</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span> <span class="n">activity</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RetrospectiveScreening.confusion_matrix"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html#openpharmacophore.RetrospectiveScreening.confusion_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">confusion_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Compute a confusion matrix</span>
+<span class="sd">        </span>
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            threshold : float, optional</span>
+<span class="sd">                The scoring value from which a molecule will be considered as active.</span>
+<span class="sd">                Required if the screening was done with fingerprints.</span>
+<span class="sd">            </span>
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            cf_matrix: np.ndarray of shape (2, 2)</span>
+<span class="sd">                The confusion matrix.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span> <span class="o">==</span> <span class="s2">&quot;Similarity&quot;</span> <span class="ow">and</span> <span class="n">threshold</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">MissingParameters</span><span class="p">(</span><span class="s2">&quot;Expected a threshold value.&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span> <span class="o">==</span> <span class="s2">&quot;SSD&quot;</span><span class="p">:</span>
+            <span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.0</span>
+            
+        <span class="n">true_positives</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">true_negatives</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">false_positives</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">false_negatives</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">mol</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bioactivities</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">mol</span><span class="o">.</span><span class="n">score</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">:</span>
+                <span class="n">true_positives</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">bioactivities</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">mol</span><span class="o">.</span><span class="n">score</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">:</span>
+                <span class="n">false_negatives</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">bioactivities</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">mol</span><span class="o">.</span><span class="n">score</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">:</span>
+                <span class="n">false_positives</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">bioactivities</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">mol</span><span class="o">.</span><span class="n">score</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">:</span>
+                <span class="n">true_negatives</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="n">cf_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">true_positives</span><span class="p">,</span> <span class="n">false_positives</span><span class="p">],</span>
+                              <span class="p">[</span><span class="n">false_negatives</span><span class="p">,</span> <span class="n">true_negatives</span><span class="p">]])</span>
+        
+        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cf_matrix</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_molecules</span>
+        
+        <span class="k">return</span> <span class="n">cf_matrix</span></div>
+
+<div class="viewcode-block" id="RetrospectiveScreening.AUC"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html#openpharmacophore.RetrospectiveScreening.AUC">[docs]</a>    <span class="k">def</span> <span class="nf">AUC</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Calculate ROC area under the curve.</span>
+<span class="sd">        </span>
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            area : float</span>
+<span class="sd">                The value of the area under the curve.</span>
+
+<span class="sd">            References</span>
+<span class="sd">            ----------</span>
+<span class="sd">            Fawcett, T. An Introduction to ROC Analysis. Pattern Recognition Letters 2006, 27, 861−874</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">trapezoid_area</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot; Calculate the area of a trapezoid.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="n">base</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span>
+            <span class="c1"># average height</span>
+            <span class="n">height</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y1</span> <span class="o">+</span> <span class="n">y2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="k">return</span> <span class="n">base</span> <span class="o">*</span> <span class="n">height</span>
+
+        <span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">]</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+
+        <span class="c1"># Sort scores in descending order and then sort labels</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">scores</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">scores</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
+        <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bioactivities</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+
+        <span class="n">n_positives</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_actives</span>
+        <span class="n">n_negatives</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_inactives</span>
+
+        <span class="n">false_positives</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">true_positives</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">false_pos_prev</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">true_pos_prev</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">area</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">score_prev</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10000000</span>
+
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">labels</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+
+            <span class="k">if</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">score_prev</span><span class="p">:</span>
+                <span class="n">area</span> <span class="o">+=</span> <span class="n">trapezoid_area</span><span class="p">(</span><span class="n">false_positives</span><span class="p">,</span> <span class="n">false_pos_prev</span><span class="p">,</span> 
+                                        <span class="n">true_positives</span><span class="p">,</span> <span class="n">true_pos_prev</span><span class="p">)</span>
+                <span class="n">score_prev</span> <span class="o">=</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">false_pos_prev</span> <span class="o">=</span> <span class="n">false_positives</span>
+                <span class="n">true_pos_prev</span> <span class="o">=</span> <span class="n">true_positives</span>
+            
+            <span class="k">if</span> <span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">true_positives</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">false_positives</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">area</span> <span class="o">+=</span> <span class="n">trapezoid_area</span><span class="p">(</span><span class="n">n_negatives</span><span class="p">,</span> <span class="n">false_pos_prev</span><span class="p">,</span> <span class="n">n_positives</span><span class="p">,</span> <span class="n">true_pos_prev</span><span class="p">)</span>
+        <span class="c1"># Scale area from n_negatives * n_positives onto the unit square</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">area</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_negatives</span> <span class="o">*</span> <span class="n">n_positives</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="n">area</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">area</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">area</span></div>
+
+<div class="viewcode-block" id="RetrospectiveScreening.ROC_plot"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html#openpharmacophore.RetrospectiveScreening.ROC_plot">[docs]</a>    <span class="k">def</span> <span class="nf">ROC_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">random_line</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Plot the ROC curve. </span>
+<span class="sd">        </span>
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            ax : matplotlib.axes._subplots.AxesSubplot, optional (Default = None)</span>
+<span class="sd">                An axes object where the plot will be drawn.</span>
+
+<span class="sd">            random_line : bool, default=True</span>
+<span class="sd">                Whether to plot the line corresponding to a random classifier.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            ----------</span>
+<span class="sd">            ax : matplotlib.axes._subplots.AxesSubplot, optional (Default = None)</span>
+<span class="sd">                An axes object whith the plot.</span>
+
+<span class="sd">            References</span>
+<span class="sd">            ----------</span>
+<span class="sd">            Fawcett, T. An Introduction to ROC Analysis. Pattern Recognition Letters 2006, 27, 861−874</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">]</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+
+        <span class="c1"># Sort scores in descending order and then sort labels</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">scores</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">scores</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
+        <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bioactivities</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+
+        <span class="n">n_positives</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_actives</span>
+        <span class="n">n_negatives</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_inactives</span>
+        
+        <span class="n">false_positives</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">true_positives</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">score_prev</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10000000</span>
+
+        <span class="c1"># Calculate points for the ROC plot</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">labels</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+
+            <span class="k">if</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">score_prev</span><span class="p">:</span>
+                <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">false_positives</span><span class="o">/</span><span class="n">n_negatives</span><span class="p">)</span>
+                <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">true_positives</span><span class="o">/</span><span class="n">n_positives</span><span class="p">)</span>
+                <span class="n">score_prev</span> <span class="o">=</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">true_positives</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">false_positives</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Append point (1, 1)</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">false_positives</span><span class="o">/</span><span class="n">n_negatives</span><span class="p">)</span>
+        <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">true_positives</span><span class="o">/</span><span class="n">n_positives</span><span class="p">)</span>
+
+        <span class="c1"># Plot the curve</span>
+
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">random_line</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Random&quot;</span><span class="p">)</span>
+        
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Sensitivity&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;1 - Specificity&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">label</span> <span class="ow">or</span> <span class="n">random_line</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>   
+
+        <span class="k">return</span> <span class="n">ax</span></div>
+
+<div class="viewcode-block" id="RetrospectiveScreening.enrichment_factor"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html#openpharmacophore.RetrospectiveScreening.enrichment_factor">[docs]</a>    <span class="k">def</span> <span class="nf">enrichment_factor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">percentage</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Calculate enrichment factor for the x% of the screened database </span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            percentage : float</span>
+<span class="sd">                Percentage of the screened database. Must be between 0 and 100</span>
+<span class="sd">            </span>
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            float</span>
+<span class="sd">                The enrichment factor</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">percentage</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">percentage</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">OpenPharmacophoreValueError</span><span class="p">(</span><span class="s2">&quot;percentage must be a number between 0 and 100&quot;</span><span class="p">)</span>
+
+        <span class="n">screened_percentage</span><span class="p">,</span> <span class="n">percentage_actives_found</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enrichment_data</span><span class="p">()</span>
+        <span class="n">screened_percentage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">screened_percentage</span><span class="p">)</span>
+        <span class="n">percentage_actives_found</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">percentage_actives_found</span><span class="p">)</span>
+
+        <span class="n">indices_screen_per</span> <span class="o">=</span> <span class="n">screened_percentage</span> <span class="o">&lt;=</span> <span class="n">percentage</span> <span class="o">/</span> <span class="mi">100</span>
+        <span class="n">max_enrichment_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">screened_percentage</span><span class="p">[</span><span class="n">indices_screen_per</span><span class="p">])[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">percentage_actives_found</span><span class="p">[</span><span class="n">max_enrichment_idx</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span></div>
+
+<div class="viewcode-block" id="RetrospectiveScreening.ideal_enrichment_factor"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html#openpharmacophore.RetrospectiveScreening.ideal_enrichment_factor">[docs]</a>    <span class="k">def</span> <span class="nf">ideal_enrichment_factor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">percentage</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Calculate ideal enrichment factor for the x% of the screened database </span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            percentage : float</span>
+<span class="sd">                Percentage of the screened database. Must be between 0 and 100</span>
+<span class="sd">            </span>
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            float</span>
+<span class="sd">                The idal enrichment factor&quot;&quot;&quot;</span>
+    
+        <span class="n">percentage</span> <span class="o">=</span> <span class="n">percentage</span> <span class="o">/</span> <span class="mi">100</span>
+
+        <span class="n">n_molecules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bioactivities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">ratio_actives</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_actives</span> <span class="o">/</span> <span class="n">n_molecules</span>
+        <span class="k">if</span> <span class="n">percentage</span> <span class="o">&lt;=</span> <span class="n">ratio_actives</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mi">100</span> <span class="o">/</span> <span class="n">ratio_actives</span><span class="p">)</span> <span class="o">*</span> <span class="n">percentage</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">100.0</span></div>
+    
+<div class="viewcode-block" id="RetrospectiveScreening.enrichment_plot"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html#openpharmacophore.RetrospectiveScreening.enrichment_plot">[docs]</a>    <span class="k">def</span> <span class="nf">enrichment_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">random_line</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ideal</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Create an enrichment plot </span>
+<span class="sd">            </span>
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            ax : matplotlib.axes._subplots.AxesSubplot, optional (Default = None)</span>
+<span class="sd">                An axes object where the plot will be drawn.</span>
+
+<span class="sd">            random_line : bool, default=True</span>
+<span class="sd">                Whether to plot the line corresponding to a random classifier.</span>
+
+<span class="sd">            ideal : bool, defaul=False</span>
+<span class="sd">                Whether to plot the ideal enrichmnent curve</span>
+<span class="sd">            </span>
+<span class="sd">            Returns</span>
+<span class="sd">            ----------</span>
+<span class="sd">            ax : matplotlib.axes._subplots.AxesSubplot, optional (Default = None)</span>
+<span class="sd">                An axes object whith the plot.</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">screened_percentage</span><span class="p">,</span> <span class="n">percentage_actives_found</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enrichment_data</span><span class="p">()</span>
+        <span class="n">n_molecules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bioactivities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">screened_percentage</span><span class="p">,</span> <span class="n">percentage_actives_found</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">random_line</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Random&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ideal</span><span class="p">:</span>
+            <span class="n">n_molecules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bioactivities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">ratio_actives</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_actives</span> <span class="o">/</span> <span class="n">n_molecules</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">ratio_actives</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Ideal&quot;</span><span class="p">)</span>
+        
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;% Database Screened&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;% Actives&quot;</span><span class="p">)</span>   
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">ax</span></div>
+     
+    <span class="k">def</span> <span class="nf">_enrichment_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get enrichment data necessary for enrichment plot and enrichment factor calculation.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            --------</span>
+<span class="sd">            screened_percentage : list of float</span>
+<span class="sd">                The percentage of the database screened.</span>
+<span class="sd">            </span>
+<span class="sd">            percentage_actives_found: list of float</span>
+<span class="sd">                The percentage of actives found.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">]</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+
+        <span class="c1"># Sort scores in descending order and then sort labels</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">scores</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">scores</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
+        <span class="n">bioactivities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bioactivities</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+
+        <span class="n">n_molecules</span> <span class="o">=</span> <span class="n">bioactivities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">n_actives</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_actives</span>
+
+        <span class="c1"># Calculate % number of active molecules found in the x% of the screened database</span>
+        <span class="n">percentage_actives_found</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">screened_percentage</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">actives_counter</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_molecules</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">bioactivities</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">actives_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">percentage_actives_found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actives_counter</span> <span class="o">/</span> <span class="n">n_actives</span><span class="p">)</span>
+            <span class="n">screened_percentage</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ii</span> <span class="o">/</span> <span class="n">n_molecules</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">screened_percentage</span><span class="p">,</span> <span class="n">percentage_actives_found</span>
+    
+    <span class="k">def</span> <span class="nf">_align_molecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Align a list of molecules to a given pharmacophore.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        molecules : list of rdkit.Chem.mol</span>
+<span class="sd">            List of molecules to align.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        -------</span>
+<span class="sd">        Does not return anything. The attribute molecules is updated with the scored molecules.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_molecules</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
+
+        <span class="n">rdkit_pharmacophore</span><span class="p">,</span> <span class="n">radii</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophore</span><span class="o">.</span><span class="n">to_rdkit</span><span class="p">()</span>
+        <span class="n">apply_radii_to_bounds</span><span class="p">(</span><span class="n">radii</span><span class="p">,</span> <span class="n">rdkit_pharmacophore</span><span class="p">)</span>
+
+        <span class="n">fdef</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">RDConfig</span><span class="o">.</span><span class="n">RDDataDir</span><span class="p">,</span><span class="s1">&#39;BaseFeatures.fdef&#39;</span><span class="p">)</span>
+        <span class="n">featFactory</span> <span class="o">=</span> <span class="n">ChemicalFeatures</span><span class="o">.</span><span class="n">BuildFeatureFactory</span><span class="p">(</span><span class="n">fdef</span><span class="p">)</span>
+        
+        <span class="n">MolScore</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;MolScore&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">])</span>
+        
+        <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">molecules</span><span class="p">):</span>
+
+            <span class="n">bounds_matrix</span> <span class="o">=</span> <span class="n">rdDistGeom</span><span class="o">.</span><span class="n">GetMoleculeBoundsMatrix</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+            <span class="n">can_match</span><span class="p">,</span> <span class="n">all_matches</span> <span class="o">=</span> <span class="n">EmbedLib</span><span class="o">.</span><span class="n">MatchPharmacophoreToMol</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">featFactory</span><span class="p">,</span> <span class="n">rdkit_pharmacophore</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">can_match</span><span class="p">:</span>
+                <span class="n">failed</span><span class="p">,</span> <span class="n">_</span> <span class="p">,</span> <span class="n">matched_mols</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">EmbedLib</span><span class="o">.</span><span class="n">MatchPharmacophore</span><span class="p">(</span><span class="n">all_matches</span><span class="p">,</span> 
+                                                                          <span class="n">bounds_matrix</span><span class="p">,</span>
+                                                                          <span class="n">rdkit_pharmacophore</span><span class="p">,</span> 
+                                                                          <span class="n">useDownsampling</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">failed</span><span class="p">:</span>
+                    <span class="n">matched_mol</span> <span class="o">=</span> <span class="n">MolScore</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetProp</span><span class="p">(</span><span class="s2">&quot;_Name&quot;</span><span class="p">),</span> <span class="n">mol</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">matched_mol</span><span class="p">)</span>
+                    <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">matched_mol</span> <span class="o">=</span> <span class="n">MolScore</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetProp</span><span class="p">(</span><span class="s2">&quot;_Name&quot;</span><span class="p">),</span> <span class="n">mol</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">matched_mol</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">atom_match</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">GetAtomIds</span><span class="p">())</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">matched_mols</span><span class="p">]</span>
+            
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">mol_H</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">AddHs</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+                <span class="n">_</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">EmbedLib</span><span class="o">.</span><span class="n">EmbedPharmacophore</span><span class="p">(</span><span class="n">mol_H</span><span class="p">,</span> <span class="n">atom_match</span><span class="p">,</span> <span class="n">rdkit_pharmacophore</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">continue</span>
+            
+            <span class="n">SSDs</span> <span class="o">=</span> <span class="n">transform_embeddings</span><span class="p">(</span><span class="n">rdkit_pharmacophore</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">atom_match</span><span class="p">)</span> 
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">SSDs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">matched_mol</span> <span class="o">=</span> <span class="n">MolScore</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetProp</span><span class="p">(</span><span class="s2">&quot;_Name&quot;</span><span class="p">),</span> <span class="n">mol</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">matched_mol</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">best_fit_index</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">SSDs</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+            
+            <span class="n">score</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">SSDs</span><span class="p">[</span><span class="n">best_fit_index</span><span class="p">]</span>
+            <span class="n">matched_mol</span> <span class="o">=</span> <span class="n">MolScore</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetProp</span><span class="p">(</span><span class="s2">&quot;_Name&quot;</span><span class="p">),</span> <span class="n">embeddings</span><span class="p">[</span><span class="n">best_fit_index</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">matched_mol</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">_fingerprint_similarity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Compute fingerprints and similarity values for a list of molecules. </span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        molecules : list of rdkit.Chem.mol</span>
+<span class="sd">            List of molecules whose similarity to the pharmacophoric fingerprint will be calculated.</span>
+<span class="sd">        </span>
+<span class="sd">        Note</span>
+<span class="sd">        -----</span>
+<span class="sd">        Does not return anything. The attribute molecules is updated with the scored molecules.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">similarity_fn</span> <span class="o">==</span> <span class="s2">&quot;tanimoto&quot;</span><span class="p">:</span>
+            <span class="n">similarity_fn</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">TanimotoSimilarity</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">similarity_fn</span> <span class="o">==</span> <span class="s2">&quot;dice&quot;</span><span class="p">:</span>
+            <span class="n">similarity_fn</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">DiceSimilarity</span>
+       
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_molecules</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
+        <span class="n">MolScore</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;MolScore&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">])</span>
+        
+        <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">molecules</span><span class="p">):</span>
+            <span class="n">fingerprint</span> <span class="o">=</span> <span class="n">Gen2DFingerprint</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_factory</span><span class="p">)</span>
+            <span class="n">similarity</span> <span class="o">=</span> <span class="n">similarity_fn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pharmacophore</span><span class="p">,</span> <span class="n">fingerprint</span><span class="p">)</span>
+            <span class="n">mol_id</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetProp</span><span class="p">(</span><span class="s2">&quot;_Name&quot;</span><span class="p">)</span>
+            <span class="n">matched_mol</span> <span class="o">=</span> <span class="n">MolScore</span><span class="p">(</span><span class="n">similarity</span><span class="p">,</span> <span class="n">mol_id</span><span class="p">,</span> <span class="n">mol</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">matched_mol</span><span class="p">)</span>
+          
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(n_molecules=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_molecules</span><span class="si">}</span><span class="s2">)&quot;</span></div>
+</pre></div>
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/openpharmacophore">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and authors. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

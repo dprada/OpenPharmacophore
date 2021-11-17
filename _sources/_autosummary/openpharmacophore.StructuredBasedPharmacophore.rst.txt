@@ -1,0 +1,37 @@
+﻿openpharmacophore.StructuredBasedPharmacophore
+==============================================
+
+.. currentmodule:: openpharmacophore
+
+.. autoclass:: StructuredBasedPharmacophore
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~StructuredBasedPharmacophore.add_element
+      ~StructuredBasedPharmacophore.add_to_NGLView
+      ~StructuredBasedPharmacophore.draw
+      ~StructuredBasedPharmacophore.from_file
+      ~StructuredBasedPharmacophore.from_pdb
+      ~StructuredBasedPharmacophore.remove_elements
+      ~StructuredBasedPharmacophore.remove_feature
+      ~StructuredBasedPharmacophore.show
+      ~StructuredBasedPharmacophore.to_ligandscout
+      ~StructuredBasedPharmacophore.to_moe
+      ~StructuredBasedPharmacophore.to_pharmagist
+      ~StructuredBasedPharmacophore.to_pharmer
+      ~StructuredBasedPharmacophore.to_rdkit
+   
+   
+
+   
+   
+   

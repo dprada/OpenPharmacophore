@@ -1,0 +1,38 @@
+﻿openpharmacophore.LigandBasedPharmacophore
+==========================================
+
+.. currentmodule:: openpharmacophore
+
+.. autoclass:: LigandBasedPharmacophore
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~LigandBasedPharmacophore.add_element
+      ~LigandBasedPharmacophore.add_to_NGLView
+      ~LigandBasedPharmacophore.draw
+      ~LigandBasedPharmacophore.from_file
+      ~LigandBasedPharmacophore.from_ligand_file
+      ~LigandBasedPharmacophore.from_ligand_list
+      ~LigandBasedPharmacophore.remove_elements
+      ~LigandBasedPharmacophore.remove_feature
+      ~LigandBasedPharmacophore.show
+      ~LigandBasedPharmacophore.to_ligandscout
+      ~LigandBasedPharmacophore.to_moe
+      ~LigandBasedPharmacophore.to_pharmagist
+      ~LigandBasedPharmacophore.to_pharmer
+      ~LigandBasedPharmacophore.to_rdkit
+   
+   
+
+   
+   
+   

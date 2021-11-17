@@ -1,0 +1,33 @@
+﻿openpharmacophore.Dynophore
+===========================
+
+.. currentmodule:: openpharmacophore
+
+.. autoclass:: Dynophore
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~Dynophore.common_hits_approach
+      ~Dynophore.draw
+      ~Dynophore.first_and_last_pharmacophore
+      ~Dynophore.pharmacophore_by_frequency
+      ~Dynophore.pharmacophore_from_unique_points
+      ~Dynophore.pharmacophores_from_frames
+      ~Dynophore.pharmacophoric_point_frequency
+      ~Dynophore.point_frequency_plot
+      ~Dynophore.representative_pharmacophore_models
+   
+   
+
+   
+   
+   

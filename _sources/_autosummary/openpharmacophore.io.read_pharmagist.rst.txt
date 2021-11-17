@@ -1,0 +1,6 @@
+﻿openpharmacophore.io.read\_pharmagist
+=====================================
+
+.. currentmodule:: openpharmacophore.io
+
+.. autofunction:: read_pharmagist

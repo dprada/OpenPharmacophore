@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>openpharmacophore.screening.screening &mdash; OpenPharmacophore 0+untagged.143.gbfcf4bd documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> OpenPharmacophore
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation and Quick Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html">Pharmacohophores with OpenPharmacophore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Creating-a-pharmacophore-model-manually">Creating a pharmacophore model manually</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Pharmacophoric-Points">Pharmacophoric Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Create-the-Pharmacophore">Create the Pharmacophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Importing-Pharmacophores-from-other-software">Importing Pharmacophores from other software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Exporting-Pharmacophores">Exporting Pharmacophores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Ligand-Based.html">Ligand-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Ligand-Based.html#Pharmacophore-for-Non-Peptide-Angiotensin-II-Receptor-antagonists">Pharmacophore for Non-Peptide Angiotensin II Receptor antagonists</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html">Structured-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Rhinovirus-coat-protein">Pharmacophore of Rhinovirus coat protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-ferrous-Synechocystis-hemoglobin">Pharmacophore of ferrous Synechocystis hemoglobin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Abl-kinase-domain">Pharmacophore of Abl kinase domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Estrogen-Nuclear-Receptor">Pharmacophore of Estrogen Nuclear Receptor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html">Dynamic Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-a-molecular-dynamics-trajectory">Pharmacophores from a molecular dynamics trajectory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-the-first-and-last-frame-only">Pharmacophores from the first and last frame only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophore-Analysis">Pharmacophore Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Get-Pharmacophores-for-each-frame-of-the-trajectory">Get Pharmacophores for each frame of the trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Get-all-unique-pharmacophoric-points">Get all unique pharmacophoric points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Derive-a-pharmacophore-model-from-the-most-frequent-points">Derive a pharmacophore model from the most frequent points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Analyze-frequency-of-all-unique-points">Analyze frequency of all unique points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#2D-Representation-of-the-Dynamic-Pharmacophore">2D Representation of the Dynamic Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Representative-Pharmacophore-Models">Representative Pharmacophore Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Common-Hits-Approach">Common Hits Approach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Zinc.html">Virtual Screening of ZINC Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Zinc.html#Pharmacophore-model-for-Plasmodium-Falciparum-Triosephosphate-isomerase">Pharmacophore model for Plasmodium Falciparum Triosephosphate isomerase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Zinc.html#Screen-ZINC-with-the-pharmacophore-model">Screen ZINC with the pharmacophore model</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#pharmacophoric-point">Pharmacophoric Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.PharmacophoricPoint.html">openpharmacophore.PharmacophoricPoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#features-colorpalettes">Features colorpalettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.color_palettes.get_color_from_palette_for_feature.html">openpharmacophore.color_palettes.get_color_from_palette_for_feature</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#pharmacophores">Pharmacophores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.Pharmacophore.html">openpharmacophore.Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.LigandBasedPharmacophore.html">openpharmacophore.LigandBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.StructuredBasedPharmacophore.html">openpharmacophore.StructuredBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.Dynophore.html">openpharmacophore.Dynophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#virtual-screening">Virtual Screening</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.VirtualScreening.html">openpharmacophore.VirtualScreening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html">openpharmacophore.RetrospectiveScreening</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#io">IO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.from_ligandscout.html">openpharmacophore.io.from_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_ligandscout.html">openpharmacophore.io.to_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.from_pharmer.html">openpharmacophore.io.from_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_pharmer.html">openpharmacophore.io.to_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.from_moe.html">openpharmacophore.io.from_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_moe.html">openpharmacophore.io.to_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.read_pharmagist.html">openpharmacophore.io.read_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_pharmagist.html">openpharmacophore.io.to_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.load_mol2_file.html">openpharmacophore.io.load_mol2_file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#databases">Databases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#zinc">Zinc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.zinc.download_zinc_subset.html">openpharmacophore.databases.zinc.download_zinc_subset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pubchem">PubChem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.pubchem.get_assay_bioactivity_data.html">openpharmacophore.databases.pubchem.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.pubchem.get_compound_assay_summary.html">openpharmacophore.databases.pubchem.get_compound_assay_summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#chembl">ChemBl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.chembl.get_assay_bioactivity_data.html">openpharmacophore.databases.chembl.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.chembl.get_bioactivity_dataframe.html">openpharmacophore.databases.chembl.get_bioactivity_dataframe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.chembl.get_ro5_dataset.html">openpharmacophore.databases.chembl.get_ro5_dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">OpenPharmacophore</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>openpharmacophore.screening.screening</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <h1>Source code for openpharmacophore.screening.screening</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Open Pharmacophore</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.databases.zinc</span> <span class="kn">import</span> <span class="n">get_zinc_urls</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.io.mol2</span> <span class="kn">import</span> <span class="n">load_mol2_file</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.utils.random_string</span> <span class="kn">import</span> <span class="n">random_string</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.screening.alignment</span> <span class="kn">import</span> <span class="n">apply_radii_to_bounds</span><span class="p">,</span> <span class="n">transform_embeddings</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore._private_tools.exceptions</span> <span class="kn">import</span> <span class="n">NoMatchesError</span><span class="p">,</span> <span class="n">OpenPharmacophoreIOError</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore._private_tools.screening_arguments</span> <span class="kn">import</span> <span class="n">check_virtual_screening_kwargs</span><span class="p">,</span> <span class="n">is_3d_pharmacophore</span>
+<span class="c1"># Third party</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">RDConfig</span><span class="p">,</span> <span class="n">Chem</span><span class="p">,</span> <span class="n">RDLogger</span><span class="p">,</span> <span class="n">DataStructs</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">ChemicalFeatures</span><span class="p">,</span> <span class="n">rdDistGeom</span><span class="p">,</span> <span class="n">Descriptors</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem.Pharm2D</span> <span class="kn">import</span> <span class="n">Gobbi_Pharm2D</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem.Pharm2D.Generate</span> <span class="kn">import</span> <span class="n">Gen2DFingerprint</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem.Pharm3D</span> <span class="kn">import</span> <span class="n">EmbedLib</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="c1"># Standard library</span>
+<span class="kn">import</span> <span class="nn">bisect</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">RDLogger</span><span class="o">.</span><span class="n">DisableLog</span><span class="p">(</span><span class="s1">&#39;rdApp.*&#39;</span><span class="p">)</span> <span class="c1"># Disable rdkit warnings</span>
+
+<div class="viewcode-block" id="VirtualScreening"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.VirtualScreening.html#openpharmacophore.VirtualScreening">[docs]</a><span class="k">class</span> <span class="nc">VirtualScreening</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Class for performing virtual screening for a database of molecules. </span>
+<span class="sd">    </span>
+<span class="sd">        The database can be fetched, loaded from files or simply passing a list of rdkit molecules.</span>
+<span class="sd">        Screening can be based on a 3D pharmacophore model or a 2D pharmacophore finegerprint.   </span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pharmacophore : openpharmacophore.Pharmacophore</span>
+<span class="sd">        The pharmacophore that will be used to screen the database. Can be a Pharmacophore, </span>
+<span class="sd">        StructuredBasedPharmacophore, LigandBasedPharmacophore or a fingerprint</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    matches : list of 3-tuples (float, str, rdkit.Chem.mol)</span>
+<span class="sd">        List of molecules that match the pharmacophore. Each tuple is formed by scoring </span>
+<span class="sd">        value, the molecule id, and the molecule object.</span>
+<span class="sd">    </span>
+<span class="sd">    n_matches : int</span>
+<span class="sd">        Number of molecules matched to the pharmacophore.</span>
+
+<span class="sd">    n_molecules: int</span>
+<span class="sd">        Number of molcules screened.</span>
+<span class="sd">    </span>
+<span class="sd">    n_fails : int</span>
+<span class="sd">        Number of molecules that cannot be matched to the pharmacophore.</span>
+<span class="sd">    </span>
+<span class="sd">    scoring_metric: str</span>
+<span class="sd">        Metric used to score the molecules, how well they fit to the pharmacophore.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pharmacophore</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+       
+       <span class="k">if</span> <span class="n">is_3d_pharmacophore</span><span class="p">(</span><span class="n">pharmacophore</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span> <span class="o">=</span> <span class="s2">&quot;SSD&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_screen_fn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_molecules</span>
+       <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pharmacophore</span><span class="p">,</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">SparseBitVect</span><span class="p">):</span> <span class="c1"># For pharmacophore fingerprints</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span> <span class="o">=</span> <span class="s2">&quot;Similarity&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">similarity_fn</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">similarity_cutoff</span> <span class="o">=</span> <span class="n">check_virtual_screening_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_factory</span> <span class="o">=</span> <span class="n">Gobbi_Pharm2D</span><span class="o">.</span><span class="n">factory</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_screen_fn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fingerprint_similarity</span>
+       <span class="k">else</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;pharmacophore must be of type Pharmacophore, StructuredBasedPharmacophore, &quot;</span>
+                <span class="s2">&quot;LigandBasedPharmacophore, or rdkit.DataStructs.SparseBitVect&quot;</span><span class="p">)</span>
+
+       <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">matches</span> <span class="o">=</span> <span class="p">[]</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">n_fails</span> <span class="o">=</span> <span class="mi">0</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">n_matches</span> <span class="o">=</span> <span class="mi">0</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">n_molecules</span> <span class="o">=</span> <span class="mi">0</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophore</span> <span class="o">=</span> <span class="n">pharmacophore</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">_file_queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+    
+<div class="viewcode-block" id="VirtualScreening.get_screening_results"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.VirtualScreening.html#openpharmacophore.VirtualScreening.get_screening_results">[docs]</a>    <span class="k">def</span> <span class="nf">get_screening_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s2">&quot;dataframe&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get the results of the screen on a dataframe or a dictionaty</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ---------</span>
+<span class="sd">            form : {&quot;dataframe&quot;, &quot;dict&quot;}</span>
+<span class="sd">                Whether to return a dataframe or a dictionary.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            pandas.DataFrame or dict</span>
+<span class="sd">                Dataframe or dictionary with the results information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Values of the scoring that was used for screening. Examples: SSD, </span>
+        <span class="c1"># tanimoto similarity</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_matches</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NoMatchesError</span><span class="p">(</span><span class="s2">&quot;There were no matches in this screen or no database has been screened.&quot;</span> 
+                                 <span class="s2">&quot;Cannot get results.&quot;</span><span class="p">)</span>
+    
+        <span class="n">score_vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">]</span>
+        <span class="n">smiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">]</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">]</span>
+        <span class="n">mw</span> <span class="o">=</span> <span class="p">[</span><span class="n">Descriptors</span><span class="o">.</span><span class="n">MolWt</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">]</span>
+        <span class="n">logp</span> <span class="o">=</span> <span class="p">[</span><span class="n">Descriptors</span><span class="o">.</span><span class="n">MolLogP</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">]</span>
+
+        <span class="n">results</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="si">}</span><span class="s2">_id&quot;</span><span class="p">:</span> <span class="n">ids</span><span class="p">,</span>
+            <span class="s2">&quot;Smiles&quot;</span><span class="p">:</span> <span class="n">smiles</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span><span class="p">:</span> <span class="n">score_vals</span><span class="p">,</span>
+            <span class="s2">&quot;Mol_weight&quot;</span><span class="p">:</span> <span class="n">mw</span><span class="p">,</span>
+            <span class="s2">&quot;logP&quot;</span><span class="p">:</span> <span class="n">logp</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">form</span> <span class="o">==</span> <span class="s2">&quot;dict&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">results</span>
+        <span class="k">elif</span> <span class="n">form</span> <span class="o">==</span> <span class="s2">&quot;dataframe&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;form must be dataframe or dict&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VirtualScreening.print_report"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.VirtualScreening.html#openpharmacophore.VirtualScreening.print_report">[docs]</a>    <span class="k">def</span> <span class="nf">print_report</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Prints a summary report of the screening.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">report_str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_report</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">report_str</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VirtualScreening.save_results_to_file"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.VirtualScreening.html#openpharmacophore.VirtualScreening.save_results_to_file">[docs]</a>    <span class="k">def</span> <span class="nf">save_results_to_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Save the results of the screening to a file. </span>
+<span class="sd">        </span>
+<span class="sd">           The file contains the matched molecules ids, smiles and SSD value. </span>
+<span class="sd">           File can be saved as csv or json.</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           file_name : str</span>
+<span class="sd">                Name of the file</span>
+
+<span class="sd">           Notes</span>
+<span class="sd">           -----</span>
+<span class="sd">           Does not return anything. A new file is written.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">file_format</span> <span class="o">=</span> <span class="n">file_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">file_format</span> <span class="o">==</span> <span class="s2">&quot;csv&quot;</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_screening_results</span><span class="p">(</span><span class="n">form</span><span class="o">=</span><span class="s2">&quot;dataframe&quot;</span><span class="p">)</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">file_format</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span><span class="p">:</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_screening_results</span><span class="p">(</span><span class="n">form</span><span class="o">=</span><span class="s2">&quot;dict&quot;</span><span class="p">)</span>
+            <span class="n">json_str</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json_str</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="VirtualScreening.screen_ZINC"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.VirtualScreening.html#openpharmacophore.VirtualScreening.screen_ZINC">[docs]</a>    <span class="k">def</span> <span class="nf">screen_ZINC</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subset</span><span class="p">,</span> <span class="n">mw_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logp_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">download_path</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Screen a subset of ZINC database. </span>
+<span class="sd">        </span>
+<span class="sd">            The subset can be one of ZINC predefined subsets. Alternatively a subset with a custom molecular </span>
+<span class="sd">            weight and logP range can be screened.</span>
+<span class="sd">            </span>
+<span class="sd">            Parameters</span>
+<span class="sd">            ---------</span>
+<span class="sd">            subset : {&quot;Drug-Like&quot;, &quot;Lead-Like&quot;, &quot;Lugs&quot;, &quot;Goldilocks&quot;, &quot;Fragments&quot;, &quot;Flagments&quot;, </span>
+<span class="sd">                    &quot;Big-n-Greasy&quot;, &quot;Shards&quot;}</span>
+<span class="sd">                Name of the predifined ZINC subset to be downloaded. </span>
+<span class="sd">            </span>
+<span class="sd">            mw_range : 2-tuple of float, optional </span>
+<span class="sd">                Range of molecular weight for the downloaded molecules.</span>
+<span class="sd">        </span>
+<span class="sd">            logp_range : 2-tuple of float, optional</span>
+<span class="sd">                Range of logP for the downloaded molecules.</span>
+
+<span class="sd">            download_path : str, default=&quot;&quot; </span>
+<span class="sd">                Directory where files will be saved. If None, files will be deleted </span>
+<span class="sd">                after processing.</span>
+<span class="sd">            </span>
+<span class="sd">            Note</span>
+<span class="sd">            -----</span>
+<span class="sd">            If mw_range argument is passed, logp_range must also be passed.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;ZINC&quot;</span>
+        <span class="k">if</span> <span class="n">download_path</span><span class="p">:</span>
+            <span class="n">temp_files</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">download_path</span><span class="p">):</span>    
+                <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">download_path</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">temp_files</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">urls</span> <span class="o">=</span> <span class="n">get_zinc_urls</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="n">subset</span><span class="p">,</span> <span class="n">mw_range</span><span class="o">=</span><span class="n">mw_range</span><span class="p">,</span> <span class="n">logp_range</span><span class="o">=</span><span class="n">logp_range</span><span class="p">)</span> 
+        <span class="n">n_files</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">)</span>
+
+        <span class="c1"># Start the thread to process files</span>
+        <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_process_files</span><span class="p">,</span> <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">n_files</span><span class="p">])</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_download_zinc_subset</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="n">download_path</span><span class="p">,</span> <span class="n">temp_files</span><span class="o">=</span><span class="n">temp_files</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file_queue</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
+        
+<div class="viewcode-block" id="VirtualScreening.screen_chembl"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.VirtualScreening.html#openpharmacophore.VirtualScreening.screen_chembl">[docs]</a>    <span class="k">def</span> <span class="nf">screen_chembl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">download_path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Screen ChemBl database&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;ChemBL&quot;</span>
+        <span class="k">pass</span></div>
+        
+<div class="viewcode-block" id="VirtualScreening.screen_db_from_dir"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.VirtualScreening.html#openpharmacophore.VirtualScreening.screen_db_from_dir">[docs]</a>    <span class="k">def</span> <span class="nf">screen_db_from_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">file_extensions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Screen a database of molecules contained in one or more files. </span>
+
+<span class="sd">            Supported file formats can be smi, mol2, sdf.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            path : str</span>
+<span class="sd">                The path to the file or directory that contains the molecules.</span>
+
+<span class="sd">            file_extensions : list of str, optional</span>
+<span class="sd">                A list of file extensions that will be searched for if a directory is passed.</span>
+<span class="sd">                The default behavior is to load all valid file extensions.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">file_extensions</span><span class="p">:</span>
+            <span class="n">file_extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;smi&quot;</span><span class="p">,</span> <span class="s2">&quot;mol2&quot;</span><span class="p">,</span> <span class="s2">&quot;sdf&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="n">files_list</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+                <span class="k">if</span> <span class="s1">&#39;.ipynb_checkpoints&#39;</span> <span class="ow">in</span> <span class="n">root</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                    <span class="n">f_extension</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">f_extension</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">file_extensions</span><span class="p">:</span>
+                        <span class="k">continue</span>
+                    <span class="n">files_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">files_list</span><span class="p">):</span>
+                <span class="n">molecules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_molecules_file</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_screen_fn</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="n">path</span>
+            <span class="n">molecules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_molecules_file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_screen_fn</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="n">pbar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">OpenPharmacophoreIOError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is not a valid file/directory&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="p">))</span></div>
+    
+<div class="viewcode-block" id="VirtualScreening.screen_mol_list"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.VirtualScreening.html#openpharmacophore.VirtualScreening.screen_mol_list">[docs]</a>    <span class="k">def</span> <span class="nf">screen_mol_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Screen a list of molecules</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           molecules: list of rdkit.Chem.mol</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_screen_fn</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="n">pbar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_download_chembl_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">download_path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Download a single file form ChemBl.</span>
+<span class="sd">           </span>
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           download_path: str</span>
+<span class="sd">                Path where the file will be stored</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_download_zinc_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">download_path</span><span class="p">,</span> <span class="n">temp_file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Download a single file form ZINC.</span>
+<span class="sd">           </span>
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           url : str</span>
+<span class="sd">                URL of the file that will be downloaded.</span>
+<span class="sd">            </span>
+<span class="sd">           temp_file : bool</span>
+<span class="sd">                Whether to use a tempfile.</span>
+
+<span class="sd">           download_path : str</span>
+<span class="sd">                Path where the file will be stored</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="n">requests</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not fetch file from </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+            <span class="k">return</span> 
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">temp_file</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span>  <span class="n">url</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">:]</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">download_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+            
+            <span class="k">return</span> <span class="n">file_path</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fp</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">()</span>
+            <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+            
+            <span class="k">return</span> <span class="n">fp</span>
+
+    <span class="k">def</span> <span class="nf">_download_zinc_subset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">urls</span><span class="p">,</span> <span class="n">download_path</span><span class="p">,</span> <span class="n">temp_files</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Download a subset from ZINC database.</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           urls : list of str</span>
+<span class="sd">                List with the URLs of the files that will be downloaded.</span>
+
+<span class="sd">           download_path : str</span>
+<span class="sd">                Path where the file will be stored</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloading from ZINC...&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">temp_files</span><span class="p">:</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_download_zinc_file</span><span class="p">(</span><span class="n">urls</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">download_path</span><span class="p">,</span> <span class="n">temp_file</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">file_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_file_queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span> 
+
+            <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">urls</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+                <span class="n">file_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_download_zinc_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">download_path</span><span class="p">,</span> <span class="n">temp_file</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">file_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_file_queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_download_zinc_file</span><span class="p">(</span><span class="n">urls</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">download_path</span><span class="p">,</span> <span class="n">temp_file</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_file_queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span> 
+            
+            <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">urls</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+                <span class="n">fp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_download_zinc_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">download_path</span><span class="p">,</span> <span class="n">temp_file</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_file_queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+   
+    
+    <span class="k">def</span> <span class="nf">_align_molecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">,</span> <span class="n">pbar</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Align a list of molecules to a given pharmacophore.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        molecules : list of rdkit.Chem.mol</span>
+<span class="sd">            List of molecules to align.</span>
+
+<span class="sd">        verbose : int</span>
+<span class="sd">            Level of verbosity.</span>
+<span class="sd">        </span>
+<span class="sd">        pbar : bool</span>
+<span class="sd">            If true, a progress bar will be displayed. </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -------</span>
+<span class="sd">        Does not return anything. The attributes matches, n_matches, and n_fails are updated.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_molecules</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
+
+        <span class="n">rdkit_pharmacophore</span><span class="p">,</span> <span class="n">radii</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophore</span><span class="o">.</span><span class="n">to_rdkit</span><span class="p">()</span>
+        <span class="n">apply_radii_to_bounds</span><span class="p">(</span><span class="n">radii</span><span class="p">,</span> <span class="n">rdkit_pharmacophore</span><span class="p">)</span>
+
+        <span class="n">fdef</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">RDConfig</span><span class="o">.</span><span class="n">RDDataDir</span><span class="p">,</span><span class="s1">&#39;BaseFeatures.fdef&#39;</span><span class="p">)</span>
+        <span class="n">featFactory</span> <span class="o">=</span> <span class="n">ChemicalFeatures</span><span class="o">.</span><span class="n">BuildFeatureFactory</span><span class="p">(</span><span class="n">fdef</span><span class="p">)</span>
+        
+        <span class="n">Match</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;Match&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">])</span>
+        
+        <span class="k">if</span> <span class="n">pbar</span><span class="p">:</span>
+            <span class="n">progress_bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_molecules</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">molecules</span><span class="p">:</span>
+
+            <span class="n">bounds_matrix</span> <span class="o">=</span> <span class="n">rdDistGeom</span><span class="o">.</span><span class="n">GetMoleculeBoundsMatrix</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+            <span class="c1"># Check if the molecule features can match with the pharmacophore.</span>
+            <span class="c1"># TODO: replace this function with a custom one that can take other feature definitions</span>
+            <span class="n">can_match</span><span class="p">,</span> <span class="n">all_matches</span> <span class="o">=</span> <span class="n">EmbedLib</span><span class="o">.</span><span class="n">MatchPharmacophoreToMol</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">featFactory</span><span class="p">,</span> <span class="n">rdkit_pharmacophore</span><span class="p">)</span>
+            <span class="c1"># all_matches is a list of tuples where each tuple contains the chemical features</span>
+            <span class="k">if</span> <span class="n">can_match</span><span class="p">:</span>
+                <span class="c1"># Match the molecule to the pharmacophore without aligning it</span>
+                <span class="n">failed</span><span class="p">,</span> <span class="n">bounds_matrix_matched</span><span class="p">,</span> <span class="n">matched_mols</span><span class="p">,</span> <span class="n">match_details</span> <span class="o">=</span> <span class="n">EmbedLib</span><span class="o">.</span><span class="n">MatchPharmacophore</span><span class="p">(</span><span class="n">all_matches</span><span class="p">,</span> 
+                                                                                                <span class="n">bounds_matrix</span><span class="p">,</span>
+                                                                                                <span class="n">rdkit_pharmacophore</span><span class="p">,</span> 
+                                                                                                <span class="n">useDownsampling</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">failed</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">n_fails</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="k">if</span> <span class="n">pbar</span><span class="p">:</span>
+                        <span class="n">progress_bar</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+                    <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">n_fails</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">pbar</span><span class="p">:</span>
+                    <span class="n">progress_bar</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+                <span class="k">continue</span>
+            <span class="n">atom_match</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">GetAtomIds</span><span class="p">())</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">matched_mols</span><span class="p">]</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">mol_H</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">AddHs</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+                <span class="c1"># Embed molecule onto the pharmacophore</span>
+                <span class="c1"># embeddings is a list of molecules with a single conformer</span>
+                <span class="n">b_matrix</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">num_fail</span> <span class="o">=</span> <span class="n">EmbedLib</span><span class="o">.</span><span class="n">EmbedPharmacophore</span><span class="p">(</span><span class="n">mol_H</span><span class="p">,</span> <span class="n">atom_match</span><span class="p">,</span> <span class="n">rdkit_pharmacophore</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">n_fails</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">pbar</span><span class="p">:</span>
+                    <span class="n">progress_bar</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+                <span class="k">continue</span>
+            <span class="c1"># Align embeddings to the pharmacophore </span>
+            <span class="n">SSDs</span> <span class="o">=</span> <span class="n">transform_embeddings</span><span class="p">(</span><span class="n">rdkit_pharmacophore</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">atom_match</span><span class="p">)</span> 
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">SSDs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">pbar</span><span class="p">:</span>
+                    <span class="n">progress_bar</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+                <span class="k">continue</span>
+            <span class="n">best_fit_index</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">SSDs</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+            
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">mol_id</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetProp</span><span class="p">(</span><span class="s2">&quot;_Name&quot;</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">mol_id</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">matched_mol</span> <span class="o">=</span> <span class="n">Match</span><span class="p">(</span><span class="n">SSDs</span><span class="p">[</span><span class="n">best_fit_index</span><span class="p">],</span> <span class="n">mol_id</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">[</span><span class="n">best_fit_index</span><span class="p">])</span> 
+            <span class="c1"># Append to list in ordered manner</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">bisect</span><span class="o">.</span><span class="n">insort</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">,</span> <span class="n">matched_mol</span><span class="p">)</span> 
+                <span class="bp">self</span><span class="o">.</span><span class="n">n_matches</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="c1"># Case when a molecule is repeated. It will throw an error since bisect</span>
+                <span class="c1"># cannot compare molecules.</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">n_molecules</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">pbar</span><span class="p">:</span>
+                    <span class="n">progress_bar</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">pbar</span><span class="p">:</span>
+                <span class="n">progress_bar</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_fingerprint_similarity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">,</span> <span class="n">pbar</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Compute fingerprints and similarity values for a list of molecules. </span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        molecules : list of rdkit.Chem.mol</span>
+<span class="sd">            List of molecules whose similarity to the pharmacophoric fingerprint will be calculated.</span>
+<span class="sd">        </span>
+<span class="sd">        pbar : bool</span>
+<span class="sd">            If true, a progress bar will be displayed. </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Does not return anything. The attributes matches, n_matches, and n_fails are updated.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">similarity_fn</span> <span class="o">==</span> <span class="s2">&quot;tanimoto&quot;</span><span class="p">:</span>
+            <span class="n">similarity_fn</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">TanimotoSimilarity</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">similarity_fn</span> <span class="o">==</span> <span class="s2">&quot;dice&quot;</span><span class="p">:</span>
+            <span class="n">similarity_fn</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">DiceSimilarity</span>
+       
+        <span class="n">Match</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;Match&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">])</span>
+       
+        <span class="k">if</span> <span class="n">pbar</span><span class="p">:</span>
+            <span class="n">progress_bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">molecules</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">molecules</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n_molecules</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">fingerprint</span> <span class="o">=</span> <span class="n">Gen2DFingerprint</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_factory</span><span class="p">)</span>
+            <span class="n">similarity</span> <span class="o">=</span> <span class="n">similarity_fn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pharmacophore</span><span class="p">,</span> <span class="n">fingerprint</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">similarity</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">similarity_cutoff</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">mol_id</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetProp</span><span class="p">(</span><span class="s2">&quot;_Name&quot;</span><span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="n">mol_id</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">matched_mol</span> <span class="o">=</span> <span class="n">Match</span><span class="p">(</span><span class="n">similarity</span><span class="p">,</span> <span class="n">mol_id</span><span class="p">,</span> <span class="n">mol</span><span class="p">)</span>
+                <span class="c1"># Append to list in ordered manner</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">bisect</span><span class="o">.</span><span class="n">insort</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">,</span> <span class="n">matched_mol</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">n_matches</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="c1"># Case when a molecule is repeated. It will throw an error since bisect</span>
+                    <span class="c1"># cannot compare molecules.</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">n_molecules</span> <span class="o">-=</span> <span class="mi">1</span>
+                    <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">n_fails</span> <span class="o">+=</span> <span class="mi">1</span> 
+            
+            <span class="k">if</span> <span class="n">pbar</span><span class="p">:</span>
+                <span class="n">progress_bar</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_get_pharmacophore_fingerprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecule</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Compute a pharmacophore fingerprint for a single molecule</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            molecule : rdkit.Chem.mol</span>
+<span class="sd">                The molecule whose pharmacophore fingerprint will be computed.</span>
+<span class="sd">            </span>
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            fingerprint : rdkit.DataStructs.SparseBitVect</span>
+<span class="sd">                The pharmacophoric fingerprint.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">factory</span> <span class="o">=</span> <span class="n">Gobbi_Pharm2D</span><span class="o">.</span><span class="n">factory</span>
+        <span class="n">fingerprint</span> <span class="o">=</span> <span class="n">Gen2DFingerprint</span><span class="p">(</span><span class="n">molecule</span><span class="p">,</span> <span class="n">factory</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fingerprint</span>
+
+    <span class="k">def</span> <span class="nf">_get_report</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get a report of the screening results.</span>
+<span class="sd">            </span>
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            report_str : str</span>
+<span class="sd">                The report in string form.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">report_str</span> <span class="o">=</span> <span class="s2">&quot;Virtual Screening Results</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">report_str</span> <span class="o">+=</span> <span class="s2">&quot;-------------------------</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">report_str</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Molecules scanned: &quot;</span> 
+        <span class="n">report_str</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{:,}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_molecules</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span>
+        <span class="n">report_str</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Molecules matched to pharmacophore: &quot;</span> 
+        <span class="n">report_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_matches</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span>
+        <span class="n">report_str</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Molecules that didn&#39;t match the pharmacophore: &quot;</span> 
+        <span class="n">report_str</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{:,}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_fails</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_matches</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">report_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Lowest  </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span><span class="si">}</span><span class="s2"> value: &quot;</span>
+            <span class="n">report_str</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+            <span class="n">report_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Highest </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span><span class="si">}</span><span class="s2"> value: &quot;</span> 
+            <span class="n">report_str</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">((</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">4</span><span class="p">)))</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+            <span class="c1"># Calculate mean</span>
+            <span class="n">mean</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_matches</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+                <span class="n">mean</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">mean</span> <span class="o">/=</span> <span class="n">N</span>
+            <span class="n">report_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Average </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span><span class="si">}</span><span class="s2"> value: &quot;</span> 
+            <span class="n">report_str</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>         
+            <span class="c1"># Print top 5 molecules or less if there are less than 5</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_matches</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">n_top_mols</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_matches</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">n_top_mols</span> <span class="o">=</span> <span class="mi">5</span>                
+            <span class="n">report_str</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Top </span><span class="si">{}</span><span class="s2"> molecules:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_top_mols</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">:</span>
+                <span class="n">report_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="si">}</span><span class="s2">ID &quot;</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">report_str</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   ID   &quot;</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+            <span class="n">report_str</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">-------&quot;</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_top_mols</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scoring_metric</span> <span class="o">==</span> <span class="s2">&quot;Similarity&quot;</span><span class="p">:</span>
+                    <span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="nb">id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">score</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span>
+                <span class="n">report_str</span> <span class="o">+=</span> <span class="nb">id</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+                <span class="n">report_str</span> <span class="o">+=</span> <span class="n">score</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        
+        <span class="k">return</span> <span class="n">report_str</span>
+
+    <span class="k">def</span> <span class="nf">_load_molecules_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">fextension</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Load a file of molecules into a list of rdkit molecules.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            file_name : str</span>
+<span class="sd">                Name of the file that will be loaded.</span>
+<span class="sd">            </span>
+<span class="sd">            fextension : str</span>
+<span class="sd">                The extension of the file. Must be passed if file argument is a temporary file.</span>
+<span class="sd">            </span>
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            list of rdkit.Chem.mol</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">fextension</span><span class="p">:</span>
+            <span class="n">fextension</span> <span class="o">=</span> <span class="n">file_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        
+        <span class="k">if</span> <span class="n">fextension</span> <span class="o">==</span> <span class="s2">&quot;smi&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kwargs</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s2">&quot;delimiter&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="ow">and</span> <span class="s2">&quot;titleLine&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                    <span class="n">ligands</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SmilesMolSupplier</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;delimiter&quot;</span><span class="p">],</span> <span class="n">titleLine</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;titleLine&quot;</span><span class="p">])</span>
+                <span class="k">elif</span> <span class="s2">&quot;delimiter&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                    <span class="n">ligands</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SmilesMolSupplier</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;delimiter&quot;</span><span class="p">],</span> <span class="n">titleLine</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="s2">&quot;titleLine&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                    <span class="n">ligands</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SmilesMolSupplier</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">titleLine</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;titleLine&quot;</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>    
+                <span class="n">ligands</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SmilesMolSupplier</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">titleLine</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">fextension</span> <span class="o">==</span> <span class="s2">&quot;mol2&quot;</span><span class="p">:</span>
+            <span class="n">ligands</span> <span class="o">=</span> <span class="n">load_mol2_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">fextension</span> <span class="o">==</span> <span class="s2">&quot;sdf&quot;</span><span class="p">:</span>
+            <span class="n">ligands</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SDMolSupplier</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        
+        <span class="c1"># For some strange reason list(ligands) doesn&#39;t work if len(ligands) is not called before</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">ligands</span><span class="p">)</span>
+        <span class="n">ligands</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ligands</span><span class="p">)</span>
+        <span class="n">ligands</span> <span class="o">=</span> <span class="p">[</span><span class="n">lig</span> <span class="k">for</span> <span class="n">lig</span> <span class="ow">in</span> <span class="n">ligands</span> <span class="k">if</span> <span class="n">lig</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ligands</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">OpenPharmacophoreIOError</span><span class="p">(</span><span class="s2">&quot;Molecules couldn´t be loaded&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">ligands</span>
+    
+    <span class="k">def</span> <span class="nf">_process_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_files</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Process a file queue. </span>
+
+<span class="sd">            For each downloaded file, converts it into a list of rdkit molecules</span>
+<span class="sd">            and then applies the screening function to each. </span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            temp_files : bool</span>
+<span class="sd">                True if temporary files were stored in the file queue.</span>
+<span class="sd">                </span>
+<span class="sd">            n_files : int</span>
+<span class="sd">                Number of files that will be downloaded.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Sleep a little so that the download bar appears first.</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Processing files...&quot;</span><span class="p">)</span>
+        <span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">n_files</span><span class="p">)</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">_TemporaryFileWrapper</span><span class="p">):</span>
+                <span class="n">file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">mols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_molecules_file</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">fextension</span><span class="o">=</span><span class="s2">&quot;smi&quot;</span><span class="p">)</span>
+                <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">mols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_molecules_file</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_screen_fn</span><span class="p">(</span><span class="n">mols</span><span class="p">)</span>
+            <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_file_queue</span><span class="o">.</span><span class="n">task_done</span><span class="p">()</span>
+            
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(n_matches=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_matches</span><span class="si">}</span><span class="s2">; &quot;</span>
+               <span class="sa">f</span><span class="s2">&quot;n_fails=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_fails</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span></div>
+        
+<span class="k">class</span> <span class="nc">ZincMultiScreening</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Class to perform screening of ZINC with multiple pharmacophores.</span>
+<span class="sd">    </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        screeners: list of openpharmacophore.VirtualScreening</span>
+<span class="sd">            A list with virtual screening objects.</span>
+<span class="sd">        </span>
+<span class="sd">        download_path: str, default=&quot;&quot;</span>
+<span class="sd">            The path where the files will be saved. If nothing is passed files will</span>
+<span class="sd">            be deleted afterwards. </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screeners</span><span class="p">,</span> <span class="n">download_path</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">screeners</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;screeners must be of type list.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">screeners</span> <span class="o">=</span> <span class="n">screeners</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">download_path</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">download_path</span> <span class="o">=</span> <span class="s2">&quot;./tmp&quot;</span> <span class="o">+</span> <span class="n">random_string</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">remove_files</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">download_path</span> <span class="o">=</span> <span class="n">download_path</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">remove_files</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">download</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">files</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">download</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="s2">&quot;Lead-Like&quot;</span><span class="p">,</span> <span class="n">mw_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logp_range</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Screen the ZINC subset with each pharmacophore</span>
+<span class="sd">        </span>
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            subset : {&quot;Drug-Like&quot;, &quot;Lead-Like&quot;, &quot;Lugs&quot;, &quot;Goldilocks&quot;, &quot;Fragments&quot;, &quot;Flagments&quot;, </span>
+<span class="sd">                    &quot;Big-n-Greasy&quot;, &quot;Shards&quot;}</span>
+<span class="sd">                Name of the predifined ZINC subset to be downloaded. </span>
+<span class="sd">            </span>
+<span class="sd">            mw_range : 2-tuple of float, optional </span>
+<span class="sd">                Range of molecular weight for the downloaded molecules.</span>
+<span class="sd">        </span>
+<span class="sd">            logp_range : 2-tuple of float, optional</span>
+<span class="sd">                Range of logP for the downloaded molecules.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">screen</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screeners</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Screening with pharmacophore </span><span class="si">{</span><span class="n">ii</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">download</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">files</span> <span class="o">=</span> <span class="n">screen</span><span class="o">.</span><span class="n">screen_ZINC</span><span class="p">(</span>
+                    <span class="n">download_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">download_path</span><span class="p">,</span>
+                    <span class="n">subset</span><span class="o">=</span><span class="n">subset</span><span class="p">,</span>
+                    <span class="n">mw_range</span><span class="o">=</span><span class="n">mw_range</span><span class="p">,</span>
+                    <span class="n">logp_range</span><span class="o">=</span><span class="n">logp_range</span>
+                <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">download</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">continue</span>
+            <span class="n">screen</span><span class="o">.</span><span class="n">screen_db_from_dir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">download_path</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">remove_files</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">files</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">download_path</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+</pre></div>
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/openpharmacophore">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and authors. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

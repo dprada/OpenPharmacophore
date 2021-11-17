@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ligand-based Pharmacophores &mdash; OpenPharmacophore 0+untagged.143.gbfcf4bd documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Structured-based Pharmacophores" href="Structure-Based.html" />
+    <link rel="prev" title="Pharmacohophores with OpenPharmacophore" href="Pharmacophore.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> OpenPharmacophore
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation and Quick Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Pharmacophore.html">Pharmacohophores with OpenPharmacophore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Pharmacophore.html#Creating-a-pharmacophore-model-manually">Creating a pharmacophore model manually</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Pharmacophore.html#Pharmacophoric-Points">Pharmacophoric Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Pharmacophore.html#Create-the-Pharmacophore">Create the Pharmacophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Pharmacophore.html#Importing-Pharmacophores-from-other-software">Importing Pharmacophores from other software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pharmacophore.html#Exporting-Pharmacophores">Exporting Pharmacophores</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ligand-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Pharmacophore-for-Non-Peptide-Angiotensin-II-Receptor-antagonists">Pharmacophore for Non-Peptide Angiotensin II Receptor antagonists</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Structure-Based.html">Structured-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Structure-Based.html#Pharmacophore-of-Rhinovirus-coat-protein">Pharmacophore of Rhinovirus coat protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Structure-Based.html#Pharmacophore-of-ferrous-Synechocystis-hemoglobin">Pharmacophore of ferrous Synechocystis hemoglobin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Structure-Based.html#Pharmacophore-of-Abl-kinase-domain">Pharmacophore of Abl kinase domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Structure-Based.html#Pharmacophore-of-Estrogen-Nuclear-Receptor">Pharmacophore of Estrogen Nuclear Receptor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DynamicPharmacophore.html">Dynamic Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DynamicPharmacophore.html#Pharmacophores-from-a-molecular-dynamics-trajectory">Pharmacophores from a molecular dynamics trajectory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="DynamicPharmacophore.html#Pharmacophores-from-the-first-and-last-frame-only">Pharmacophores from the first and last frame only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DynamicPharmacophore.html#Pharmacophore-Analysis">Pharmacophore Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DynamicPharmacophore.html#Get-Pharmacophores-for-each-frame-of-the-trajectory">Get Pharmacophores for each frame of the trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DynamicPharmacophore.html#Get-all-unique-pharmacophoric-points">Get all unique pharmacophoric points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DynamicPharmacophore.html#Derive-a-pharmacophore-model-from-the-most-frequent-points">Derive a pharmacophore model from the most frequent points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DynamicPharmacophore.html#Analyze-frequency-of-all-unique-points">Analyze frequency of all unique points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DynamicPharmacophore.html#2D-Representation-of-the-Dynamic-Pharmacophore">2D Representation of the Dynamic Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DynamicPharmacophore.html#Representative-Pharmacophore-Models">Representative Pharmacophore Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DynamicPharmacophore.html#Common-Hits-Approach">Common Hits Approach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Zinc.html">Virtual Screening of ZINC Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Zinc.html#Pharmacophore-model-for-Plasmodium-Falciparum-Triosephosphate-isomerase">Pharmacophore model for Plasmodium Falciparum Triosephosphate isomerase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Zinc.html#Screen-ZINC-with-the-pharmacophore-model">Screen ZINC with the pharmacophore model</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#pharmacophoric-point">Pharmacophoric Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.PharmacophoricPoint.html">openpharmacophore.PharmacophoricPoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#features-colorpalettes">Features colorpalettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.color_palettes.get_color_from_palette_for_feature.html">openpharmacophore.color_palettes.get_color_from_palette_for_feature</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#pharmacophores">Pharmacophores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.Pharmacophore.html">openpharmacophore.Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.LigandBasedPharmacophore.html">openpharmacophore.LigandBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.StructuredBasedPharmacophore.html">openpharmacophore.StructuredBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.Dynophore.html">openpharmacophore.Dynophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#virtual-screening">Virtual Screening</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.VirtualScreening.html">openpharmacophore.VirtualScreening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.RetrospectiveScreening.html">openpharmacophore.RetrospectiveScreening</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#io">IO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.from_ligandscout.html">openpharmacophore.io.from_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_ligandscout.html">openpharmacophore.io.to_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.from_pharmer.html">openpharmacophore.io.from_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_pharmer.html">openpharmacophore.io.to_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.from_moe.html">openpharmacophore.io.from_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_moe.html">openpharmacophore.io.to_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.read_pharmagist.html">openpharmacophore.io.read_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_pharmagist.html">openpharmacophore.io.to_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.load_mol2_file.html">openpharmacophore.io.load_mol2_file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#databases">Databases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#zinc">Zinc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.zinc.download_zinc_subset.html">openpharmacophore.databases.zinc.download_zinc_subset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pubchem">PubChem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.pubchem.get_assay_bioactivity_data.html">openpharmacophore.databases.pubchem.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.pubchem.get_compound_assay_summary.html">openpharmacophore.databases.pubchem.get_compound_assay_summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#chembl">ChemBl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.chembl.get_assay_bioactivity_data.html">openpharmacophore.databases.chembl.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.chembl.get_bioactivity_dataframe.html">openpharmacophore.databases.chembl.get_bioactivity_dataframe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.chembl.get_ro5_dataset.html">openpharmacophore.databases.chembl.get_ro5_dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OpenPharmacophore</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Ligand-based Pharmacophores</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="Ligand-based-Pharmacophores">
+<h1>Ligand-based Pharmacophores<a class="headerlink" href="#Ligand-based-Pharmacophores" title="Permalink to this headline"></a></h1>
+<p>Pharmacophores can be obtanied from a set of ligands that are known to have activity against the receptor of interest. This is called ligand-based pharmacophore modelling and it is usually carried out by extracting common chemical features from 3D structures of a set of known ligands representative of essential interactions between the ligands and a specific macromolecular target.</p>
+<p>A variety of methods exists to extract a common pharmacophore from a set of ligands. Different algorithms such as the genetic algorithm, clique detection, gibbs sampling, etc. have been used succesfully to derive ligand-based pharmacophores. Currently OpenPharmacophore only supports a algorithm based on density based cluestering. Future versions of the library will implement other algorithms.</p>
+<p>In this tutorial we will explore how to construct ligand based pharmacophores with OpenPharmacophore.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">openpharmacophore</span> <span class="kn">import</span> <span class="n">LigandBasedPharmacophore</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.utils.load_custom_feats</span> <span class="kn">import</span> <span class="n">load_smarts_fdef</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">Draw</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">RDLogger</span>
+<span class="n">RDLogger</span><span class="o">.</span><span class="n">DisableLog</span><span class="p">(</span><span class="s1">&#39;rdApp.*&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d1ca77863cef4bf0a97daca349cc776e", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+2021-11-03 14:57:47,304 [WARNING] [__init__.py:5] root: Warning: importing &#39;simtk.openmm&#39; is deprecated.  Import &#39;openmm&#39; instead.
+</pre></div></div>
+</div>
+<section id="Pharmacophore-for-Non-Peptide-Angiotensin-II-Receptor-antagonists">
+<h2>Pharmacophore for Non-Peptide Angiotensin II Receptor antagonists<a class="headerlink" href="#Pharmacophore-for-Non-Peptide-Angiotensin-II-Receptor-antagonists" title="Permalink to this headline"></a></h2>
+<p>We will derive a pharmacophore model from a set of 5 ligands of the non-peptide angiotensin receptor.</p>
+<p>A ligand-based pharmacophore can be created using the LiganBasedPharmacophore class. A pharmacophore then can be created from a list of rdkit molecules or by passing a molecule file such as a smi, mol2 or sdf file.</p>
+<p>The LiganBasedPharmacophore class is derived from the Pharmacophore class, so it functions in a similar way.</p>
+<p>We will obtain the pharmacophore model from a list of rdkit molecules.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Load the molecules and visualize them</span>
+<span class="n">molecules</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SmilesMolSupplier</span><span class="p">(</span><span class="s1">&#39;../../../openpharmacophore/data/ligands/clique_detection.smi&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">titleLine</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span><span class="si">}</span><span class="s2"> molecules&quot;</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">returnPNG</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">img</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+5 molecules
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/contents_Pharmacophore_Ligand-Based_3_1.png" src="../../_images/contents_Pharmacophore_Ligand-Based_3_1.png" />
+</div>
+</div>
+<p>To create the pharmacophore the class method from_ligand_list can be used. Otherwise, the from_file method can be used. Besides the ligands, this method also expects a “method” argument, a “feat_list” and a “feat_def” argument.</p>
+<p>The “method” argument is the algorithm that will be used to obtain the common pharmacophore. Currently, only the density based clustering algorithm or dbscan is implemented.</p>
+<p>“feat_list” is a an optional list with the pharmacophoric features that will be taken into account. For example, if we would like to obtain a pharmacophore with only hydrogen bond donors an aromatic rings we wil pass the list [“hb donor”, “aromatic ring”]</p>
+<p>The “feat_def” argument stands for feature definition. A feature definition is a set of smarts strings that are used to define chemical features within a ligand. Openpharmacophore uses the default definition implemented in rdkit; however, a custom definion can be passed as we will do in this example.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Let&#39;s load a custom feature definition</span>
+<span class="c1"># First take a look at the file</span>
+<span class="o">!</span> head ../../../openpharmacophore/data/smarts_features.txt -n <span class="m">10</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+# lines started from # are comments
+#
+# each line is SMARTS and feature label
+#
+# Aromatic
+a1aaaaa1 Aromatic
+a1aaaa1 Aromatic
+
+# HBD
+[#7!H0&amp;!$(N-[SX4](=O)(=O)[CX4](F)(F)F)] Donor
+</pre></div></div>
+</div>
+<p>A custom feature defintion can be loaded froma file similar to the one above. This is a file with the smarts strings followed by the name of the chemical feature. We can use the function load_smarts_fdef to obtain a dictionary of smarts and feature names.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">feat_def</span> <span class="o">=</span> <span class="n">load_smarts_fdef</span><span class="p">(</span><span class="s2">&quot;../../../openpharmacophore/data/smarts_features.txt&quot;</span><span class="p">)</span>
+<span class="n">feat_def</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;a1aaaaa1&#39;: &#39;Aromatic&#39;,
+ &#39;a1aaaa1&#39;: &#39;Aromatic&#39;,
+ &#39;[#7!H0&amp;!$(N-[SX4](=O)(=O)[CX4](F)(F)F)]&#39;: &#39;Donor&#39;,
+ &#39;[#8!H0&amp;!$([OH][C,S,P]=O)]&#39;: &#39;Donor&#39;,
+ &#39;[#16!H0]&#39;: &#39;Donor&#39;,
+ &#39;[#7&amp;!$([nX3])&amp;!$([NX3]-*=[!#6])&amp;!$([NX3]-[a])&amp;!$([NX4])&amp;!$(N=C([C,N])N)]&#39;: &#39;Acceptor&#39;,
+ &#39;[$([O])&amp;!$([OX2](C)C=O)&amp;!$(*(~a)~a)]&#39;: &#39;Acceptor&#39;,
+ &#39;[$([NX3]([CX4])([CX4,#1])[CX4,#1])&amp;!$([NX3]-*=[!#6])]&#39;: &#39;PosIonizable&#39;,
+ &#39;[$([CX3](=N)(-N)[!N])](=N)-N&#39;: &#39;PosIonizable&#39;,
+ &#39;N=[CX3](N)-N&#39;: &#39;PosIonizable&#39;,
+ &#39;[$([+,+2,+3])&amp;!$(*[-,-2,-3])]&#39;: &#39;PosIonizable&#39;,
+ &#39;c1nn[nH1]n1&#39;: &#39;NegIonizable&#39;,
+ &#39;[$([SX4,PX4](=O)(=O)[O-,OH])](=O)(=O)[O-,OH]&#39;: &#39;NegIonizable&#39;,
+ &#39;[$([CX3,SX3,PX3](=O)[O-,OH])](=O)[O-,OH]&#39;: &#39;NegIonizable&#39;,
+ &#39;[$([-,-2,-3])&amp;!$(*[+,+2,+3])]&#39;: &#39;NegIonizable&#39;,
+ &#39;[$([CH3X4,CH2X3,CH1X2,F,Cl,Br,I])&amp;!$(**[CH3X4,CH2X3,CH1X2,F,Cl,Br,I])]&#39;: &#39;Hydrophobe&#39;,
+ &#39;[$(*([CH3X4,CH2X3,CH1X2,F,Cl,Br,I])[CH3X4,CH2X3,CH1X2,F,Cl,Br,I])&amp;!$(*([CH3X4,CH2X3,CH1X2,F,Cl,Br,I])([CH3X4,CH2X3,CH1X2,F,Cl,Br,I])[CH3X4,CH2X3,CH1X2,F,Cl,Br,I])]([CH3X4,CH2X3,CH1X2,F,Cl,Br,I])[CH3X4,CH2X3,CH1X2,F,Cl,Br,I]&#39;: &#39;Hydrophobe&#39;,
+ &#39;*([CH3X4,CH2X3,CH1X2,F,Cl,Br,I])([CH3X4,CH2X3,CH1X2,F,Cl,Br,I])[CH3X4,CH2X3,CH1X2,F,Cl,Br,I]&#39;: &#39;Hydrophobe&#39;,
+ &#39;[C&amp;r3]1~[C&amp;r3]~[C&amp;r3]1&#39;: &#39;Hydrophobe&#39;,
+ &#39;[C&amp;r4]1~[C&amp;r4]~[C&amp;r4]~[C&amp;r4]1&#39;: &#39;Hydrophobe&#39;,
+ &#39;[C&amp;r5]1~[C&amp;r5]~[C&amp;r5]~[C&amp;r5]~[C&amp;r5]1&#39;: &#39;Hydrophobe&#39;,
+ &#39;[C&amp;r6]1~[C&amp;r6]~[C&amp;r6]~[C&amp;r6]~[C&amp;r6]~[C&amp;r6]1&#39;: &#39;Hydrophobe&#39;,
+ &#39;[C&amp;r7]1~[C&amp;r7]~[C&amp;r7]~[C&amp;r7]~[C&amp;r7]~[C&amp;r7]~[C&amp;r7]1&#39;: &#39;Hydrophobe&#39;,
+ &#39;[C&amp;r8]1~[C&amp;r8]~[C&amp;r8]~[C&amp;r8]~[C&amp;r8]~[C&amp;r8]~[C&amp;r8]~[C&amp;r8]1&#39;: &#39;Hydrophobe&#39;,
+ &#39;[CH2X4,CH1X3,CH0X2]~[CH3X4,CH2X3,CH1X2,F,Cl,Br,I]&#39;: &#39;Hydrophobe&#39;,
+ &#39;[$([CH2X4,CH1X3,CH0X2]~[$([!#1]);!$([CH2X4,CH1X3,CH0X2])])]~[CH2X4,CH1X3,CH0X2]~[CH2X4,CH1X3,CH0X2]&#39;: &#39;Hydrophobe&#39;,
+ &#39;[$([CH2X4,CH1X3,CH0X2]~[CH2X4,CH1X3,CH0X2]~[$([CH2X4,CH1X3,CH0X2]~[$([!#1]);!$([CH2X4,CH1X3,CH0X2])])])]~[CH2X4,CH1X3,CH0X2]~[CH2X4,CH1X3,CH0X2]~[CH2X4,CH1X3,CH0X2]&#39;: &#39;Hydrophobe&#39;,
+ &#39;[$([S]~[#6])&amp;!$(S~[!#6])]&#39;: &#39;Hydrophobe&#39;}
+</pre></div></div>
+</div>
+<p>Now we are ready to create the pharmacophore</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Create the pharmacophore</span>
+<span class="n">molecules</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
+<span class="n">pharmacophore</span> <span class="o">=</span> <span class="n">LigandBasedPharmacophore</span><span class="p">()</span><span class="o">.</span><span class="n">from_ligand_list</span><span class="p">(</span><span class="n">ligands</span><span class="o">=</span><span class="n">molecules</span><span class="p">,</span>
+                                                            <span class="n">method</span><span class="o">=</span><span class="s2">&quot;dbscan&quot;</span><span class="p">,</span>
+                                                            <span class="n">feat_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                                            <span class="n">feat_def</span><span class="o">=</span><span class="n">feat_def</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pharmacophore</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+LigandBasedPharmacophore(n_elements: 6)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">pharmacophore</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[HbAcceptorSphere(center: (-3.2099, 0.6359, 2.4323); radius: 1.0), HbAcceptorSphere(center: (-1.5734, 4.2674, 0.3026); radius: 1.0), AromaticRingSphere(center: (1.0191, 0.7249, -0.9843); radius: 1.0), AromaticRingSphere(center: (-2.6875, 1.3437, 1.7495); radius: 1.0), HbDonorSphere(center: (4.146, -1.3919, 1.8679); radius: 1.0), HydrophobicitySphere(center: (-4.8432, -1.7925, -0.4132); radius: 1.0)]
+</pre></div></div>
+</div>
+<p>We can visualize the pharmacophoric features in each of the ligands using the draw method.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Image</span><span class="p">(</span><span class="n">pharmacophore</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">n_per_row</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/contents_Pharmacophore_Ligand-Based_12_0.png" src="../../_images/contents_Pharmacophore_Ligand-Based_12_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">pharmacophore</span><span class="o">.</span><span class="n">elements</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[HbAcceptorSphere(center: (-3.2099, 0.6359, 2.4323); radius: 1.0),
+ HbAcceptorSphere(center: (-1.5734, 4.2674, 0.3026); radius: 1.0),
+ AromaticRingSphere(center: (1.0191, 0.7249, -0.9843); radius: 1.0),
+ AromaticRingSphere(center: (-2.6875, 1.3437, 1.7495); radius: 1.0),
+ HbDonorSphere(center: (4.146, -1.3919, 1.8679); radius: 1.0),
+ HydrophobicitySphere(center: (-4.8432, -1.7925, -0.4132); radius: 1.0)]
+</pre></div></div>
+</div>
+<p>Finally we can visualize the pharmacophore with it’s ligands.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">view</span> <span class="o">=</span> <span class="n">pharmacophore</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">show_ligands</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">view</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a03bbb225c9a400693e259b64dd1f24a", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "fca079be027c4881a46cb9bde19b7eac", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">view</span><span class="o">.</span><span class="n">_display_image</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/contents_Pharmacophore_Ligand-Based_17_0.png" src="../../_images/contents_Pharmacophore_Ligand-Based_17_0.png" />
+</div>
+</div>
+<p>References</p>
+<p>[1] Yang, Sheng-Yong. “Pharmacophore modeling and applications in drug discovery: challenges and recent advances.” Drug discovery today 15, no. 11-12 (2010): 444-450.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/openpharmacophore">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Pharmacophore.html" class="btn btn-neutral float-left" title="Pharmacohophores with OpenPharmacophore" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Structure-Based.html" class="btn btn-neutral float-right" title="Structured-based Pharmacophores" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and authors. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

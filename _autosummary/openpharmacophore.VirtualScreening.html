@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>openpharmacophore.VirtualScreening &mdash; OpenPharmacophore 0+untagged.143.gbfcf4bd documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="openpharmacophore.RetrospectiveScreening" href="openpharmacophore.RetrospectiveScreening.html" />
+    <link rel="prev" title="openpharmacophore.Dynophore" href="openpharmacophore.Dynophore.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> OpenPharmacophore
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation and Quick Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contents/Installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contents/Pharmacophore/Pharmacophore.html">Pharmacohophores with OpenPharmacophore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Pharmacophore.html#Creating-a-pharmacophore-model-manually">Creating a pharmacophore model manually</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/Pharmacophore.html#Pharmacophoric-Points">Pharmacophoric Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/Pharmacophore.html#Create-the-Pharmacophore">Create the Pharmacophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Pharmacophore.html#Importing-Pharmacophores-from-other-software">Importing Pharmacophores from other software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Pharmacophore.html#Exporting-Pharmacophores">Exporting Pharmacophores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contents/Pharmacophore/Ligand-Based.html">Ligand-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Ligand-Based.html#Pharmacophore-for-Non-Peptide-Angiotensin-II-Receptor-antagonists">Pharmacophore for Non-Peptide Angiotensin II Receptor antagonists</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contents/Pharmacophore/Structure-Based.html">Structured-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Rhinovirus-coat-protein">Pharmacophore of Rhinovirus coat protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-ferrous-Synechocystis-hemoglobin">Pharmacophore of ferrous Synechocystis hemoglobin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Abl-kinase-domain">Pharmacophore of Abl kinase domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Estrogen-Nuclear-Receptor">Pharmacophore of Estrogen Nuclear Receptor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html">Dynamic Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-a-molecular-dynamics-trajectory">Pharmacophores from a molecular dynamics trajectory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-the-first-and-last-frame-only">Pharmacophores from the first and last frame only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophore-Analysis">Pharmacophore Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Get-Pharmacophores-for-each-frame-of-the-trajectory">Get Pharmacophores for each frame of the trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Get-all-unique-pharmacophoric-points">Get all unique pharmacophoric points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Derive-a-pharmacophore-model-from-the-most-frequent-points">Derive a pharmacophore model from the most frequent points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Analyze-frequency-of-all-unique-points">Analyze frequency of all unique points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#2D-Representation-of-the-Dynamic-Pharmacophore">2D Representation of the Dynamic Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Representative-Pharmacophore-Models">Representative Pharmacophore Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contents/Pharmacophore/DynamicPharmacophore.html#Common-Hits-Approach">Common Hits Approach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contents/Pharmacophore/Zinc.html">Virtual Screening of ZINC Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Zinc.html#Pharmacophore-model-for-Plasmodium-Falciparum-Triosephosphate-isomerase">Pharmacophore model for Plasmodium Falciparum Triosephosphate isomerase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contents/Pharmacophore/Zinc.html#Screen-ZINC-with-the-pharmacophore-model">Screen ZINC with the pharmacophore model</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../api.html#pharmacophoric-point">Pharmacophoric Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.PharmacophoricPoint.html">openpharmacophore.PharmacophoricPoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#features-colorpalettes">Features colorpalettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.color_palettes.get_color_from_palette_for_feature.html">openpharmacophore.color_palettes.get_color_from_palette_for_feature</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#pharmacophores">Pharmacophores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.Pharmacophore.html">openpharmacophore.Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.LigandBasedPharmacophore.html">openpharmacophore.LigandBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.StructuredBasedPharmacophore.html">openpharmacophore.StructuredBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.Dynophore.html">openpharmacophore.Dynophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#virtual-screening">Virtual Screening</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">openpharmacophore.VirtualScreening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.RetrospectiveScreening.html">openpharmacophore.RetrospectiveScreening</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#io">IO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.from_ligandscout.html">openpharmacophore.io.from_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.to_ligandscout.html">openpharmacophore.io.to_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.from_pharmer.html">openpharmacophore.io.from_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.to_pharmer.html">openpharmacophore.io.to_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.from_moe.html">openpharmacophore.io.from_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.to_moe.html">openpharmacophore.io.to_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.read_pharmagist.html">openpharmacophore.io.read_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.to_pharmagist.html">openpharmacophore.io.to_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openpharmacophore.io.load_mol2_file.html">openpharmacophore.io.load_mol2_file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#databases">Databases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#zinc">Zinc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.databases.zinc.download_zinc_subset.html">openpharmacophore.databases.zinc.download_zinc_subset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#pubchem">PubChem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.databases.pubchem.get_assay_bioactivity_data.html">openpharmacophore.databases.pubchem.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.databases.pubchem.get_compound_assay_summary.html">openpharmacophore.databases.pubchem.get_compound_assay_summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#chembl">ChemBl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.databases.chembl.get_assay_bioactivity_data.html">openpharmacophore.databases.chembl.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.databases.chembl.get_bioactivity_dataframe.html">openpharmacophore.databases.chembl.get_bioactivity_dataframe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openpharmacophore.databases.chembl.get_ro5_dataset.html">openpharmacophore.databases.chembl.get_ro5_dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenPharmacophore</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API Documentation</a> &raquo;</li>
+      <li>openpharmacophore.VirtualScreening</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="openpharmacophore-virtualscreening">
+<h1>openpharmacophore.VirtualScreening<a class="headerlink" href="#openpharmacophore-virtualscreening" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="openpharmacophore.VirtualScreening">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpharmacophore.</span></span><span class="sig-name descname"><span class="pre">VirtualScreening</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pharmacophore</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/screening/screening.html#VirtualScreening"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.VirtualScreening" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for performing virtual screening for a database of molecules.</p>
+<blockquote>
+<div><p>The database can be fetched, loaded from files or simply passing a list of rdkit molecules.
+Screening can be based on a 3D pharmacophore model or a 2D pharmacophore finegerprint.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pharmacophore</strong> (<a class="reference internal" href="openpharmacophore.Pharmacophore.html#openpharmacophore.Pharmacophore" title="openpharmacophore.Pharmacophore"><em>openpharmacophore.Pharmacophore</em></a>) – The pharmacophore that will be used to screen the database. Can be a Pharmacophore,
+StructuredBasedPharmacophore, LigandBasedPharmacophore or a fingerprint</p>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>matches</strong> (<em>list of 3-tuples</em><em> (</em><em>float</em><em>, </em><em>str</em><em>, </em><em>rdkit.Chem.mol</em><em>)</em>) – List of molecules that match the pharmacophore. Each tuple is formed by scoring
+value, the molecule id, and the molecule object.</p></li>
+<li><p><strong>n_matches</strong> (<em>int</em>) – Number of molecules matched to the pharmacophore.</p></li>
+<li><p><strong>n_molecules</strong> (<em>int</em>) – Number of molcules screened.</p></li>
+<li><p><strong>n_fails</strong> (<em>int</em>) – Number of molecules that cannot be matched to the pharmacophore.</p></li>
+<li><p><strong>scoring_metric</strong> (<em>str</em>) – Metric used to score the molecules, how well they fit to the pharmacophore.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#openpharmacophore.VirtualScreening.get_screening_results" title="openpharmacophore.VirtualScreening.get_screening_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_screening_results</span></code></a></p></td>
+<td><p>Get the results of the screen on a dataframe or a dictionaty</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#openpharmacophore.VirtualScreening.print_report" title="openpharmacophore.VirtualScreening.print_report"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_report</span></code></a></p></td>
+<td><p>Prints a summary report of the screening.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#openpharmacophore.VirtualScreening.save_results_to_file" title="openpharmacophore.VirtualScreening.save_results_to_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_results_to_file</span></code></a></p></td>
+<td><p>Save the results of the screening to a file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#openpharmacophore.VirtualScreening.screen_ZINC" title="openpharmacophore.VirtualScreening.screen_ZINC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">screen_ZINC</span></code></a></p></td>
+<td><p>Screen a subset of ZINC database.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#openpharmacophore.VirtualScreening.screen_chembl" title="openpharmacophore.VirtualScreening.screen_chembl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">screen_chembl</span></code></a></p></td>
+<td><p>Screen ChemBl database</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#openpharmacophore.VirtualScreening.screen_db_from_dir" title="openpharmacophore.VirtualScreening.screen_db_from_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">screen_db_from_dir</span></code></a></p></td>
+<td><p>Screen a database of molecules contained in one or more files.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#openpharmacophore.VirtualScreening.screen_mol_list" title="openpharmacophore.VirtualScreening.screen_mol_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">screen_mol_list</span></code></a></p></td>
+<td><p>Screen a list of molecules</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.VirtualScreening.get_screening_results">
+<span class="sig-name descname"><span class="pre">get_screening_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">form</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dataframe'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/screening/screening.html#VirtualScreening.get_screening_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.VirtualScreening.get_screening_results" title="Permalink to this definition"></a></dt>
+<dd><p>Get the results of the screen on a dataframe or a dictionaty</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>form</strong> (<em>{&quot;dataframe&quot;</em><em>, </em><em>&quot;dict&quot;}</em>) – Whether to return a dataframe or a dictionary.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dataframe or dictionary with the results information.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame or dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.VirtualScreening.print_report">
+<span class="sig-name descname"><span class="pre">print_report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/screening/screening.html#VirtualScreening.print_report"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.VirtualScreening.print_report" title="Permalink to this definition"></a></dt>
+<dd><p>Prints a summary report of the screening.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.VirtualScreening.save_results_to_file">
+<span class="sig-name descname"><span class="pre">save_results_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/screening/screening.html#VirtualScreening.save_results_to_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.VirtualScreening.save_results_to_file" title="Permalink to this definition"></a></dt>
+<dd><p>Save the results of the screening to a file.</p>
+<p>The file contains the matched molecules ids, smiles and SSD value.
+File can be saved as csv or json.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_name</strong> (<em>str</em>) – Name of the file</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Does not return anything. A new file is written.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.VirtualScreening.screen_ZINC">
+<span class="sig-name descname"><span class="pre">screen_ZINC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mw_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logp_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/screening/screening.html#VirtualScreening.screen_ZINC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.VirtualScreening.screen_ZINC" title="Permalink to this definition"></a></dt>
+<dd><p>Screen a subset of ZINC database.</p>
+<p>The subset can be one of ZINC predefined subsets. Alternatively a subset with a custom molecular
+weight and logP range can be screened.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subset</strong> (<em>{&quot;Drug-Like&quot;</em><em>, </em><em>&quot;Lead-Like&quot;</em><em>, </em><em>&quot;Lugs&quot;</em><em>, </em><em>&quot;Goldilocks&quot;</em><em>, </em><em>&quot;Fragments&quot;</em><em>, </em><em>&quot;Flagments&quot;</em><em>,</em>) – “Big-n-Greasy”, “Shards”}
+Name of the predifined ZINC subset to be downloaded.</p></li>
+<li><p><strong>mw_range</strong> (<em>2-tuple of float</em><em>, </em><em>optional</em>) – Range of molecular weight for the downloaded molecules.</p></li>
+<li><p><strong>logp_range</strong> (<em>2-tuple of float</em><em>, </em><em>optional</em>) – Range of logP for the downloaded molecules.</p></li>
+<li><p><strong>download_path</strong> (<em>str</em><em>, </em><em>default=&quot;&quot;</em>) – Directory where files will be saved. If None, files will be deleted
+after processing.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If mw_range argument is passed, logp_range must also be passed.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.VirtualScreening.screen_chembl">
+<span class="sig-name descname"><span class="pre">screen_chembl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">download_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/screening/screening.html#VirtualScreening.screen_chembl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.VirtualScreening.screen_chembl" title="Permalink to this definition"></a></dt>
+<dd><p>Screen ChemBl database</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.VirtualScreening.screen_db_from_dir">
+<span class="sig-name descname"><span class="pre">screen_db_from_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_extensions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/screening/screening.html#VirtualScreening.screen_db_from_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.VirtualScreening.screen_db_from_dir" title="Permalink to this definition"></a></dt>
+<dd><p>Screen a database of molecules contained in one or more files.</p>
+<p>Supported file formats can be smi, mol2, sdf.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – The path to the file or directory that contains the molecules.</p></li>
+<li><p><strong>file_extensions</strong> (<em>list of str</em><em>, </em><em>optional</em>) – A list of file extensions that will be searched for if a directory is passed.
+The default behavior is to load all valid file extensions.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpharmacophore.VirtualScreening.screen_mol_list">
+<span class="sig-name descname"><span class="pre">screen_mol_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/openpharmacophore/screening/screening.html#VirtualScreening.screen_mol_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#openpharmacophore.VirtualScreening.screen_mol_list" title="Permalink to this definition"></a></dt>
+<dd><p>Screen a list of molecules</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>molecules</strong> (<em>list of rdkit.Chem.mol</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/openpharmacophore">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="openpharmacophore.Dynophore.html" class="btn btn-neutral float-left" title="openpharmacophore.Dynophore" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="openpharmacophore.RetrospectiveScreening.html" class="btn btn-neutral float-right" title="openpharmacophore.RetrospectiveScreening" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and authors. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

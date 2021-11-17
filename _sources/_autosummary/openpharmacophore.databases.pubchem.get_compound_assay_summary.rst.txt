@@ -1,0 +1,6 @@
+﻿openpharmacophore.databases.pubchem.get\_compound\_assay\_summary
+=================================================================
+
+.. currentmodule:: openpharmacophore.databases.pubchem
+
+.. autofunction:: get_compound_assay_summary

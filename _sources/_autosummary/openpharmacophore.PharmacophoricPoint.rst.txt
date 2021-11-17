@@ -1,0 +1,27 @@
+﻿openpharmacophore.PharmacophoricPoint
+=====================================
+
+.. currentmodule:: openpharmacophore
+
+.. autoclass:: PharmacophoricPoint
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~PharmacophoricPoint.add_to_NGLView
+      ~PharmacophoricPoint.get_valid_features
+      ~PharmacophoricPoint.is_equal
+   
+   
+
+   
+   
+   

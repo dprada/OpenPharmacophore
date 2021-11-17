@@ -1,0 +1,6 @@
+﻿openpharmacophore.io.to\_pharmagist
+===================================
+
+.. currentmodule:: openpharmacophore.io
+
+.. autofunction:: to_pharmagist

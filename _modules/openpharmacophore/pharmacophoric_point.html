@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>openpharmacophore.pharmacophoric_point &mdash; OpenPharmacophore 0+untagged.143.gbfcf4bd documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> OpenPharmacophore
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation and Quick Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html">Pharmacohophores with OpenPharmacophore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Creating-a-pharmacophore-model-manually">Creating a pharmacophore model manually</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Pharmacophoric-Points">Pharmacophoric Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Create-the-Pharmacophore">Create the Pharmacophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Importing-Pharmacophores-from-other-software">Importing Pharmacophores from other software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Exporting-Pharmacophores">Exporting Pharmacophores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/Ligand-Based.html">Ligand-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Ligand-Based.html#Pharmacophore-for-Non-Peptide-Angiotensin-II-Receptor-antagonists">Pharmacophore for Non-Peptide Angiotensin II Receptor antagonists</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html">Structured-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Rhinovirus-coat-protein">Pharmacophore of Rhinovirus coat protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-ferrous-Synechocystis-hemoglobin">Pharmacophore of ferrous Synechocystis hemoglobin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Abl-kinase-domain">Pharmacophore of Abl kinase domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Estrogen-Nuclear-Receptor">Pharmacophore of Estrogen Nuclear Receptor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html">Dynamic Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-a-molecular-dynamics-trajectory">Pharmacophores from a molecular dynamics trajectory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-the-first-and-last-frame-only">Pharmacophores from the first and last frame only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophore-Analysis">Pharmacophore Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Get-Pharmacophores-for-each-frame-of-the-trajectory">Get Pharmacophores for each frame of the trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Get-all-unique-pharmacophoric-points">Get all unique pharmacophoric points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Derive-a-pharmacophore-model-from-the-most-frequent-points">Derive a pharmacophore model from the most frequent points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Analyze-frequency-of-all-unique-points">Analyze frequency of all unique points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#2D-Representation-of-the-Dynamic-Pharmacophore">2D Representation of the Dynamic Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Representative-Pharmacophore-Models">Representative Pharmacophore Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Common-Hits-Approach">Common Hits Approach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/Zinc.html">Virtual Screening of ZINC Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Zinc.html#Pharmacophore-model-for-Plasmodium-Falciparum-Triosephosphate-isomerase">Pharmacophore model for Plasmodium Falciparum Triosephosphate isomerase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Zinc.html#Screen-ZINC-with-the-pharmacophore-model">Screen ZINC with the pharmacophore model</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#pharmacophoric-point">Pharmacophoric Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.PharmacophoricPoint.html">openpharmacophore.PharmacophoricPoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#features-colorpalettes">Features colorpalettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.color_palettes.get_color_from_palette_for_feature.html">openpharmacophore.color_palettes.get_color_from_palette_for_feature</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#pharmacophores">Pharmacophores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.Pharmacophore.html">openpharmacophore.Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.LigandBasedPharmacophore.html">openpharmacophore.LigandBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.StructuredBasedPharmacophore.html">openpharmacophore.StructuredBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.Dynophore.html">openpharmacophore.Dynophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#virtual-screening">Virtual Screening</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.VirtualScreening.html">openpharmacophore.VirtualScreening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.RetrospectiveScreening.html">openpharmacophore.RetrospectiveScreening</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#io">IO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.from_ligandscout.html">openpharmacophore.io.from_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_ligandscout.html">openpharmacophore.io.to_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.from_pharmer.html">openpharmacophore.io.from_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_pharmer.html">openpharmacophore.io.to_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.from_moe.html">openpharmacophore.io.from_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_moe.html">openpharmacophore.io.to_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.read_pharmagist.html">openpharmacophore.io.read_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_pharmagist.html">openpharmacophore.io.to_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.load_mol2_file.html">openpharmacophore.io.load_mol2_file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#databases">Databases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#zinc">Zinc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.zinc.download_zinc_subset.html">openpharmacophore.databases.zinc.download_zinc_subset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pubchem">PubChem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.pubchem.get_assay_bioactivity_data.html">openpharmacophore.databases.pubchem.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.pubchem.get_compound_assay_summary.html">openpharmacophore.databases.pubchem.get_compound_assay_summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#chembl">ChemBl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.chembl.get_assay_bioactivity_data.html">openpharmacophore.databases.chembl.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.chembl.get_bioactivity_dataframe.html">openpharmacophore.databases.chembl.get_bioactivity_dataframe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.chembl.get_ro5_dataset.html">openpharmacophore.databases.chembl.get_ro5_dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OpenPharmacophore</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>openpharmacophore.pharmacophoric_point</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <h1>Source code for openpharmacophore.pharmacophoric_point</h1><div class="highlight"><pre>
+<span></span><span class="c1"># OpenPharmacophore</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore</span> <span class="kn">import</span> <span class="n">__documentation_web__</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.color_palettes</span> <span class="kn">import</span> <span class="n">get_color_from_palette_for_feature</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore._private_tools.exceptions</span> <span class="kn">import</span> <span class="n">IsNotStringError</span><span class="p">,</span> <span class="n">PointWithNoColorError</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore._private_tools.colors</span> <span class="kn">import</span> <span class="n">convert</span> <span class="k">as</span> <span class="n">convert_color_code</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore._private_tools.input_arguments</span> <span class="kn">import</span> <span class="n">validate_input_array_like</span><span class="p">,</span> <span class="n">validate_input_quantity</span>
+<span class="c1"># Third Party</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pyunitwizard</span> <span class="k">as</span> <span class="nn">puw</span>
+
+<div class="viewcode-block" id="PharmacophoricPoint"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.PharmacophoricPoint.html#openpharmacophore.PharmacophoricPoint">[docs]</a><span class="k">class</span> <span class="nc">PharmacophoricPoint</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Class to store pharmacophoric points of any feature type. This class can</span>
+<span class="sd">        store spheres or sphere and vector pharmacophoric points.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        -----------</span>
+
+<span class="sd">        feat_type : str</span>
+<span class="sd">            The feature type of the point. This can be hb donor, hb acceptor, aromatic ring</span>
+<span class="sd">            hydrophobic, positive charge, negative charge, excluded volume.</span>
+
+<span class="sd">        center : Quantity (dimensionality:{&#39;[L]&#39;:1}; value_type:list,tuple,numpy.ndarray; shape:(3,))</span>
+<span class="sd">            Coordinates of the sphere center.</span>
+<span class="sd">        </span>
+<span class="sd">        radius : Quantity (dimensionality:{&#39;[L]&#39;:1}; value:float)</span>
+<span class="sd">            Radius of the pharmacophoric sphere.</span>
+<span class="sd">        </span>
+<span class="sd">        direction : array_like; shape:(3,)</span>
+<span class="sd">            Vector direction as a three dimensional vector. If the pharmacophoric point doesn&#39;t have</span>
+<span class="sd">            direction is set to None. It must be of length or shape 3.</span>
+<span class="sd">        </span>
+<span class="sd">        atoms_inxs : list, set or tuple of int</span>
+<span class="sd">            The indices of the atoms corresponding to the pharmacophoic point in the molecule from which</span>
+<span class="sd">            they were extracted. A list, set or tupple can be passed. </span>
+
+<span class="sd">        Attributes</span>
+<span class="sd">        ----------</span>
+<span class="sd">        feature_name : str</span>
+<span class="sd">            The feature type of the point. This can be hb donor, hb acceptor, aromatic ring</span>
+<span class="sd">            hydrophobic, positive charge, negative charge, excluded volume.</span>
+
+<span class="sd">        center : Quantity (dimensionality:{&#39;[L]&#39;:1}; value:numpy.ndarray; shape:(3,)) or None</span>
+<span class="sd">            Coordinates of the sphere center.</span>
+
+<span class="sd">        radius : Quantity (dimensionality:{&#39;[L]&#39;:1}; value:float)</span>
+<span class="sd">            Radius of the pharmacophoric sphere.</span>
+
+<span class="sd">        direction : ndarray; shape:(3,)</span>
+<span class="sd">            Unit vector.</span>
+<span class="sd">        </span>
+<span class="sd">        has_direction : bool</span>
+<span class="sd">            Whether the pharmacophoric point has direction.</span>
+
+<span class="sd">        element_name : str</span>
+<span class="sd">            The name of the element contains the feature type and wheter the point is a sphere or a sphere</span>
+<span class="sd">            and vector.</span>
+<span class="sd">        </span>
+<span class="sd">        atoms_inxs : set of int</span>
+<span class="sd">            A set of the indices of the atoms corresponding to the pharmacophoic point in the molecule from which</span>
+<span class="sd">            they were extracted.  </span>
+
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feat_type</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">atoms_inxs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        
+        <span class="c1"># Validate Center</span>
+        <span class="n">validate_input_quantity</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;[L]&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
+        <span class="c1"># Validate Radius</span>
+        <span class="n">validate_input_quantity</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;[L]&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;center&quot;</span><span class="p">)</span>
+        <span class="c1"># Validate direction</span>
+        <span class="k">if</span> <span class="n">direction</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">validate_input_array_like</span><span class="p">(</span><span class="n">direction</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;direction&quot;</span><span class="p">)</span>
+              
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">feat_type</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">IsNotStringError</span><span class="p">(</span><span class="s2">&quot;feat_type must be a string&quot;</span><span class="p">)</span>
+        
+        <span class="n">feature_to_char</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;hb acceptor&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hb donor&quot;</span><span class="p">:</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;aromatic ring&quot;</span><span class="p">:</span> <span class="s2">&quot;R&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hydrophobicity&quot;</span><span class="p">:</span> <span class="s2">&quot;H&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;positive charge&quot;</span><span class="p">:</span> <span class="s2">&quot;P&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;negative charge&quot;</span><span class="p">:</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;excluded volume&quot;</span><span class="p">:</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;included volume&quot;</span><span class="p">:</span> <span class="s2">&quot;I&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">feat_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">feature_to_char</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">feat_type</span><span class="si">}</span><span class="s2"> is not a valid feature type. Valid feature names are </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">feature_to_char</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">standardize</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">standardize</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feature_name</span> <span class="o">=</span> <span class="n">feat_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">short_name</span> <span class="o">=</span> <span class="n">feature_to_char</span><span class="p">[</span><span class="n">feat_type</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">element_name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">n</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_name</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span>
+        <span class="k">if</span> <span class="n">direction</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">direction</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">has_direction</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">element_name</span> <span class="o">+=</span> <span class="s2">&quot;SphereAndVector&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">has_direction</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">element_name</span> <span class="o">+=</span> <span class="s2">&quot;Sphere&quot;</span>
+        
+        <span class="k">if</span> <span class="n">atoms_inxs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">atoms_inxs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">atoms_inxs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">atoms_inxs</span> <span class="o">=</span> <span class="kc">None</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophore_index</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        
+<div class="viewcode-block" id="PharmacophoricPoint.add_to_NGLView"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.PharmacophoricPoint.html#openpharmacophore.PharmacophoricPoint.add_to_NGLView">[docs]</a>    <span class="k">def</span> <span class="nf">add_to_NGLView</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">feature_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_palette</span><span class="o">=</span><span class="s1">&#39;openpharmacophore&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Adding the pharmacophoric point to an NGLview view.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        view : NGLView.widget</span>
+<span class="sd">            NGLview object where the point representations is added.</span>
+<span class="sd">        color_palette : str or dict, default=&#39;openpharmacophore&#39;</span>
+<span class="sd">            Color palette to show the point representation.</span>
+<span class="sd">        color : str or list</span>
+<span class="sd">            Color to show the point representation as HEX or RGB code.</span>
+<span class="sd">        opacity : float</span>
+<span class="sd">            The level of opacity. Must be a number between 0 and 1.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        This method does not return a new view but modifies the input object.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">feature_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">feature_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_name</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+        <span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">feature_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="n">get_color_from_palette_for_feature</span><span class="p">(</span><span class="n">feature_name</span><span class="p">,</span> <span class="n">color_palette</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">PointWithNoColorError</span><span class="p">(</span><span class="n">__documentation_web__</span><span class="p">)</span>
+
+        <span class="n">color</span> <span class="o">=</span> <span class="n">convert_color_code</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">to_form</span><span class="o">=</span><span class="s1">&#39;rgb&#39;</span><span class="p">)</span>
+
+        <span class="n">radius</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="n">to_unit</span><span class="o">=</span><span class="s1">&#39;angstroms&#39;</span><span class="p">)</span>
+        <span class="n">center</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">,</span> <span class="n">to_unit</span><span class="o">=</span><span class="s1">&#39;angstroms&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">n_components</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">_ngl_component_ids</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">n_components</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">view</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">add_sphere</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">feature_name</span><span class="p">)</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">update_representation</span><span class="p">(</span><span class="n">component</span><span class="o">=</span><span class="n">n_components</span><span class="p">,</span> <span class="n">repr_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="n">opacity</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_direction</span><span class="p">:</span>
+            <span class="n">arrow_radius</span> <span class="o">=</span> <span class="mf">0.2</span>
+            <span class="n">end_arrow</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span> <span class="n">to_unit</span><span class="o">=</span><span class="s1">&#39;angstroms&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+            <span class="n">view</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">add_arrow</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">end_arrow</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">arrow_radius</span><span class="p">)</span>
+            <span class="n">view</span><span class="o">.</span><span class="n">update_representation</span><span class="p">(</span><span class="n">component</span><span class="o">=</span><span class="n">n_components</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">repr_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="PharmacophoricPoint.get_valid_features"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.PharmacophoricPoint.html#openpharmacophore.PharmacophoricPoint.get_valid_features">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_valid_features</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot; Get a list of all valid chemical features for a PharmacophoricPoint object&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="s2">&quot;hb acceptor&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hb donor&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;aromatic ring&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hydrophobicity&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;positive charge&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;negative charge&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;excluded volume&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;included volume&quot;</span><span class="p">,</span>
+        <span class="p">]</span></div>
+    
+<div class="viewcode-block" id="PharmacophoricPoint.is_equal"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.PharmacophoricPoint.html#openpharmacophore.PharmacophoricPoint.is_equal">[docs]</a>    <span class="k">def</span> <span class="nf">is_equal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Compare equality of two pharmacophoric points based on atoms indices.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">short_name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">short_name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">atoms_inxs</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">atoms_inxs</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Compare equality of two pharmacophoric points based on their 3D coordinates,</span>
+<span class="sd">            directionality and radius.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">short_name</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">short_name</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_direction</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">has_direction</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="n">radius_eq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-02</span><span class="p">)</span>
+            <span class="n">center_eq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">center</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-04</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_direction</span><span class="p">:</span>
+                <span class="n">direction_eq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-04</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">radius_eq</span> <span class="ow">and</span> <span class="n">center_eq</span> <span class="ow">and</span> <span class="n">direction_eq</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">radius_eq</span> <span class="ow">and</span> <span class="n">center_eq</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">puw</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">,</span> <span class="s2">&quot;angstroms&quot;</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="n">radius</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">puw</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="s2">&quot;angstroms&quot;</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">center</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_direction</span><span class="p">:</span>
+            <span class="n">direction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+            <span class="n">xd</span><span class="p">,</span> <span class="n">yd</span><span class="p">,</span> <span class="n">zd</span> <span class="o">=</span> <span class="n">direction</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">direction</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">direction</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">element_name</span><span class="si">}</span><span class="s2">(center=(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">); radius=</span><span class="si">{</span><span class="n">radius</span><span class="si">}</span><span class="s2">; direction=(</span><span class="si">{</span><span class="n">xd</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">yd</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">zd</span><span class="si">}</span><span class="s2">))&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">element_name</span><span class="si">}</span><span class="s2">(center=(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">); radius=</span><span class="si">{</span><span class="n">radius</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">puw</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">,</span> <span class="s2">&quot;angstroms&quot;</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">radius</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">puw</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="s2">&quot;angstroms&quot;</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">center</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_direction</span><span class="p">:</span>
+            <span class="n">direction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+            <span class="n">xd</span><span class="p">,</span> <span class="n">yd</span><span class="p">,</span> <span class="n">zd</span> <span class="o">=</span> <span class="n">direction</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">direction</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">direction</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="k">return</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;feat_type=(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_name</span><span class="si">}</span><span class="s2">) &quot;</span> 
+                    <span class="sa">f</span><span class="s2">&quot;center=(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">); radius: </span><span class="si">{</span><span class="n">radius</span><span class="si">}</span><span class="s2">; &quot;</span> 
+                    <span class="sa">f</span><span class="s2">&quot;direction=(</span><span class="si">{</span><span class="n">xd</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">yd</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">zd</span><span class="si">}</span><span class="s2">))&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;feat_type=(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_name</span><span class="si">}</span><span class="s2">) &quot;</span> 
+                    <span class="sa">f</span><span class="s2">&quot;center=(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">); radius=</span><span class="si">{</span><span class="n">radius</span><span class="si">}</span><span class="s2">;&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">class</span> <span class="nc">UniquePharmacophoricPoint</span><span class="p">(</span><span class="n">PharmacophoricPoint</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A class to keep track of unique pharmacophoric points on a dynophore or in a set</span>
+<span class="sd">        with multiple pharmacophores.</span>
+
+<span class="sd">        Inherits from PharmacophoricPoint.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">feature_name</span><span class="p">,</span> 
+                        <span class="n">point</span><span class="o">.</span><span class="n">center</span><span class="p">,</span> 
+                        <span class="n">point</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> 
+                        <span class="n">direction</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                        <span class="n">atoms_inxs</span><span class="o">=</span><span class="n">point</span><span class="o">.</span><span class="n">atoms_inxs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># To keep the count of each point when working with multiple pharmacophores.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timesteps</span> <span class="o">=</span> <span class="p">[]</span> 
+</pre></div>
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/openpharmacophore">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and authors. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

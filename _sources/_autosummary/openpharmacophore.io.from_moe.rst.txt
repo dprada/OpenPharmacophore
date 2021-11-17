@@ -1,0 +1,6 @@
+﻿openpharmacophore.io.from\_moe
+==============================
+
+.. currentmodule:: openpharmacophore.io
+
+.. autofunction:: from_moe

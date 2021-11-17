@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>openpharmacophore.dynophore &mdash; OpenPharmacophore 0+untagged.143.gbfcf4bd documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> OpenPharmacophore
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation and Quick Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html">Pharmacohophores with OpenPharmacophore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Creating-a-pharmacophore-model-manually">Creating a pharmacophore model manually</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Pharmacophoric-Points">Pharmacophoric Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Create-the-Pharmacophore">Create the Pharmacophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Importing-Pharmacophores-from-other-software">Importing Pharmacophores from other software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Exporting-Pharmacophores">Exporting Pharmacophores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/Ligand-Based.html">Ligand-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Ligand-Based.html#Pharmacophore-for-Non-Peptide-Angiotensin-II-Receptor-antagonists">Pharmacophore for Non-Peptide Angiotensin II Receptor antagonists</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html">Structured-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Rhinovirus-coat-protein">Pharmacophore of Rhinovirus coat protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-ferrous-Synechocystis-hemoglobin">Pharmacophore of ferrous Synechocystis hemoglobin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Abl-kinase-domain">Pharmacophore of Abl kinase domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Estrogen-Nuclear-Receptor">Pharmacophore of Estrogen Nuclear Receptor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html">Dynamic Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-a-molecular-dynamics-trajectory">Pharmacophores from a molecular dynamics trajectory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-the-first-and-last-frame-only">Pharmacophores from the first and last frame only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophore-Analysis">Pharmacophore Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Get-Pharmacophores-for-each-frame-of-the-trajectory">Get Pharmacophores for each frame of the trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Get-all-unique-pharmacophoric-points">Get all unique pharmacophoric points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Derive-a-pharmacophore-model-from-the-most-frequent-points">Derive a pharmacophore model from the most frequent points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Analyze-frequency-of-all-unique-points">Analyze frequency of all unique points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#2D-Representation-of-the-Dynamic-Pharmacophore">2D Representation of the Dynamic Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Representative-Pharmacophore-Models">Representative Pharmacophore Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Common-Hits-Approach">Common Hits Approach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/Zinc.html">Virtual Screening of ZINC Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Zinc.html#Pharmacophore-model-for-Plasmodium-Falciparum-Triosephosphate-isomerase">Pharmacophore model for Plasmodium Falciparum Triosephosphate isomerase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Zinc.html#Screen-ZINC-with-the-pharmacophore-model">Screen ZINC with the pharmacophore model</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#pharmacophoric-point">Pharmacophoric Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.PharmacophoricPoint.html">openpharmacophore.PharmacophoricPoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#features-colorpalettes">Features colorpalettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.color_palettes.get_color_from_palette_for_feature.html">openpharmacophore.color_palettes.get_color_from_palette_for_feature</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#pharmacophores">Pharmacophores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.Pharmacophore.html">openpharmacophore.Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.LigandBasedPharmacophore.html">openpharmacophore.LigandBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.StructuredBasedPharmacophore.html">openpharmacophore.StructuredBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.Dynophore.html">openpharmacophore.Dynophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#virtual-screening">Virtual Screening</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.VirtualScreening.html">openpharmacophore.VirtualScreening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.RetrospectiveScreening.html">openpharmacophore.RetrospectiveScreening</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#io">IO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.from_ligandscout.html">openpharmacophore.io.from_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_ligandscout.html">openpharmacophore.io.to_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.from_pharmer.html">openpharmacophore.io.from_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_pharmer.html">openpharmacophore.io.to_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.from_moe.html">openpharmacophore.io.from_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_moe.html">openpharmacophore.io.to_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.read_pharmagist.html">openpharmacophore.io.read_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_pharmagist.html">openpharmacophore.io.to_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.load_mol2_file.html">openpharmacophore.io.load_mol2_file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#databases">Databases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#zinc">Zinc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.zinc.download_zinc_subset.html">openpharmacophore.databases.zinc.download_zinc_subset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pubchem">PubChem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.pubchem.get_assay_bioactivity_data.html">openpharmacophore.databases.pubchem.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.pubchem.get_compound_assay_summary.html">openpharmacophore.databases.pubchem.get_compound_assay_summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#chembl">ChemBl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.chembl.get_assay_bioactivity_data.html">openpharmacophore.databases.chembl.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.chembl.get_bioactivity_dataframe.html">openpharmacophore.databases.chembl.get_bioactivity_dataframe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.chembl.get_ro5_dataset.html">openpharmacophore.databases.chembl.get_ro5_dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OpenPharmacophore</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>openpharmacophore.dynophore</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <h1>Source code for openpharmacophore.dynophore</h1><div class="highlight"><pre>
+<span></span><span class="c1"># OpenPharmacophore</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore._private_tools.exceptions</span> <span class="kn">import</span> <span class="n">InvalidFileFormat</span><span class="p">,</span> <span class="n">NoLigandsError</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.pharmacophoric_point</span> <span class="kn">import</span> <span class="n">UniquePharmacophoricPoint</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.structured_based</span> <span class="kn">import</span> <span class="n">StructuredBasedPharmacophore</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore</span> <span class="kn">import</span> <span class="n">Pharmacophore</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.utils.random_string</span> <span class="kn">import</span> <span class="n">random_string</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.utils.conformers</span> <span class="kn">import</span> <span class="n">conformer_energy</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.color_palettes</span> <span class="kn">import</span> <span class="n">get_color_from_palette_for_feature</span>
+<span class="c1"># Third Party</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">MDAnalysis</span> <span class="k">as</span> <span class="nn">mda</span>
+<span class="kn">from</span> <span class="nn">MDAnalysis.lib.util</span> <span class="kn">import</span> <span class="n">NamedStream</span>
+<span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">mdt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem.Draw</span> <span class="kn">import</span> <span class="n">rdMolDraw2D</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="c1"># Standard Library</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">bisect</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<div class="viewcode-block" id="Dynophore"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Dynophore.html#openpharmacophore.Dynophore">[docs]</a><span class="k">class</span> <span class="nc">Dynophore</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Class to store and compute dynamic pharmacophores</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    trajectory : str or mdtraj.trajectory or MDAnalysis.universe</span>
+<span class="sd">        A str with the file path containing the trajectory, an mdtraj trajectory object, </span>
+<span class="sd">        or an MDAnalysis universe.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    pharmacophores : list of openpharmacophore.StructuredBasedPharmacophore</span>
+<span class="sd">        List with pharmacophores for each relevant frame in the trajectory. </span>
+
+<span class="sd">    pharmacophore_indices : list of int</span>
+<span class="sd">        Indices of the frame of the trajectory from which the pharmacophores were extracted.</span>
+<span class="sd">        The index of each element of the list corresponds to the one in pharmacophores list.</span>
+
+<span class="sd">    n_pharmacophores : int</span>
+<span class="sd">        Number of different pharmacophores in the trajectory.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trajectory</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophores</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophore_indices</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_pharmacophores</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">trajectory</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_trajectory_file</span><span class="p">(</span><span class="n">trajectory</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">trajectory</span><span class="p">,</span> <span class="n">mdt</span><span class="o">.</span><span class="n">Trajectory</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory_type</span> <span class="o">=</span> <span class="s2">&quot;mdt&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span> <span class="o">=</span> <span class="n">trajectory</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">trajectory</span><span class="p">,</span> <span class="n">mda</span><span class="o">.</span><span class="n">Universe</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory_type</span> <span class="o">=</span> <span class="s2">&quot;mda&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span> <span class="o">=</span> <span class="n">trajectory</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Trajectory must be of type string, mdtraj.Trajectory or MdAnalysis.Universe&quot;</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">_n_frames</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span><span class="o">.</span><span class="n">n_frames</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_saved_ligand</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_averaged_coords</span> <span class="o">=</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="Dynophore.common_hits_approach"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Dynophore.html#openpharmacophore.Dynophore.common_hits_approach">[docs]</a>    <span class="k">def</span> <span class="nf">common_hits_approach</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame_list</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get a list of pharmacophore models from a trajectory using the common hits approach</span>
+<span class="sd">            method.</span>
+
+<span class="sd">            Notes</span>
+<span class="sd">            -----</span>
+
+<span class="sd">            This method is based on obtaining a list of representative pharmacophore models from a </span>
+<span class="sd">            trajectory and then validate and score them using virtual screening. The best performant</span>
+<span class="sd">            pharmacophore models are then returned.</span>
+
+<span class="sd">            References</span>
+<span class="sd">            ----------</span>
+
+<span class="sd">            [1] Wieder, Marcus, Arthur Garon, Ugo Perricone, Stefan Boresch, Thomas Seidel, Anna Maria Almerico, </span>
+<span class="sd">            and Thierry Langer. &quot;Common hits approach: combining pharmacophore modeling and molecular dynamics </span>
+<span class="sd">            simulations.&quot; Journal of chemical information and modeling 57, no. 2 (2017): 365-385      </span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">frame_list</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">frame_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n_frames</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophores_from_frames</span><span class="p">(</span><span class="n">frame_list</span><span class="p">,</span> <span class="n">load_ligand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_unique_pharmacophoric_points</span><span class="p">(</span><span class="n">avg_coordinates</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">rpms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">representative_pharmacophore_models</span><span class="p">()</span>
+
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="Dynophore.draw"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Dynophore.html#openpharmacophore.Dynophore.draw">[docs]</a>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">img_size</span><span class="o">=</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">freq_threshold</span><span class="o">=</span><span class="mf">0.2</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Draw a 2d representation of the dynamic pharmacophore. This is a drawing of the</span>
+<span class="sd">            ligand with the pharmacophoric features highlighted and the frequency if each</span>
+<span class="sd">            one. </span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            file_name : str</span>
+<span class="sd">                Name or path og the file where the drawing will be saved. Must be a png file.</span>
+
+<span class="sd">            img_size : 2-tuple of int, optional </span>
+<span class="sd">                The size of the image (default=(500,500))</span>
+
+<span class="sd">            legend : str, optional</span>
+<span class="sd">                Image legend.</span>
+
+<span class="sd">            freq_threshold : double , optional</span>
+<span class="sd">                The minimun frequency of a pharmacophoric point to be drawn. Number</span>
+<span class="sd">                between 0.0 and 1.0 (default=0.2). </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">freq_threshold</span> <span class="o">&lt;</span> <span class="mf">0.0</span> <span class="ow">or</span> <span class="n">freq_threshold</span> <span class="o">&gt;</span> <span class="mf">1.0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Freqency threshold must be a value between 0 and 1&quot;</span><span class="p">)</span>    
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.png&quot;</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">InvalidFileFormat</span><span class="p">(</span><span class="s2">&quot;File must be a png.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Extract a ligand</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ligand</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NoLigandsError</span><span class="p">(</span><span class="s2">&quot;Ligand could not be extracted&quot;</span><span class="p">)</span>
+        <span class="n">ligand</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pharmacophores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ligand</span><span class="p">)</span>
+        <span class="n">ligand</span><span class="o">.</span><span class="n">RemoveAllConformers</span><span class="p">()</span>
+
+        <span class="n">atoms</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">bond_colors</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">atom_highlights</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="n">highlight_radius</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">up</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="p">:</span>
+            
+            <span class="k">if</span> <span class="n">up</span><span class="o">.</span><span class="n">frequency</span> <span class="o">&lt;</span> <span class="n">freq_threshold</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">indices</span> <span class="o">=</span> <span class="n">up</span><span class="o">.</span><span class="n">atoms_inxs</span>
+            <span class="n">update_freq</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">:</span>
+
+                <span class="c1"># If an atom has more than one feature keep higher frequency value</span>
+                <span class="k">if</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">atoms</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">ligand</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">HasProp</span><span class="p">(</span><span class="s2">&quot;atomNote&quot;</span><span class="p">):</span>
+                        <span class="n">freq</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ligand</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">GetProp</span><span class="p">(</span><span class="s2">&quot;atomNote&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">:])</span>
+                        <span class="k">if</span> <span class="n">freq</span> <span class="o">&gt;</span> <span class="n">up</span><span class="o">.</span><span class="n">frequency</span><span class="p">:</span>
+                            <span class="n">update_freq</span> <span class="o">=</span> <span class="kc">False</span>
+
+                <span class="n">atoms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s2">&quot;hydrophobicity&quot;</span> <span class="ow">in</span> <span class="n">up</span><span class="o">.</span><span class="n">feature_name</span><span class="p">:</span>
+                    <span class="n">feat_name</span> <span class="o">=</span> <span class="s2">&quot;hydrophobicity&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">feat_name</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">up</span><span class="o">.</span><span class="n">feature_name</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+                
+                <span class="n">atom_highlights</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_color_from_palette_for_feature</span><span class="p">(</span><span class="n">feat_name</span><span class="p">))</span>
+                <span class="n">highlight_radius</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.6</span>
+
+                <span class="c1"># Draw aromatic rings bonds</span>
+                <span class="k">if</span> <span class="n">up</span><span class="o">.</span><span class="n">short_name</span> <span class="o">==</span> <span class="s2">&quot;R&quot;</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">ligand</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">GetNeighbors</span><span class="p">():</span>
+                        <span class="n">nbr_idx</span> <span class="o">=</span> <span class="n">neighbor</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span>
+                        <span class="k">if</span> <span class="n">nbr_idx</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">:</span>
+                            <span class="k">continue</span>
+                        <span class="n">bond</span> <span class="o">=</span> <span class="n">ligand</span><span class="o">.</span><span class="n">GetBondBetweenAtoms</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">nbr_idx</span><span class="p">)</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span>
+                        <span class="n">bond_colors</span><span class="p">[</span><span class="n">bond</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">get_color_from_palette_for_feature</span><span class="p">(</span><span class="s2">&quot;aromatic ring&quot;</span><span class="p">)]</span>
+            
+            <span class="k">if</span> <span class="n">update_freq</span><span class="p">:</span>
+                <span class="n">frequency</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">up</span><span class="o">.</span><span class="n">frequency</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+                <span class="n">ligand</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">SetProp</span><span class="p">(</span><span class="s2">&quot;atomNote&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;f=</span><span class="si">{</span><span class="n">frequency</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">drawing</span> <span class="o">=</span> <span class="n">rdMolDraw2D</span><span class="o">.</span><span class="n">MolDraw2DCairo</span><span class="p">(</span><span class="n">img_size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">img_size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">drawing</span><span class="o">.</span><span class="n">DrawMoleculeWithHighlights</span><span class="p">(</span><span class="n">ligand</span><span class="p">,</span> <span class="n">legend</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">atom_highlights</span><span class="p">),</span> <span class="n">bond_colors</span><span class="p">,</span> <span class="n">highlight_radius</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">drawing</span><span class="o">.</span><span class="n">FinishDrawing</span><span class="p">()</span>
+        <span class="n">drawing</span><span class="o">.</span><span class="n">WriteDrawingText</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Dynophore.first_and_last_pharmacophore"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Dynophore.html#openpharmacophore.Dynophore.first_and_last_pharmacophore">[docs]</a>    <span class="k">def</span> <span class="nf">first_and_last_pharmacophore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Derive a pharmacophore model for the first and last frames of a trajectory.</span>
+
+<span class="sd">            References</span>
+<span class="sd">            ----------</span>
+<span class="sd">            [1] Wieder, Marcus, Ugo Perricone, Thomas Seidel, Stefan Boresch, and Thierry Langer. </span>
+<span class="sd">            &quot;Comparing pharmacophore models derived from crystal structures and from molecular </span>
+<span class="sd">            dynamics simulations.&quot; Monatshefte für Chemie-Chemical Monthly 147, no. 3 (2016): </span>
+<span class="sd">            553-563.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory_type</span> <span class="o">==</span> <span class="s2">&quot;mdt&quot;</span><span class="p">:</span>
+            <span class="n">get_pharmacophore</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pharmacophore_from_mdtraj</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory_type</span> <span class="o">==</span> <span class="s2">&quot;mda&quot;</span><span class="p">:</span>
+            <span class="n">get_pharmacophore</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pharmacohore_from_mdanalysis</span>
+
+        <span class="n">initial_pharmacophore</span> <span class="o">=</span> <span class="n">get_pharmacophore</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">end_pharmacophore</span> <span class="o">=</span> <span class="n">get_pharmacophore</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">last_frame_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span><span class="o">.</span><span class="n">n_frames</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophores</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">initial_pharmacophore</span><span class="p">,</span>
+            <span class="n">end_pharmacophore</span>
+        <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophore_indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">last_frame_index</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_pharmacophores</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+<div class="viewcode-block" id="Dynophore.pharmacophore_by_frequency"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Dynophore.html#openpharmacophore.Dynophore.pharmacophore_by_frequency">[docs]</a>    <span class="k">def</span> <span class="nf">pharmacophore_by_frequency</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Derive a unique pharmacophore model with the pharmacophoric points</span>
+<span class="sd">            that have a frequency &gt;= to threshold.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ---------</span>
+<span class="sd">            threshold : double</span>
+<span class="sd">                The value of frequency from which points are considered part of</span>
+<span class="sd">                the pharmacophore model.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            openpharmcophore.Pharmacophore</span>
+<span class="sd">                Pharmacophore model with the unique pharmacophoric points.</span>
+
+<span class="sd">            References</span>
+<span class="sd">            ----------</span>
+<span class="sd">            [1] Wieder, Marcus, Ugo Perricone, Thomas Seidel, and Thierry Langer. &quot;Pharmacophore models </span>
+<span class="sd">            derived from molecular dynamics simulations of protein-ligand complexes: A case study.&quot; </span>
+<span class="sd">            Natural product communications 11, no. 10 (2016): 1934578X1601101019.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">threshold</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">threshold</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Threshold must be a number between 0 and 1&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_get_unique_pharmacophoric_points</span><span class="p">(</span><span class="n">avg_coordinates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            
+        <span class="n">points</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">frequency</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">Pharmacophore</span><span class="p">(</span><span class="n">points</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Dynophore.pharmacophore_from_unique_points"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Dynophore.html#openpharmacophore.Dynophore.pharmacophore_from_unique_points">[docs]</a>    <span class="k">def</span> <span class="nf">pharmacophore_from_unique_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_points</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get a pharmacophore which consists of the passed unique pharmacophoric</span>
+<span class="sd">            points.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            unique_points: list of str</span>
+<span class="sd">                List with the name if the unique pharmacophoric points.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            openpharmcophore.Pharmacophore</span>
+<span class="sd">                Pharmacophore model with the specified points.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged_coords</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_get_unique_pharmacophoric_points</span><span class="p">(</span><span class="n">avg_coordinates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="p">[</span><span class="n">point</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span> <span class="k">if</span> <span class="n">point</span><span class="o">.</span><span class="n">feature_name</span> <span class="ow">in</span> <span class="n">unique_points</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">Pharmacophore</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="n">points</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Dynophore.pharmacophores_from_frames"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Dynophore.html#openpharmacophore.Dynophore.pharmacophores_from_frames">[docs]</a>    <span class="k">def</span> <span class="nf">pharmacophores_from_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frames</span><span class="p">,</span> <span class="n">load_ligand</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get pharmacophores for the specified frames in a trajectory</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            frames : list of int</span>
+<span class="sd">                Indices of the frames for which pharmacophores will be derived.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory_type</span> <span class="o">==</span> <span class="s2">&quot;mdt&quot;</span><span class="p">:</span>
+            <span class="n">get_pharmacophore</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pharmacophore_from_mdtraj</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory_type</span> <span class="o">==</span> <span class="s2">&quot;mda&quot;</span><span class="p">:</span>
+            <span class="n">get_pharmacophore</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pharmacohore_from_mdanalysis</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophores</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">frames</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_pharmacophore</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">load_ligand</span><span class="o">=</span><span class="n">load_ligand</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophore_indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_pharmacophores</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pharmacophores</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Dynophore.pharmacophoric_point_frequency"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Dynophore.html#openpharmacophore.Dynophore.pharmacophoric_point_frequency">[docs]</a>    <span class="k">def</span> <span class="nf">pharmacophoric_point_frequency</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get a dataframe with all unique pharmacophoric points and its frequency.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            pandas.DataFrame</span>
+<span class="sd">                Dataframe with the following columns: feature name, frequency and atom</span>
+<span class="sd">                indices.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged_coords</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_get_unique_pharmacophoric_points</span><span class="p">(</span><span class="n">avg_coordinates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">frequencies</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="p">:</span>
+            <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">feature_name</span><span class="p">)</span>
+            <span class="n">frequencies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">frequency</span><span class="p">)</span>
+            <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">atoms_inxs</span><span class="p">)</span>
+
+        <span class="n">frequency</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
+            <span class="s2">&quot;Feature Name&quot;</span><span class="p">:</span> <span class="n">names</span><span class="p">,</span>
+            <span class="s2">&quot;Frequency&quot;</span><span class="p">:</span> <span class="n">frequencies</span><span class="p">,</span>
+            <span class="s2">&quot;Atoms Indices&quot;</span><span class="p">:</span> <span class="n">indices</span>
+        <span class="p">})</span>
+        <span class="n">frequency</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">frequency</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">frequency</span></div>
+
+<div class="viewcode-block" id="Dynophore.point_frequency_plot"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Dynophore.html#openpharmacophore.Dynophore.point_frequency_plot">[docs]</a>    <span class="k">def</span> <span class="nf">point_frequency_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Plot of pharmacophoric points frequency vs time. </span>
+<span class="sd">        </span>
+<span class="sd">            Each pharmacophoric point will appear as a different line in the plot.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            threshold : double, default=0.0</span>
+<span class="sd">                The value of overall frequency from which points will form part of the </span>
+<span class="sd">                plot. If there are a lot of points with really low frequency, setting</span>
+<span class="sd">                the threshold value can help with visualization.</span>
+
+<span class="sd">            n_bins : int, default=10</span>
+<span class="sd">                Number of bins to discretize the timesteps.            </span>
+
+<span class="sd">            ax : matplotlib.axes._subplots.AxesSubplot, optional.</span>
+<span class="sd">                An axes object where the plot will be drawn.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged_coords</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_get_unique_pharmacophoric_points</span><span class="p">(</span><span class="n">avg_coordinates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">threshold</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">threshold</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Threshold must be a number between 0 and 1&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+        <span class="n">n_timesteps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n_frames</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_timesteps</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_timesteps</span><span class="o">/</span><span class="n">n_bins</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">point</span><span class="o">.</span><span class="n">frequency</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">point_timesteps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">timesteps</span><span class="p">)</span>
+            <span class="n">discretized_timesteps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">point_timesteps</span><span class="p">,</span> <span class="n">bins</span><span class="p">)</span>
+
+            <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bins</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">discretized_timesteps</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
+                <span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span>
+            
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">point</span><span class="o">.</span><span class="n">feature_name</span><span class="p">)</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Timesteps&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">ax</span></div>
+    
+<div class="viewcode-block" id="Dynophore.representative_pharmacophore_models"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Dynophore.html#openpharmacophore.Dynophore.representative_pharmacophore_models">[docs]</a>    <span class="k">def</span> <span class="nf">representative_pharmacophore_models</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get all representative pharmacophore models in a trajectory. </span>
+<span class="sd">            </span>
+<span class="sd">            Get pharmacophore models that have the same pharmacophoric points, </span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            rpms : list of openpharmacophore.StructuredBasedPharmacophore</span>
+<span class="sd">                The representative pharmacophore models</span>
+
+<span class="sd">            Notes</span>
+<span class="sd">            -----</span>
+<span class="sd">            Pharmacophoric points are considered equal based only  on feature type and the atoms to </span>
+<span class="sd">            which this points belong to. Coordinates are not taken into account.</span>
+
+<span class="sd">            The coordinates of the pharmacophoric points are those that belong to the median energy of</span>
+<span class="sd">            the ligand.</span>
+
+<span class="sd">            References</span>
+<span class="sd">            ----------</span>
+<span class="sd">            [1] Wieder, Marcus, Arthur Garon, Ugo Perricone, Stefan Boresch, Thomas Seidel, Anna Maria Almerico, </span>
+<span class="sd">            and Thierry Langer. &quot;Common hits approach: combining pharmacophore modeling and molecular dynamics </span>
+<span class="sd">            simulations.&quot; Journal of chemical information and modeling 57, no. 2 (2017): 365-385   </span>
+<span class="sd">            </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged_coords</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_get_unique_pharmacophoric_points</span><span class="p">(</span><span class="n">avg_coordinates</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_averaged_coords</span> <span class="o">=</span> <span class="kc">False</span>
+        
+        <span class="c1"># Compute a matrix where each row represents a feature vector of a pharmacophore</span>
+        <span class="n">n_pharmacophores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_pharmacophores</span>
+        <span class="n">n_features</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="p">)</span> 
+        <span class="n">feature_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_pharmacophores</span><span class="p">,</span> <span class="n">n_features</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">pharmacophore</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pharmacophores</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">pharmacophore</span><span class="o">.</span><span class="n">elements</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">jj</span><span class="p">,</span> <span class="n">unique_point</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">point</span><span class="o">.</span><span class="n">is_equal</span><span class="p">(</span><span class="n">unique_point</span><span class="p">):</span>
+                        <span class="n">feature_matrix</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                        <span class="k">break</span>
+        
+        <span class="c1"># Find similar pharmacophores in the matrix</span>
+        <span class="n">rpms_indices</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">skip</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_pharmacophores</span><span class="p">):</span>
+            <span class="n">rpm</span> <span class="o">=</span> <span class="p">[</span><span class="n">ii</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ii</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_pharmacophores</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">jj</span> <span class="ow">in</span> <span class="n">skip</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">feature_matrix</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="p">:]</span> <span class="o">==</span> <span class="n">feature_matrix</span><span class="p">[</span><span class="n">jj</span><span class="p">,</span> <span class="p">:]):</span>
+                    <span class="n">rpm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span>
+                    <span class="n">skip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span>
+            <span class="c1"># Keep only models that have a frequency higher than 2</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rpm</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">rpms_indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rpm</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pharmacophores_from_ligand_median_energy</span><span class="p">(</span><span class="n">rpms_indices</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_pharmacophores_from_ligand_median_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rpms_indices</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get the representative pharmacophore models that correspond to the pharmacophore</span>
+<span class="sd">            with ligand median energy.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            rpms_indices : list of list of int</span>
+<span class="sd">                A list where each sublist contains the indices of the representative pharmacophore</span>
+<span class="sd">                model. This indices correspond to the attribute pharmacophores of the Dynophore</span>
+<span class="sd">                class.</span>
+<span class="sd">            </span>
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            rpms : list of openpharmacophore.StructuredBasedPharmacophore</span>
+<span class="sd">                The representative pharmacophore models</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">rpms</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">indices</span> <span class="ow">in</span> <span class="n">rpms_indices</span><span class="p">:</span>
+            <span class="n">energies</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">:</span>
+                <span class="n">energy</span> <span class="o">=</span> <span class="p">(</span><span class="n">conformer_energy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pharmacophores</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">ligand</span><span class="p">),</span> <span class="n">index</span><span class="p">)</span>
+                <span class="n">bisect</span><span class="o">.</span><span class="n">insort</span><span class="p">(</span><span class="n">energies</span><span class="p">,</span> <span class="n">energy</span><span class="p">)</span>
+            <span class="c1"># Take the pharmacophore with median energy</span>
+            <span class="n">median_energy_index</span> <span class="o">=</span> <span class="n">energies</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">energies</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)][</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">rpms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pharmacophores</span><span class="p">[</span><span class="n">median_energy_index</span><span class="p">])</span>
+        
+        <span class="k">return</span> <span class="n">rpms</span>
+
+            
+    <span class="k">def</span> <span class="nf">_load_trajectory_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Load a trajectory file from a MD simulation</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            file_name : str</span>
+<span class="sd">                Name of the file containing the trajectory.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            traj : </span>
+<span class="sd">                The trajectory object.  </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;h5&quot;</span><span class="p">):</span>
+            <span class="n">traj</span> <span class="o">=</span> <span class="n">mdt</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory_type</span> <span class="o">=</span> <span class="s2">&quot;mdt&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+        <span class="k">return</span> <span class="n">traj</span>
+    
+    <span class="k">def</span> <span class="nf">_get_unique_pharmacophoric_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">avg_coordinates</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get all unique pharmacophoric points across all the pharmacophore models </span>
+<span class="sd">            derived from the trajectory. </span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            avg_coordinates : bool</span>
+<span class="sd">                Whether to average the coordinates of the pharmacophoric points.</span>
+<span class="sd">            </span>
+<span class="sd">            Notes</span>
+<span class="sd">            -----</span>
+<span class="sd">            Two points are considered equal if they have the same feature type and</span>
+<span class="sd">            are associated with the same atom in the ligand.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">avg_coordinates</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_averaged_coords</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_pharmacophores</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pharmacophores_from_frames</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n_frames</span><span class="p">)))</span>
+        <span class="n">all_points</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pharmacophore</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pharmacophores</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">pharmacophoric_point</span> <span class="ow">in</span> <span class="n">pharmacophore</span><span class="o">.</span><span class="n">elements</span><span class="p">:</span>
+                <span class="n">pharmacophoric_point</span><span class="o">.</span><span class="n">pharmacophore_index</span> <span class="o">=</span> <span class="n">i</span>
+                <span class="n">all_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pharmacophoric_point</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1"># Get all unique parmacophoric points while also updating the count, </span>
+        <span class="c1"># timesteps where they appear and calculatinf the average centroid.</span>
+        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">all_points</span><span class="p">:</span>
+            <span class="n">is_unique</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">for</span> <span class="n">unique_p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">point</span><span class="o">.</span><span class="n">is_equal</span><span class="p">(</span><span class="n">unique_p</span><span class="p">):</span>
+                    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">unique_p</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">unique_p</span><span class="o">.</span><span class="n">timesteps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">pharmacophore_index</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">avg_coordinates</span><span class="p">:</span>
+                        <span class="n">unique_p</span><span class="o">.</span><span class="n">center</span> <span class="o">+=</span> <span class="n">point</span><span class="o">.</span><span class="n">center</span>
+                    <span class="n">is_unique</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="k">break</span>
+            <span class="k">if</span> <span class="n">is_unique</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">UniquePharmacophoricPoint</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
+        
+        <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">unique_pharmacophoric_points</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">avg_coordinates</span><span class="p">:</span>
+                <span class="c1"># Normalize centroid</span>
+                <span class="n">point</span><span class="o">.</span><span class="n">center</span> <span class="o">/=</span> <span class="n">point</span><span class="o">.</span><span class="n">count</span> 
+            <span class="n">point</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">count</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_pharmacophores</span>
+            <span class="c1"># Get a unique name for each point</span>
+            <span class="n">feat_num</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">full_name</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">feature_name</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">feat_num</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">full_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+                <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span>
+                <span class="n">point</span><span class="o">.</span><span class="n">feature_name</span> <span class="o">=</span> <span class="n">full_name</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                    <span class="n">feat_num</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">full_name</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">feature_name</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">feat_num</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">full_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+                        <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span>
+                        <span class="n">point</span><span class="o">.</span><span class="n">feature_name</span> <span class="o">=</span> <span class="n">full_name</span>
+                        <span class="k">break</span>
+
+        
+    <span class="k">def</span> <span class="nf">_pharmacophore_from_mdtraj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame_num</span><span class="p">,</span> <span class="n">load_mol_system</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">load_ligand</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Derive a pharmacophore for a single frame of an mdtraj Trajectory object.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            frame_num : int</span>
+<span class="sd">                The index number of the frame from which the pharmacophore will be derived.</span>
+<span class="sd">            </span>
+<span class="sd">            load_mol_system : bool, default=False</span>
+<span class="sd">                If true the receptor will be stored in the pharmacophore object.</span>
+<span class="sd">            </span>
+<span class="sd">            load_ligand : bool, default=False</span>
+<span class="sd">                If true the ligand will be stored in the pharmacophore object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># mdtraj trajectories cannot be passed to SringIO objects nor saved as string. So with this</span>
+        <span class="c1"># method, temporary pdb files will be created thath can be read by the StructuredBasedPharmacophore </span>
+        <span class="c1"># class.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">frame_num</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Frame number must be an integer&quot;</span><span class="p">)</span>
+        <span class="n">temp_filename</span> <span class="o">=</span> <span class="s2">&quot;./temp&quot;</span> <span class="o">+</span> <span class="n">random_string</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.pdb&quot;</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span><span class="p">[</span><span class="n">frame_num</span><span class="p">]</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">save_pdb</span><span class="p">(</span><span class="n">temp_filename</span><span class="p">)</span>
+
+        <span class="c1"># The pdb mdtraj generates needs to be edited so that pybel can read it.</span>
+        <span class="c1"># The third line that contains &quot;MODEL&quot; needs to be removed for the structured </span>
+        <span class="c1"># based pharmacophore to work.</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">temp_filename</span><span class="p">,</span> <span class="s2">&quot;r+&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+                <span class="k">if</span>  <span class="ow">not</span> <span class="n">i</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;MODEL&quot;</span><span class="p">):</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">truncate</span><span class="p">()</span>
+        <span class="n">pharmacophore</span> <span class="o">=</span> <span class="n">StructuredBasedPharmacophore</span><span class="o">.</span><span class="n">from_pdb</span><span class="p">(</span><span class="n">temp_filename</span><span class="p">,</span> 
+            <span class="n">radius</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">ligand_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hydrophobics</span><span class="o">=</span><span class="s2">&quot;plip&quot;</span><span class="p">,</span> 
+            <span class="n">load_mol_system</span><span class="o">=</span><span class="n">load_mol_system</span><span class="p">,</span> <span class="n">load_ligand</span><span class="o">=</span><span class="n">load_ligand</span><span class="p">)</span>
+        
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">temp_filename</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pharmacophore</span>
+    
+    <span class="k">def</span> <span class="nf">_pharmacohore_from_mdanalysis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame_num</span><span class="p">,</span> <span class="n">load_mol_system</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">load_ligand</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Derive a pharmacophore for a single frame of an MdAnalysis Universe object.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            frame_num : int</span>
+<span class="sd">                The index number of the frame from which the pharmacophore will be derived.</span>
+<span class="sd">            </span>
+<span class="sd">            load_mol_system: bool, default=False</span>
+<span class="sd">                If true the receptor will be stored in the pharmacophore object.</span>
+<span class="sd">            </span>
+<span class="sd">            load_ligand: bool, default=False</span>
+<span class="sd">                If true the ligand will be stored in the pharmacophore object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">frame_num</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Frame number must be an integer&quot;</span><span class="p">)</span>
+        <span class="n">stream</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
+        <span class="n">pdb_stream</span> <span class="o">=</span> <span class="n">NamedStream</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="s2">&quot;output.pdb&quot;</span><span class="p">)</span>
+        <span class="n">atoms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span><span class="o">.</span><span class="n">select_atoms</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+        <span class="n">atoms</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pdb_stream</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span><span class="o">.</span><span class="n">trajectory</span><span class="p">[[</span><span class="n">frame_num</span><span class="p">]])</span>
+        <span class="n">pharmacophore</span> <span class="o">=</span> <span class="n">StructuredBasedPharmacophore</span><span class="o">.</span><span class="n">from_pdb</span><span class="p">(</span><span class="n">pdb_stream</span><span class="p">,</span> 
+            <span class="n">radius</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">ligand_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hydrophobics</span><span class="o">=</span><span class="s2">&quot;plip&quot;</span><span class="p">,</span> 
+            <span class="n">load_mol_system</span><span class="o">=</span><span class="n">load_mol_system</span><span class="p">,</span> <span class="n">load_ligand</span><span class="o">=</span><span class="n">load_ligand</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">pharmacophore</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(n_pharmacophores=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_pharmacophores</span><span class="si">}</span><span class="s2">; n_frames=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_n_frames</span><span class="si">}</span><span class="s2">)&quot;</span></div>
+
+    
+    
+</pre></div>
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/openpharmacophore">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and authors. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

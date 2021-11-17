@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>openpharmacophore.databases.pubchem &mdash; OpenPharmacophore 0+untagged.143.gbfcf4bd documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> OpenPharmacophore
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation and Quick Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html">Pharmacohophores with OpenPharmacophore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Creating-a-pharmacophore-model-manually">Creating a pharmacophore model manually</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Pharmacophoric-Points">Pharmacophoric Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Create-the-Pharmacophore">Create the Pharmacophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Importing-Pharmacophores-from-other-software">Importing Pharmacophores from other software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Pharmacophore.html#Exporting-Pharmacophores">Exporting Pharmacophores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Ligand-Based.html">Ligand-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Ligand-Based.html#Pharmacophore-for-Non-Peptide-Angiotensin-II-Receptor-antagonists">Pharmacophore for Non-Peptide Angiotensin II Receptor antagonists</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html">Structured-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Rhinovirus-coat-protein">Pharmacophore of Rhinovirus coat protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-ferrous-Synechocystis-hemoglobin">Pharmacophore of ferrous Synechocystis hemoglobin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Abl-kinase-domain">Pharmacophore of Abl kinase domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Estrogen-Nuclear-Receptor">Pharmacophore of Estrogen Nuclear Receptor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html">Dynamic Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-a-molecular-dynamics-trajectory">Pharmacophores from a molecular dynamics trajectory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-the-first-and-last-frame-only">Pharmacophores from the first and last frame only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophore-Analysis">Pharmacophore Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Get-Pharmacophores-for-each-frame-of-the-trajectory">Get Pharmacophores for each frame of the trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Get-all-unique-pharmacophoric-points">Get all unique pharmacophoric points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Derive-a-pharmacophore-model-from-the-most-frequent-points">Derive a pharmacophore model from the most frequent points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Analyze-frequency-of-all-unique-points">Analyze frequency of all unique points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#2D-Representation-of-the-Dynamic-Pharmacophore">2D Representation of the Dynamic Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Representative-Pharmacophore-Models">Representative Pharmacophore Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/Pharmacophore/DynamicPharmacophore.html#Common-Hits-Approach">Common Hits Approach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/Pharmacophore/Zinc.html">Virtual Screening of ZINC Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Zinc.html#Pharmacophore-model-for-Plasmodium-Falciparum-Triosephosphate-isomerase">Pharmacophore model for Plasmodium Falciparum Triosephosphate isomerase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/Pharmacophore/Zinc.html#Screen-ZINC-with-the-pharmacophore-model">Screen ZINC with the pharmacophore model</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#pharmacophoric-point">Pharmacophoric Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.PharmacophoricPoint.html">openpharmacophore.PharmacophoricPoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#features-colorpalettes">Features colorpalettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.color_palettes.get_color_from_palette_for_feature.html">openpharmacophore.color_palettes.get_color_from_palette_for_feature</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#pharmacophores">Pharmacophores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.Pharmacophore.html">openpharmacophore.Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.LigandBasedPharmacophore.html">openpharmacophore.LigandBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.StructuredBasedPharmacophore.html">openpharmacophore.StructuredBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.Dynophore.html">openpharmacophore.Dynophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#virtual-screening">Virtual Screening</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.VirtualScreening.html">openpharmacophore.VirtualScreening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.RetrospectiveScreening.html">openpharmacophore.RetrospectiveScreening</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#io">IO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.from_ligandscout.html">openpharmacophore.io.from_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_ligandscout.html">openpharmacophore.io.to_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.from_pharmer.html">openpharmacophore.io.from_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_pharmer.html">openpharmacophore.io.to_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.from_moe.html">openpharmacophore.io.from_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_moe.html">openpharmacophore.io.to_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.read_pharmagist.html">openpharmacophore.io.read_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.to_pharmagist.html">openpharmacophore.io.to_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/openpharmacophore.io.load_mol2_file.html">openpharmacophore.io.load_mol2_file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#databases">Databases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#zinc">Zinc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.zinc.download_zinc_subset.html">openpharmacophore.databases.zinc.download_zinc_subset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pubchem">PubChem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.pubchem.get_assay_bioactivity_data.html">openpharmacophore.databases.pubchem.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.pubchem.get_compound_assay_summary.html">openpharmacophore.databases.pubchem.get_compound_assay_summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#chembl">ChemBl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.chembl.get_assay_bioactivity_data.html">openpharmacophore.databases.chembl.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.chembl.get_bioactivity_dataframe.html">openpharmacophore.databases.chembl.get_bioactivity_dataframe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/openpharmacophore.databases.chembl.get_ro5_dataset.html">openpharmacophore.databases.chembl.get_ro5_dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">OpenPharmacophore</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>openpharmacophore.databases.pubchem</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <h1>Source code for openpharmacophore.databases.pubchem</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">openpharmacophore._private_tools.exceptions</span> <span class="kn">import</span> <span class="n">FetchError</span><span class="p">,</span> <span class="n">OpenPharmacophoreValueError</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+  
+<span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;</span>
+
+<span class="k">def</span> <span class="nf">_get_data</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">attempts</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Downloads data from a given url.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        url : str</span>
+<span class="sd">            url to fetch data from</span>
+<span class="sd">        </span>
+<span class="sd">        attempts : int</span>
+<span class="sd">            number of times to try to download the data in case of failure</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        ----------</span>
+<span class="sd">        requests.response.content</span>
+<span class="sd">            The content of the response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">attempts</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Number of attempts must be greater than 0&quot;</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">attempts</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="n">requests</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">attempts</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="n">requests</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">FetchError</span><span class="p">(</span><span class="s2">&quot;Failed to get data from </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">content</span>
+    
+
+<span class="k">def</span> <span class="nf">get_assay_compounds_id</span><span class="p">(</span><span class="n">assay_id</span><span class="p">,</span> <span class="n">attempts</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Get compounds id for tested compounds in an assay</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        assay_id : int</span>
+<span class="sd">            The id of the bioassay.</span>
+<span class="sd">        </span>
+<span class="sd">        attempts : int, optional</span>
+<span class="sd">            Number of times to try to download the data in case of failure</span>
+<span class="sd">            (default=10). </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        list </span>
+<span class="sd">            List containing the compounds ids.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">assay_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/bioassay/AID/</span><span class="si">{}</span><span class="s2">/cids/JSON&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">assay_id</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">_get_data</span><span class="p">(</span><span class="n">assay_url</span><span class="p">,</span> <span class="n">attempts</span><span class="p">)</span>
+    
+    <span class="n">ids_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ids_dict</span><span class="p">[</span><span class="s2">&quot;InformationList&quot;</span><span class="p">][</span><span class="s2">&quot;Information&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;CID&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_assay_description</span><span class="p">(</span><span class="n">assay_id</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">attempts</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Get the description of an assay in JSON format.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        assay_id : int</span>
+<span class="sd">            The id of the bioassay.</span>
+<span class="sd">        </span>
+<span class="sd">        summary : bool, optional</span>
+<span class="sd">            If true returns a summary of the description of the assay (default=True).  </span>
+
+<span class="sd">        attempts : int, optional</span>
+<span class="sd">            number of times to try to download the data in case of failure</span>
+<span class="sd">            (default=10). </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        --------</span>
+<span class="sd">        dict</span>
+<span class="sd">            A dictionary containing the assay description.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">assay_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/assay/aid/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">assay_id</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">summary</span><span class="p">:</span>
+        <span class="n">description_url</span> <span class="o">=</span> <span class="n">assay_url</span> <span class="o">+</span> <span class="s2">&quot;/summary/JSON&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">description_url</span> <span class="o">=</span> <span class="n">assay_url</span> <span class="o">+</span> <span class="s2">&quot;/description/JSON&quot;</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">_get_data</span><span class="p">(</span><span class="n">description_url</span><span class="p">,</span> <span class="n">attempts</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_assay_results</span><span class="p">(</span><span class="n">assay_id</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s2">&quot;dataframe&quot;</span><span class="p">,</span> <span class="n">attempts</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Get results of an assay. </span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        assay_id : int</span>
+<span class="sd">            The id of the bioassay.</span>
+<span class="sd">        </span>
+<span class="sd">        form : {&quot;dataframe&quot;, &quot;dict&quot;}</span>
+<span class="sd">            The form of the returned object. Can be a dataframe or dict.  </span>
+
+<span class="sd">        attempts : int, optional</span>
+<span class="sd">            number of times to try to download the data in case of failure</span>
+<span class="sd">            (default=10). </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pandas.DataFrame or dict</span>
+<span class="sd">            Dataframe or dictionarty with the assay results.</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">form</span> <span class="o">==</span> <span class="s2">&quot;dataframe&quot;</span><span class="p">:</span>
+        <span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;CSV&quot;</span>
+    <span class="k">elif</span> <span class="n">form</span> <span class="o">==</span> <span class="s2">&quot;dict&quot;</span><span class="p">:</span>
+        <span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;JSON&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is not a valid form&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">form</span><span class="p">))</span>
+
+    <span class="n">assay_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/assay/aid/</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">assay_id</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">_get_data</span><span class="p">(</span><span class="n">assay_url</span><span class="p">,</span> <span class="n">attempts</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">format</span> <span class="o">==</span> <span class="s2">&quot;CSV&quot;</span><span class="p">:</span>
+        <span class="n">csv_string</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_string</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">format</span> <span class="o">==</span> <span class="s2">&quot;JSON&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">get_assay_target_info</span><span class="p">(</span><span class="n">assay_id</span><span class="p">,</span> <span class="n">attempts</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Get target information of an assay.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        assay_id : int</span>
+<span class="sd">            The id of the bioassay.</span>
+<span class="sd">        </span>
+<span class="sd">        attempts : int, optional</span>
+<span class="sd">            number of times to try to download the data in case of failure</span>
+<span class="sd">            (default=10). </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        --------</span>
+<span class="sd">        dict</span>
+<span class="sd">            A dictionary containing information of the assay target.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">target_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/assay/aid/</span><span class="si">{}</span><span class="s2">/targets/ProteinGI,ProteinName,GeneID,GeneSymbol/JSON&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">assay_id</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">_get_data</span><span class="p">(</span><span class="n">target_url</span><span class="p">,</span> <span class="n">attempts</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<div class="viewcode-block" id="get_assay_bioactivity_data"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.databases.pubchem.get_assay_bioactivity_data.html#openpharmacophore.databases.pubchem.get_assay_bioactivity_data">[docs]</a><span class="k">def</span> <span class="nf">get_assay_bioactivity_data</span><span class="p">(</span><span class="n">assay_id</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Get bioactivity data and the compounds in an assay. </span>
+<span class="sd">    </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        assay_id : int</span>
+<span class="sd">            The id of the bioassay.</span>
+<span class="sd">        Returns</span>
+<span class="sd">        ----------</span>
+<span class="sd">        compounds : list of 2-tuples</span>
+<span class="sd">            The first element is the compound PubChem id.</span>
+<span class="sd">            The second element is the smiles of the compound.</span>
+<span class="sd">        </span>
+<span class="sd">        bioactivity : np.array of bits</span>
+<span class="sd">            An array where each element corresponds to the index of the compounds list.</span>
+<span class="sd">            An entry is either one if the compound is active or zero if the compund is inactive.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">assay_results</span> <span class="o">=</span> <span class="n">get_assay_results</span><span class="p">(</span><span class="n">assay_id</span><span class="o">=</span><span class="n">assay_id</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s2">&quot;dataframe&quot;</span><span class="p">)</span>
+    <span class="c1"># Keep only cid and activity columns</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">assay_results</span><span class="p">[[</span><span class="s2">&quot;PUBCHEM_CID&quot;</span><span class="p">,</span> <span class="s2">&quot;PUBCHEM_ACTIVITY_OUTCOME&quot;</span><span class="p">]]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+    <span class="c1"># Add activity column of 1 and 0</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;activity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;PUBCHEM_ACTIVITY_OUTCOME&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;Inactive&quot;</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Drop original activity column</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;PUBCHEM_ACTIVITY_OUTCOME&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;int32&quot;</span><span class="p">)</span>
+    <span class="n">molecules_ids</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;PUBCHEM_CID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">bioactivity</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;activity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> 
+
+    <span class="n">molecules</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fetching molecules smiles...&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">mol_id</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">molecules_ids</span><span class="p">):</span>
+        <span class="n">smiles</span> <span class="o">=</span> <span class="n">get_compound_smiles</span><span class="p">(</span><span class="n">mol_id</span><span class="p">)</span>
+        <span class="n">molecules</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">mol_id</span><span class="p">,</span> <span class="n">smiles</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">molecules</span><span class="p">,</span> <span class="n">bioactivity</span></div>
+
+<span class="k">def</span> <span class="nf">get_assay_actives_and_inactives</span><span class="p">(</span><span class="n">assay_id</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Get smiles for compounds in an assay split into active and inactive.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        assay_id : int</span>
+<span class="sd">            The id of the bioassay.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns</span>
+<span class="sd">        ----------</span>
+<span class="sd">        actives : 2-tuple</span>
+<span class="sd">            The first element is a list of the active compounds PubChem ids, and</span>
+<span class="sd">            the second elment is a list of smiles for the active compounds.</span>
+<span class="sd">        </span>
+<span class="sd">        inactives : 2-tuple</span>
+<span class="sd">            The first element is a list of the inactive compounds PubChem ids, and</span>
+<span class="sd">            the second elment is a list of smiles for the inactive compounds.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">assay_results</span> <span class="o">=</span> <span class="n">get_assay_results</span><span class="p">(</span><span class="n">assay_id</span><span class="o">=</span><span class="n">assay_id</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s2">&quot;dataframe&quot;</span><span class="p">)</span>
+    <span class="c1"># Keep only cid and activity columns</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">assay_results</span><span class="p">[[</span><span class="s2">&quot;PUBCHEM_CID&quot;</span><span class="p">,</span> <span class="s2">&quot;PUBCHEM_ACTIVITY_OUTCOME&quot;</span><span class="p">]]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+    <span class="c1"># Split into active/inactive</span>
+    <span class="n">actives</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;PUBCHEM_ACTIVITY_OUTCOME&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Active&quot;</span><span class="p">]</span>
+    <span class="n">inactives</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;PUBCHEM_ACTIVITY_OUTCOME&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Inactive&quot;</span><span class="p">]</span>
+    <span class="c1"># Drop activity column</span>
+    <span class="n">actives</span> <span class="o">=</span> <span class="n">actives</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;PUBCHEM_ACTIVITY_OUTCOME&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">inactives</span> <span class="o">=</span> <span class="n">inactives</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;PUBCHEM_ACTIVITY_OUTCOME&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Cast to int</span>
+    <span class="n">actives</span> <span class="o">=</span> <span class="n">actives</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;int32&quot;</span><span class="p">)</span>
+    <span class="n">inactives</span> <span class="o">=</span> <span class="n">inactives</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;int32&quot;</span><span class="p">)</span>
+
+    <span class="n">actives_list</span> <span class="o">=</span> <span class="n">actives</span><span class="p">[</span><span class="s2">&quot;PUBCHEM_CID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">inactives_list</span> <span class="o">=</span> <span class="n">inactives</span><span class="p">[</span><span class="s2">&quot;PUBCHEM_CID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    
+    <span class="n">actives_smiles</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">inactives_smiles</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fetching active compound smiles...&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">compound</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">actives_list</span><span class="p">):</span>
+        <span class="n">smiles</span> <span class="o">=</span> <span class="n">get_compound_smiles</span><span class="p">(</span><span class="n">compound</span><span class="p">)</span>
+        <span class="n">actives_smiles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fetching inactive compound smiles...&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">compound</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">inactives_list</span><span class="p">):</span>
+        <span class="n">smiles</span> <span class="o">=</span> <span class="n">get_compound_smiles</span><span class="p">(</span><span class="n">compound</span><span class="p">)</span>
+        <span class="n">inactives_smiles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
+            
+    <span class="k">return</span> <span class="p">(</span><span class="n">actives_list</span><span class="p">,</span> <span class="n">actives_smiles</span><span class="p">),</span> <span class="p">(</span><span class="n">inactives_list</span><span class="p">,</span> <span class="n">inactives_smiles</span><span class="p">)</span>
+
+<div class="viewcode-block" id="get_compound_assay_summary"><a class="viewcode-back" href="../../../_autosummary/openpharmacophore.databases.pubchem.get_compound_assay_summary.html#openpharmacophore.databases.pubchem.get_compound_assay_summary">[docs]</a><span class="k">def</span> <span class="nf">get_compound_assay_summary</span><span class="p">(</span><span class="n">compound_id</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s2">&quot;dataframe&quot;</span><span class="p">,</span> <span class="n">attempts</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Get summary of biological test results for a given compound.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        compound_id : int</span>
+<span class="sd">            The PubChem id of the compound.</span>
+<span class="sd">        </span>
+<span class="sd">        form : {&quot;dataframe&quot;, &quot;dict&quot;}</span>
+<span class="sd">            The form of the returned object. Can be a dataframe or dict.</span>
+
+<span class="sd">        attempts : int, optional</span>
+<span class="sd">            Number of times to try to download the data in case of failure</span>
+<span class="sd">            (default=10). </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pandas.Dataframe or dict</span>
+<span class="sd">            A dataFrame or a dictionary with the assay results for the passed compound.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">form</span> <span class="o">==</span> <span class="s2">&quot;dataframe&quot;</span><span class="p">:</span>
+        <span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;CSV&quot;</span>
+    <span class="k">elif</span> <span class="n">form</span> <span class="o">==</span> <span class="s2">&quot;dict&quot;</span><span class="p">:</span>
+        <span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;JSON&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">OpenPharmacophoreValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is not a valid form&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">form</span><span class="p">))</span>
+    
+    <span class="n">compound_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/compound/cid/</span><span class="si">{}</span><span class="s2">/assaysummary/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compound_id</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">_get_data</span><span class="p">(</span><span class="n">compound_url</span><span class="p">,</span> <span class="n">attempts</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">format</span> <span class="o">==</span> <span class="s2">&quot;CSV&quot;</span><span class="p">:</span>
+        <span class="n">csv_string</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_string</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">format</span> <span class="o">==</span> <span class="s2">&quot;JSON&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">content</span><span class="p">)</span></div>
+
+<span class="k">def</span> <span class="nf">get_compound_id</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">attempts</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Get pubchem compound id for a given compound name.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str</span>
+<span class="sd">            Name of the compound. </span>
+<span class="sd">        </span>
+<span class="sd">        attempts : int, optional</span>
+<span class="sd">            Number of times to try to download the data in case of failure</span>
+<span class="sd">            (default=10). </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        ----------</span>
+<span class="sd">        str</span>
+<span class="sd">            A string with the compound name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">compound_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/compound/name/</span><span class="si">{}</span><span class="s2">/cids/JSON&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">_get_data</span><span class="p">(</span><span class="n">compound_url</span><span class="p">,</span> <span class="n">attempts</span><span class="p">)</span>
+
+    <span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">json_data</span><span class="p">[</span><span class="s2">&quot;IdentifierList&quot;</span><span class="p">][</span><span class="s2">&quot;CID&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_compound_description</span><span class="p">(</span><span class="n">compound_identifier</span><span class="p">,</span> <span class="n">attempts</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Get description for a given compound. </span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        compound_identifier : str or int</span>
+<span class="sd">            The name as str or the PubChem id as int of the compound.</span>
+<span class="sd">        </span>
+<span class="sd">        attempts : int, optional</span>
+<span class="sd">            Number of times to try to download the data in case of failure</span>
+<span class="sd">            (default=10). </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        --------</span>
+<span class="sd">        dict</span>
+<span class="sd">            A dictionary containing the compound description.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># If a string is passed assume its compound name</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">compound_identifier</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">compound_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/compound/name/</span><span class="si">{}</span><span class="s2">/description/JSON&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compound_identifier</span><span class="p">)</span>
+    <span class="c1"># Else use compound id</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">compound_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/compound/cid/</span><span class="si">{}</span><span class="s2">/description/JSON&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compound_identifier</span><span class="p">)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">_get_data</span><span class="p">(</span><span class="n">compound_url</span><span class="p">,</span> <span class="n">attempts</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_compound_smiles</span><span class="p">(</span><span class="n">compound_id</span><span class="p">,</span> <span class="n">attempts</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Get smiles for a given compound. </span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        compound_id: int</span>
+<span class="sd">            The PubChem id of the compound.</span>
+<span class="sd">        </span>
+<span class="sd">        attempts : int, optional</span>
+<span class="sd">            Number of times to try to download the data in case of failure</span>
+<span class="sd">            (default=10). </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        smiles : str </span>
+<span class="sd">            The smiles for the passed compound. </span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">smiles_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/compound/cid/</span><span class="si">{}</span><span class="s2">/property/CanonicalSMILES/TXT&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compound_id</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">_get_data</span><span class="p">(</span><span class="n">smiles_url</span><span class="p">,</span> <span class="n">attempts</span><span class="p">)</span>
+    <span class="n">smiles</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">smiles</span>
+
+<span class="k">def</span> <span class="nf">get_target_assays</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="n">identifier_type</span><span class="p">,</span> <span class="n">attempts</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Get assay ids and name for a given target</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        identifier : str</span>
+<span class="sd">            Identifier of the target. Can be GI, Gene ID, or gene symbol.</span>
+
+<span class="sd">        identifer_type : {&quot;genesymbol&quot;, &quot;geneid&quot;, &quot;gi&quot;}</span>
+<span class="sd">            The type of the identifier can be genesymbol, geneid or gi. </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        --------</span>
+<span class="sd">        pandas.DataFrame </span>
+<span class="sd">            Dataframe with the assays ids and names for the passed target</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">identifier_type</span> <span class="o">=</span> <span class="n">identifier_type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">valid_identifiers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;genesymbol&quot;</span><span class="p">,</span> <span class="s2">&quot;geneid&quot;</span><span class="p">,</span> <span class="s2">&quot;gi&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">identifier_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">valid_identifiers</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">OpenPharmacophoreValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is not a valid identifier type&quot;</span><span class="p">)</span>
+
+    <span class="n">target_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/assay/target/</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">/description/JSON&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">identifier_type</span><span class="p">,</span> <span class="n">identifier</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">_get_data</span><span class="p">(</span><span class="n">target_url</span><span class="p">,</span> <span class="n">attempts</span><span class="p">)</span>
+
+    <span class="n">assays_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">ids</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># Retrieve only id and name</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">assays_dict</span><span class="p">[</span><span class="s2">&quot;PC_AssayContainer&quot;</span><span class="p">])):</span>
+        <span class="n">assay</span> <span class="o">=</span> <span class="n">assays_dict</span><span class="p">[</span><span class="s1">&#39;PC_AssayContainer&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;assay&#39;</span><span class="p">][</span><span class="s1">&#39;descr&#39;</span><span class="p">]</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">assay</span><span class="p">[</span><span class="s2">&quot;aid&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">])</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">assay</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+        <span class="n">ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+        <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="n">assays</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">ids</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">names</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">assays</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">similarity_search</span><span class="p">(</span><span class="n">compound</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_records</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">attempts</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Perform a 2D similarity search for a given compound.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        compound : str or int</span>
+<span class="sd">            Can be a smiles str or the PubChem id of the compound.</span>
+<span class="sd">        </span>
+<span class="sd">        threshold : int, optional</span>
+<span class="sd">            Minimum Tanimoto score for a hit.</span>
+<span class="sd">        </span>
+<span class="sd">        max_records : int, optional</span>
+<span class="sd">            Maximum number of hits.</span>
+
+<span class="sd">        attempts : int, optional</span>
+<span class="sd">            Number of times to try to download the data in case of failure</span>
+<span class="sd">            (default=10). </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        --------</span>
+<span class="sd">        list</span>
+<span class="sd">            A List with the id&#39;s of the hits.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># If compound is passed as str assume is smiles</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">compound</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/compound/similarity/smiles/</span><span class="si">{}</span><span class="s2">/JSON&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compound</span><span class="p">)</span>
+    <span class="c1"># Else use compound id</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/compound/similarity/cid/</span><span class="si">{}</span><span class="s2">/JSON&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compound</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">threshold</span> <span class="ow">and</span> <span class="n">max_records</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">+=</span> <span class="s2">&quot;?Threshold=</span><span class="si">{}</span><span class="s2">&amp;MaxRecords=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">threshold</span><span class="p">,</span> <span class="n">max_records</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">threshold</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">+=</span> <span class="s2">&quot;?Threshold=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">threshold</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">max_records</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">+=</span> <span class="s2">&quot;?MaxRecords=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">max_records</span><span class="p">)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">_get_data</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">attempts</span><span class="p">)</span>
+    <span class="c1"># Data returns a listkey that can be used to retrieve the results from another url</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">listkey</span> <span class="o">=</span> <span class="n">content</span><span class="p">[</span><span class="s2">&quot;Waiting&quot;</span><span class="p">][</span><span class="s2">&quot;ListKey&quot;</span><span class="p">]</span>
+    
+    <span class="n">results_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/compound/listkey/</span><span class="si">{}</span><span class="s2">/cids/JSON&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">listkey</span><span class="p">)</span>
+    <span class="c1"># Wait a little as similarity searches take more time to complete</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">_get_data</span><span class="p">(</span><span class="n">results_url</span><span class="p">,</span> <span class="n">attempts</span><span class="p">)</span>
+    <span class="n">data_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;IdentifierList&quot;</span><span class="p">][</span><span class="s2">&quot;CID&quot;</span><span class="p">]</span>
+
+</pre></div>
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/openpharmacophore">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and authors. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

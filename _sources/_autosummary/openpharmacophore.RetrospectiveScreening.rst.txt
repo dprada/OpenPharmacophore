@@ -1,0 +1,33 @@
+﻿openpharmacophore.RetrospectiveScreening
+========================================
+
+.. currentmodule:: openpharmacophore
+
+.. autoclass:: RetrospectiveScreening
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~RetrospectiveScreening.AUC
+      ~RetrospectiveScreening.ROC_plot
+      ~RetrospectiveScreening.confusion_matrix
+      ~RetrospectiveScreening.enrichment_factor
+      ~RetrospectiveScreening.enrichment_plot
+      ~RetrospectiveScreening.from_bioactivity_data
+      ~RetrospectiveScreening.from_chembl_target_id
+      ~RetrospectiveScreening.from_pubchem_bioassay_id
+      ~RetrospectiveScreening.ideal_enrichment_factor
+   
+   
+
+   
+   
+   

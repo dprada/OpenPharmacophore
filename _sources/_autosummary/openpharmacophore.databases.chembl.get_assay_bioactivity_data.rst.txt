@@ -1,0 +1,6 @@
+﻿openpharmacophore.databases.chembl.get\_assay\_bioactivity\_data
+================================================================
+
+.. currentmodule:: openpharmacophore.databases.chembl
+
+.. autofunction:: get_assay_bioactivity_data

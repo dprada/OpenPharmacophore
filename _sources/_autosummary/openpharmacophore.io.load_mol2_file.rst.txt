@@ -1,0 +1,6 @@
+﻿openpharmacophore.io.load\_mol2\_file
+=====================================
+
+.. currentmodule:: openpharmacophore.io
+
+.. autofunction:: load_mol2_file

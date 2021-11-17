@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>openpharmacophore.pharmacophore &mdash; OpenPharmacophore 0+untagged.143.gbfcf4bd documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> OpenPharmacophore
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation and Quick Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html">Pharmacohophores with OpenPharmacophore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Creating-a-pharmacophore-model-manually">Creating a pharmacophore model manually</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Pharmacophoric-Points">Pharmacophoric Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Create-the-Pharmacophore">Create the Pharmacophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Importing-Pharmacophores-from-other-software">Importing Pharmacophores from other software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Pharmacophore.html#Exporting-Pharmacophores">Exporting Pharmacophores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/Ligand-Based.html">Ligand-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Ligand-Based.html#Pharmacophore-for-Non-Peptide-Angiotensin-II-Receptor-antagonists">Pharmacophore for Non-Peptide Angiotensin II Receptor antagonists</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html">Structured-based Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Rhinovirus-coat-protein">Pharmacophore of Rhinovirus coat protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-ferrous-Synechocystis-hemoglobin">Pharmacophore of ferrous Synechocystis hemoglobin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Abl-kinase-domain">Pharmacophore of Abl kinase domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Structure-Based.html#Pharmacophore-of-Estrogen-Nuclear-Receptor">Pharmacophore of Estrogen Nuclear Receptor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html">Dynamic Pharmacophores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-a-molecular-dynamics-trajectory">Pharmacophores from a molecular dynamics trajectory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophores-from-the-first-and-last-frame-only">Pharmacophores from the first and last frame only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Pharmacophore-Analysis">Pharmacophore Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Get-Pharmacophores-for-each-frame-of-the-trajectory">Get Pharmacophores for each frame of the trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Get-all-unique-pharmacophoric-points">Get all unique pharmacophoric points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Derive-a-pharmacophore-model-from-the-most-frequent-points">Derive a pharmacophore model from the most frequent points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Analyze-frequency-of-all-unique-points">Analyze frequency of all unique points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#2D-Representation-of-the-Dynamic-Pharmacophore">2D Representation of the Dynamic Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Representative-Pharmacophore-Models">Representative Pharmacophore Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contents/Pharmacophore/DynamicPharmacophore.html#Common-Hits-Approach">Common Hits Approach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contents/Pharmacophore/Zinc.html">Virtual Screening of ZINC Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Zinc.html#Pharmacophore-model-for-Plasmodium-Falciparum-Triosephosphate-isomerase">Pharmacophore model for Plasmodium Falciparum Triosephosphate isomerase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contents/Pharmacophore/Zinc.html#Screen-ZINC-with-the-pharmacophore-model">Screen ZINC with the pharmacophore model</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#pharmacophoric-point">Pharmacophoric Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.PharmacophoricPoint.html">openpharmacophore.PharmacophoricPoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#features-colorpalettes">Features colorpalettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.color_palettes.get_color_from_palette_for_feature.html">openpharmacophore.color_palettes.get_color_from_palette_for_feature</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#pharmacophores">Pharmacophores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.Pharmacophore.html">openpharmacophore.Pharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.LigandBasedPharmacophore.html">openpharmacophore.LigandBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.StructuredBasedPharmacophore.html">openpharmacophore.StructuredBasedPharmacophore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.Dynophore.html">openpharmacophore.Dynophore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#virtual-screening">Virtual Screening</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.VirtualScreening.html">openpharmacophore.VirtualScreening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.RetrospectiveScreening.html">openpharmacophore.RetrospectiveScreening</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#io">IO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.from_ligandscout.html">openpharmacophore.io.from_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_ligandscout.html">openpharmacophore.io.to_ligandscout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.from_pharmer.html">openpharmacophore.io.from_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_pharmer.html">openpharmacophore.io.to_pharmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.from_moe.html">openpharmacophore.io.from_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_moe.html">openpharmacophore.io.to_moe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.read_pharmagist.html">openpharmacophore.io.read_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.to_pharmagist.html">openpharmacophore.io.to_pharmagist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/openpharmacophore.io.load_mol2_file.html">openpharmacophore.io.load_mol2_file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#databases">Databases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#zinc">Zinc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.zinc.download_zinc_subset.html">openpharmacophore.databases.zinc.download_zinc_subset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pubchem">PubChem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.pubchem.get_assay_bioactivity_data.html">openpharmacophore.databases.pubchem.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.pubchem.get_compound_assay_summary.html">openpharmacophore.databases.pubchem.get_compound_assay_summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#chembl">ChemBl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.chembl.get_assay_bioactivity_data.html">openpharmacophore.databases.chembl.get_assay_bioactivity_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.chembl.get_bioactivity_dataframe.html">openpharmacophore.databases.chembl.get_bioactivity_dataframe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/openpharmacophore.databases.chembl.get_ro5_dataset.html">openpharmacophore.databases.chembl.get_ro5_dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OpenPharmacophore</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>openpharmacophore.pharmacophore</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <h1>Source code for openpharmacophore.pharmacophore</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">openpharmacophore._private_tools.exceptions</span> <span class="kn">import</span> <span class="n">InvalidFeatureError</span><span class="p">,</span> <span class="n">InvalidFileFormat</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.io</span> <span class="kn">import</span> <span class="p">(</span><span class="n">from_pharmer</span><span class="p">,</span> <span class="n">from_moe</span><span class="p">,</span> <span class="n">from_ligandscout</span><span class="p">,</span> <span class="n">read_pharmagist</span><span class="p">,</span>
+ <span class="n">to_ligandscout</span><span class="p">,</span> <span class="n">to_moe</span><span class="p">,</span> <span class="n">to_pharmagist</span><span class="p">,</span> <span class="n">to_pharmer</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore</span> <span class="kn">import</span> <span class="n">PharmacophoricPoint</span>
+<span class="kn">from</span> <span class="nn">openpharmacophore.color_palettes</span> <span class="kn">import</span> <span class="n">get_color_from_palette_for_feature</span>
+<span class="kn">import</span> <span class="nn">nglview</span> <span class="k">as</span> <span class="nn">nv</span>
+<span class="kn">import</span> <span class="nn">pyunitwizard</span> <span class="k">as</span> <span class="nn">puw</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">RDLogger</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">ChemicalFeatures</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem.Pharm3D</span> <span class="kn">import</span> <span class="n">Pharmacophore</span> <span class="k">as</span> <span class="n">rdkitPharmacophore</span>
+<span class="n">RDLogger</span><span class="o">.</span><span class="n">DisableLog</span><span class="p">(</span><span class="s1">&#39;rdApp.*&#39;</span><span class="p">)</span> <span class="c1"># Disable rdkit warnings</span>
+
+<div class="viewcode-block" id="Pharmacophore"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Pharmacophore.html#openpharmacophore.Pharmacophore">[docs]</a><span class="k">class</span> <span class="nc">Pharmacophore</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Native object for pharmacophores.</span>
+
+<span class="sd">    Openpharmacophore native class to store pharmacophoric models. A pharmacophore can be constructed </span>
+<span class="sd">    from a list of elements or from a file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    elements : list openpharmacophore.PharmacophoricPoint</span>
+<span class="sd">        List of pharmacophoric elements</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    elements : list openpharmacophore.PharmacophoricPoint</span>
+<span class="sd">        List of pharmacophoric elements</span>
+
+<span class="sd">    n_elements : int</span>
+<span class="sd">        Number of pharmacophoric elements</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="p">[]):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">elements</span> <span class="o">=</span> <span class="n">elements</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_elements</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+    
+<div class="viewcode-block" id="Pharmacophore.from_file"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Pharmacophore.html#openpharmacophore.Pharmacophore.from_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Class method to load a pharmacophore from a file.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ---------</span>
+<span class="sd">        file_name : str</span>
+<span class="sd">            Name of the file containing the pharmacophore</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">fextension</span> <span class="o">=</span> <span class="n">file_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">fextension</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span><span class="p">:</span>
+            <span class="n">points</span><span class="p">,</span> <span class="n">_</span> <span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">from_pharmer</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">fextension</span> <span class="o">==</span> <span class="s2">&quot;ph4&quot;</span><span class="p">:</span>
+            <span class="n">points</span> <span class="o">=</span> <span class="n">from_moe</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+           
+        <span class="k">elif</span> <span class="n">fextension</span> <span class="o">==</span> <span class="s2">&quot;pml&quot;</span><span class="p">:</span>
+            <span class="n">points</span> <span class="o">=</span> <span class="n">from_ligandscout</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">fextension</span> <span class="o">==</span> <span class="s2">&quot;mol2&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kwargs</span><span class="p">:</span>
+                <span class="n">ph_index</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;index&quot;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ph_index</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">points</span> <span class="o">=</span> <span class="n">read_pharmagist</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">pharmacophore_index</span><span class="o">=</span><span class="n">ph_index</span><span class="p">)</span>
+        
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidFileFormat</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid file format, </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> is not a supported file format&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="n">points</span><span class="p">)</span>    </div>
+        
+<div class="viewcode-block" id="Pharmacophore.add_to_NGLView"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Pharmacophore.html#openpharmacophore.Pharmacophore.add_to_NGLView">[docs]</a>    <span class="k">def</span> <span class="nf">add_to_NGLView</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;openpharmacophore&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add the pharmacophore representation to a view (NGLWidget) from NGLView.</span>
+
+<span class="sd">        Each pharmacophoric element is added to the NGLWidget as a new component.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        view : nglview.NGLWidget</span>
+<span class="sd">            View as NGLView widget where the representation of the pharmacophore is going to be</span>
+<span class="sd">            added.</span>
+<span class="sd">        palette : str or dict</span>
+<span class="sd">            Color palette name or dictionary. (Default: &#39;openpharmacophore&#39;)</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">        Nothing is returned. The `view` object is modified in place.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">first_element_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">_ngl_component_ids</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">):</span>
+            <span class="c1"># Add Spheres</span>
+            <span class="n">center</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">center</span><span class="p">,</span> <span class="n">to_unit</span><span class="o">=</span><span class="s2">&quot;angstroms&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+            <span class="n">radius</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="n">to_unit</span><span class="o">=</span><span class="s2">&quot;angstroms&quot;</span><span class="p">)</span>
+            <span class="n">feature_color</span> <span class="o">=</span> <span class="n">get_color_from_palette_for_feature</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">feature_name</span><span class="p">,</span> <span class="n">color_palette</span><span class="o">=</span><span class="n">palette</span><span class="p">)</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element</span><span class="o">.</span><span class="n">feature_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">ii</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">view</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">add_sphere</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">feature_color</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+
+            <span class="c1"># Add vectors</span>
+            <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">has_direction</span><span class="p">:</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element</span><span class="o">.</span><span class="n">feature_name</span><span class="si">}</span><span class="s2">_vector&quot;</span>
+                <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">feature_name</span> <span class="o">==</span> <span class="s2">&quot;hb acceptor&quot;</span><span class="p">:</span>
+                    <span class="n">end_arrow</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">center</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">puw</span><span class="o">.</span><span class="n">quantity</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span> <span class="s2">&quot;angstroms&quot;</span><span class="p">),</span> <span class="n">to_unit</span><span class="o">=</span><span class="s1">&#39;angstroms&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+                    <span class="n">view</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">add_arrow</span><span class="p">(</span><span class="n">end_arrow</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">feature_color</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">end_arrow</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">center</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">puw</span><span class="o">.</span><span class="n">quantity</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span> <span class="s2">&quot;angstroms&quot;</span><span class="p">),</span> <span class="n">to_unit</span><span class="o">=</span><span class="s1">&#39;angstroms&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+                    <span class="n">view</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">add_arrow</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">end_arrow</span><span class="p">,</span> <span class="n">feature_color</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+        
+        <span class="c1"># Add opacity to spheres</span>
+        <span class="n">last_element_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">_ngl_component_ids</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">first_element_index</span><span class="p">,</span> <span class="n">last_element_index</span><span class="p">):</span>
+            <span class="n">view</span><span class="o">.</span><span class="n">update_representation</span><span class="p">(</span><span class="n">component</span><span class="o">=</span><span class="n">jj</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Pharmacophore.show"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Pharmacophore.html#openpharmacophore.Pharmacophore.show">[docs]</a>    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;openpharmacophore&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Show the pharmacophore model.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        palette : str or dict.</span>
+<span class="sd">            Color palette name or dictionary. (Default: &#39;openpharmacophore&#39;)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        nglview.NGLWidget</span>
+<span class="sd">            An nglview.NGLWidget is returned with the &#39;view&#39; of the pharmacophoric model and the</span>
+<span class="sd">            molecular system used to elucidate it.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">view</span> <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">NGLWidget</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_to_NGLView</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">view</span></div>
+
+<div class="viewcode-block" id="Pharmacophore.add_element"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Pharmacophore.html#openpharmacophore.Pharmacophore.add_element">[docs]</a>    <span class="k">def</span> <span class="nf">add_element</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pharmacophoric_element</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a new element to the pharmacophore.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pharmacophoric_element : openpharmacophore.PharmacophricPoint</span>
+<span class="sd">            The pharmacophoric point that will be added.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        ------</span>
+<span class="sd">            The pharmacophoric element given as input argument is added to the pharmacophore</span>
+<span class="sd">            as a new entry of the list `elements`.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pharmacophoric_element</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_elements</span> <span class="o">+=</span><span class="mi">1</span></div>
+    
+<div class="viewcode-block" id="Pharmacophore.remove_elements"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Pharmacophore.html#openpharmacophore.Pharmacophore.remove_elements">[docs]</a>    <span class="k">def</span> <span class="nf">remove_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element_indices</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Remove elements from the pharmacophore.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        element_indices : int or list of int</span>
+<span class="sd">            Indices of the elements to be removed. Can be a list of integers if multiple elements will be</span>
+<span class="sd">            removed or a single integer to remove one element.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        -----</span>
+<span class="sd">            The pharmacophoric element given as input argument is removed from the pharmacophore.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element_indices</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">element_indices</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n_elements</span> <span class="o">-=</span><span class="mi">1</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element_indices</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">new_elements</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">element_indices</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">elements</span> <span class="o">=</span> <span class="n">new_elements</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n_elements</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Pharmacophore.remove_feature"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Pharmacophore.html#openpharmacophore.Pharmacophore.remove_feature">[docs]</a>    <span class="k">def</span> <span class="nf">remove_feature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feat_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Remove an especific feature type from the pharmacophore elements list</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        feat_type : str</span>
+<span class="sd">            Name or type of the feature to be removed.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        -----</span>
+<span class="sd">            The pharmacophoric elements of the feature type given as input argument </span>
+<span class="sd">            are removed from the pharmacophore.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">feats</span> <span class="o">=</span> <span class="n">PharmacophoricPoint</span><span class="o">.</span><span class="n">get_valid_features</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">feat_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">feats</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidFeatureError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot remove feature. </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">feat_type</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> is not a valid feature type&quot;</span><span class="p">)</span>
+
+        <span class="n">temp_elements</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span> <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">feature_name</span> <span class="o">!=</span> <span class="n">feat_type</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">temp_elements</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_elements</span><span class="p">:</span> <span class="c1"># No element was removed</span>
+            <span class="k">raise</span> <span class="n">InvalidFeatureError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot remove feature. The pharmacophore does not contain any </span><span class="si">{</span><span class="n">feat_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">elements</span> <span class="o">=</span> <span class="n">temp_elements</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_elements</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span></div>
+    
+    <span class="k">def</span> <span class="nf">_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Private method to reset all attributes to default values.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">        Nothing is returned. All attributes are set to default values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_elements</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">extractor</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">molecular_system</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Pharmacophore.to_ligandscout"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Pharmacophore.html#openpharmacophore.Pharmacophore.to_ligandscout">[docs]</a>    <span class="k">def</span> <span class="nf">to_ligandscout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Method to export the pharmacophore to the ligandscout compatible format.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        file_name : str</span>
+<span class="sd">            Name of file to be written with the ligandscout format of the pharmacophore.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">        Nothing is returned. A new file is written.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">to_ligandscout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Pharmacophore.to_pharmer"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Pharmacophore.html#openpharmacophore.Pharmacophore.to_pharmer">[docs]</a>    <span class="k">def</span> <span class="nf">to_pharmer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Method to export the pharmacophore to the pharmer compatible format.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        file_name : str</span>
+<span class="sd">            Name of file to be written with the pharmer format of the pharmacophore.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">            Nothing is returned. A new file is written.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">to_pharmer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Pharmacophore.to_pharmagist"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Pharmacophore.html#openpharmacophore.Pharmacophore.to_pharmagist">[docs]</a>    <span class="k">def</span> <span class="nf">to_pharmagist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Method to export the pharmacophore to the pharmagist compatible format.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        file_name : str</span>
+<span class="sd">            Name of file to be written with the pharmagist format of the pharmacophore.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">            Nothing is returned. A new file is written.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">to_pharmagist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Pharmacophore.to_moe"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Pharmacophore.html#openpharmacophore.Pharmacophore.to_moe">[docs]</a>    <span class="k">def</span> <span class="nf">to_moe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Method to export the pharmacophore to the MOE compatible format.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        file_name: str</span>
+<span class="sd">            Name of file to be written with the MOE format of the pharmacophore.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">            Nothing is returned. A new file is written.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">to_moe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Pharmacophore.to_rdkit"><a class="viewcode-back" href="../../_autosummary/openpharmacophore.Pharmacophore.html#openpharmacophore.Pharmacophore.to_rdkit">[docs]</a>    <span class="k">def</span> <span class="nf">to_rdkit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns an rdkit pharmacophore with the elements from the original pharmacophore. </span>
+<span class="sd">            </span>
+<span class="sd">            rdkit pharmacophores do not store the elements radii, so they are returned as well.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            rdkit_pharmacophore : rdkit.Chem.Pharm3D.Pharmacophore</span>
+<span class="sd">                The rdkit pharmacophore.</span>
+
+<span class="sd">            radii : list of float</span>
+<span class="sd">                List with the radius in angstroms of each pharmacophoric point.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">rdkit_element_name</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># dictionary to map openpharmacophore feature names to rdkit feature names</span>
+        <span class="s2">&quot;aromatic ring&quot;</span><span class="p">:</span> <span class="s2">&quot;Aromatic&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hydrophobicity&quot;</span><span class="p">:</span> <span class="s2">&quot;Hydrophobe&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hb acceptor&quot;</span><span class="p">:</span> <span class="s2">&quot;Acceptor&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hb donor&quot;</span><span class="p">:</span> <span class="s2">&quot;Donor&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;positive charge&quot;</span><span class="p">:</span> <span class="s2">&quot;PosIonizable&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;negative charge&quot;</span><span class="p">:</span> <span class="s2">&quot;NegIonizable&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">radii</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">:</span>
+            <span class="n">feat_name</span> <span class="o">=</span> <span class="n">rdkit_element_name</span><span class="p">[</span><span class="n">element</span><span class="o">.</span><span class="n">feature_name</span><span class="p">]</span>
+            <span class="n">center</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">center</span><span class="p">,</span> <span class="n">to_unit</span><span class="o">=</span><span class="s2">&quot;angstroms&quot;</span><span class="p">)</span>
+            <span class="n">center</span> <span class="o">=</span> <span class="n">Geometry</span><span class="o">.</span><span class="n">Point3D</span><span class="p">(</span><span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">center</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+            <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ChemicalFeatures</span><span class="o">.</span><span class="n">FreeChemicalFeature</span><span class="p">(</span>
+                <span class="n">feat_name</span><span class="p">,</span>
+                <span class="n">center</span>
+            <span class="p">))</span>
+            <span class="n">radius</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="n">to_unit</span><span class="o">=</span><span class="s2">&quot;angstroms&quot;</span><span class="p">)</span>
+            <span class="n">radii</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+
+        <span class="n">rdkit_pharmacophore</span> <span class="o">=</span> <span class="n">rdkitPharmacophore</span><span class="o">.</span><span class="n">Pharmacophore</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rdkit_pharmacophore</span><span class="p">,</span> <span class="n">radii</span></div>
+    
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(n_elements: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_elements</span><span class="si">}</span><span class="s2">)&quot;</span></div>
+
+    
+</pre></div>
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/openpharmacophore">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and authors. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

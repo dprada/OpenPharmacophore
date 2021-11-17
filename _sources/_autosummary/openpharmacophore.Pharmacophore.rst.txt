@@ -1,0 +1,35 @@
+﻿openpharmacophore.Pharmacophore
+===============================
+
+.. currentmodule:: openpharmacophore
+
+.. autoclass:: Pharmacophore
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~Pharmacophore.add_element
+      ~Pharmacophore.add_to_NGLView
+      ~Pharmacophore.from_file
+      ~Pharmacophore.remove_elements
+      ~Pharmacophore.remove_feature
+      ~Pharmacophore.show
+      ~Pharmacophore.to_ligandscout
+      ~Pharmacophore.to_moe
+      ~Pharmacophore.to_pharmagist
+      ~Pharmacophore.to_pharmer
+      ~Pharmacophore.to_rdkit
+   
+   
+
+   
+   
+   

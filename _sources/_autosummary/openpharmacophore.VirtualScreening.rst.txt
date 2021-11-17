@@ -1,0 +1,31 @@
+﻿openpharmacophore.VirtualScreening
+==================================
+
+.. currentmodule:: openpharmacophore
+
+.. autoclass:: VirtualScreening
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~VirtualScreening.get_screening_results
+      ~VirtualScreening.print_report
+      ~VirtualScreening.save_results_to_file
+      ~VirtualScreening.screen_ZINC
+      ~VirtualScreening.screen_chembl
+      ~VirtualScreening.screen_db_from_dir
+      ~VirtualScreening.screen_mol_list
+   
+   
+
+   
+   
+   

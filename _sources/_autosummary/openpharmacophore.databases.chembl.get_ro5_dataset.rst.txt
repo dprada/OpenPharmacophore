@@ -1,0 +1,6 @@
+﻿openpharmacophore.databases.chembl.get\_ro5\_dataset
+====================================================
+
+.. currentmodule:: openpharmacophore.databases.chembl
+
+.. autofunction:: get_ro5_dataset

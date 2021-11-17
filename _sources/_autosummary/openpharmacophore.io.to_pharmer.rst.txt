@@ -1,0 +1,6 @@
+﻿openpharmacophore.io.to\_pharmer
+================================
+
+.. currentmodule:: openpharmacophore.io
+
+.. autofunction:: to_pharmer
